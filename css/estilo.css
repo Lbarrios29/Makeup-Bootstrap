@@ -528,12 +528,7 @@ nav {
 *$*$**********************************************************************/
 .containerFormulario {
     width: 85%;
-    height: auto;
-    padding: 10px 15px 40px 40px;
-    margin: 30px auto 0px auto;
     background: url(../images/contacto/imgForm.jpg) no-repeat;
-    /* background-image: url(../images/contacto/imgForm.jpg);
-    background-repeat: no-repeat; */
     background-size: cover;
     background-position: center center;
     border-radius: 6px;
@@ -542,23 +537,17 @@ nav {
 
 .boxFormulario {
     width: 60%;
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
     /* background-color: #25d366; */
 }
 
-#h3Formulario {
-    width: 100%;
+.h3Formulario {
+    /* width: 100%; */
     line-height: 1.5;
     font-weight: 400;
     /* color: #000; */
     text-transform: none;
-    font-size: 1.75rem;
-    text-align: left;
-    margin-bottom: 24px;
-    margin-top: 20px;
-    padding: 0px;
-    /* background-color: aqua; */
 }
 
 .contactoFormulario {
@@ -569,60 +558,7 @@ nav {
 }
 
 .flexNombre {
-    width: 100%;
     display: flex;
-    padding-top: 10px;
-    /* background-color: #25d366; */
-}
-
-.boxContacto {
-    width: 100%;
-}
-
-.boxContacto2 {
-    width: 100%;
-    padding-left: 20px;
-}
-
-.label {
-    display: inline-block;
-    margin-bottom: 0.5rem;
-    text-transform: uppercase;
-    font-size: 12px;
-    font-weight: 600;
-}
-
-.input {
-    display: block;
-    /* width: 340px; */
-    width: 100%;
-    padding: 6px 12px;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #495057;
-    background-color: #ffffff;
-    background-clip: padding-box;
-    border: 1px solid white;
-    border-radius: 0.25rem;
-    transition: background-color 0.3s
-}
-
-.asunto {
-    width: 50%;
-}
-
-#comentario {
-    width: 100%;
-    border: 1px solid white;
-    /* background-color: rgb(34, 34, 34); */
-    padding: 6px 12px;
-    background-color: #ffffff;
-    border-radius: 0.25rem;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #495057;
 }
 
 .botonContacto {
@@ -630,14 +566,9 @@ nav {
     color: white;
     background-color: rgb(34, 34, 34);
     font-weight: 600;
-    font-size: 1rem;
-    vertical-align: middle;
     border: 1px solid transparent;
-    padding: 0.375rem 0.75rem;
     line-height: 1.5;
     border-radius: 0.25rem;
-    cursor: pointer;
-    margin-right: 0.5rem;
 }
 
 .botonContacto:hover {
@@ -768,14 +699,14 @@ footer {
         flex-direction: column;
     }
 
-    .boxContacto2 {
+    /* .boxContacto2 {
         padding-left: 0px;
         padding-top: 10px;
     }
 
     .asunto {
         width: 100%;
-    }
+    } */
 
 }
 
@@ -791,7 +722,7 @@ footer {
         width: 90%;
     }
 
-    .input {
+    /* .input {
         width: 110%;
     }
 
@@ -801,7 +732,7 @@ footer {
 
     .botonContacto {
         width: 40%;
-    }
+    } */
 
     .contenedorFooter {
         height: 50vh;
@@ -841,7 +772,7 @@ footer {
         /* background-color: blue; */
     }
 
-    #h3Formulario {
+    /* #h3Formulario {
         line-height: 1.2;
         font-size: 1.3rem;
     }
@@ -852,6 +783,6 @@ footer {
 
     #comentario {
         width: 110%;
-    }
+    } */
 
 }

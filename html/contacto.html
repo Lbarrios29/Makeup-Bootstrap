@@ -8,6 +8,8 @@
     <link rel="shortcut icon" href="../images/logo.jpg" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/estilo.css">
     <title>Make Up Studio</title>
 </head>
@@ -52,58 +54,84 @@
 
     <main>
         <section>
-            <div class="containerFormulario">
-
+            <!-- <div class="containerFormulario">
+                <div class="boxFormulario"> -->
+            <div class="container containerFormulario mt-5">
                 <div class="boxFormulario">
 
-                    <h3 id="h3Formulario">Contactate con Nosotros</h3>
+                    <h3 class="p-3 ps-2 text-start h3Formulario">
+                        Contactate con Nosotros
+                    </h3>
 
-                    <form action="" class="contactoFormulario">
+                    <!-- <form action="" class="contactoFormulario"> -->
+                    <form class="ms-2 contactoFormulario">
 
-                        <div class="flexNombre">
+                        <div class="row flexNombre">
 
-                            <div class="boxContacto">
-                                <!-- Nombre Completo-->
-                                <label for="nombre" class="label">Nombre Completo</label>
-                                <input type="text" name="nombre" id="nombre" class="input" placeholder="Nombre Completo"
+                            <!-- Nombre Completo-->
+                            <div class="col mb-3">
+                                <label for="nombre" class="form-label form-label-lg form-label-sm">
+                                    Nombre Completo
+                                </label>
+                                <input type="text" name="nombre" id="nombre"
+                                    class="form-control form-control-lg form-control-sm" placeholder="Nombre Completo"
                                     required>
                             </div>
 
-                            <div class="boxContacto2">
-                                <!-- Email-->
-                                <label for="email" class="label">Direccion de email</label>
-                                <input type="email" name="email" id="email" class="input" placeholder="Email" required>
+                            <!-- Email-->
+                            <div class="col mb-3">
+                                <label for="email" class="form-label form-label-lg form-label-sm">
+                                    Direccion de email
+                                </label>
+                                <input type="email" name="email" id="email"
+                                    class="form-control form-control-lg form-control-sm" placeholder="Email" required>
                             </div>
 
                         </div>
 
-                        <!-- Lista Despegable Asunto-->
-                        <br>
-                        <label for="asunto" class="label">Asunto</label>
-                        <select name="asunto" id="asunto" class="input asunto" required>
-                            <option selected disabled>-- Elija una opción --</option>
-                            <option value="">Maquillaje</option>
-                            <option value="">Pedicuria</option>
-                            <option value="">Peinado</option>
-                            <option value="">Pestañas</option>
-                            <option value="">Uñas</option>
-                        </select>
+                        <!-- Lista desplegable -->
+                        <div class="mb-3">
+                            <label for="DataList" class="form-label form-label-lg form-label-sm">
+                                Asunto
+                            </label>
+                            <input class="form-control form-control-lg form-control-sm" list="datalistOptions"
+                                id="DataList" placeholder="Escriba o elija una opción">
+                            <datalist id="datalistOptions">
+                                <option value="Maquillaje">
+                                <option value="Pedicuria">
+                                <option value="Peinado">
+                                <option value="Pestañas">
+                                <option value="Uñas">
+                            </datalist>
+                        </div>
 
                         <!-- Comentarios -->
-                        <br>
-                        <label for="comentario" class="label">Mensaje</label>
-                        <br>
-                        <textarea id="comentario" name="comentario" cols="51" rows="7" placeholder="Mensaje">
-                    </textarea>
+                        <div class="mb-3">
+                            <label for="FormControlTextarea1" class="form-label form-label-lg form-label-sm">
+                                Mensaje
+                            </label>
+                            <textarea class="form-control form-control-lg form-control-sm" id="FormControlTextarea1"
+                                rows="3" placeholder="Mensaje"></textarea>
+                        </div>
+
 
                         <!--Checkbox-->
-                        <br><br>
-                        <label for="notif" class="label">¿Desea recibir Newsletter?</label>
-                        <input type="checkbox" name="chk" id="notif"><br>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                            <label class="form-check-label" for="flexCheckChecked">
+                                ¿Desea recibir Newsletter?
+                            </label>
+                        </div>
 
                         <br>
-                        <input type="submit" value="Enviar" class="botonContacto">
-                        <input type="reset" value="Reset" class="botonContacto"><br>
+                        <!-- <input type="submit" value="Enviar" class="botonContacto"> -->
+                        <button type="submit" class="btn btn-primary botonContacto">
+                            Enviar
+                        </button>
+                        <button type="reset" class="btn btn-secondary botonContacto">
+                            Reset
+                        </button>
+                        <!-- <input type="reset" value="Reset" class="botonContacto"><br> -->
 
                     </form>
 
@@ -177,6 +205,9 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>
