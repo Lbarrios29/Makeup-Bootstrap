@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../images/logo.jpg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/estilo.css">
+    <title>Make Up Studio</title>
+</head>
+
+<body>
+
+    <!--Menu-->
+    <header>
+        <nav>
+            <div class="headerNavAncho">
+
+                <div class="logo">
+                    <a href="../index.html">
+                        <img src="../images/logodiaz.png" alt="logo" class="logo__img--center">
+                    </a>
+                </div>
+
+                <div class="menu">
+                    <ul class="menu__items">
+                        <li>
+                            <a href="../index.html">HOME</a>
+                        </li>
+                        <li>
+                            <a href="../html/nosotros.html">NOSOTROS</a>
+                        </li>
+                        <li>
+                            <a href="../html/servicios.html">SERVICIOS</a>
+                        </li>
+                        <li>
+                            <a href="../html/galeria.html">GALERIA</a>
+                        </li>
+                        <li>
+                            <a href="../html/contacto.html">CONTACTO</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+        <!-- <h1 id="h1Contacto">Contactate con Nosotros</h1> -->
+    </header>
+
+    <main>
+        <section>
+            <div class="containerFormulario">
+
+                <div class="boxFormulario">
+
+                    <h3 id="h3Formulario">Contactate con Nosotros</h3>
+
+                    <form action="" class="contactoFormulario">
+
+                        <div class="flexNombre">
+
+                            <div class="boxContacto">
+                                <!-- Nombre Completo-->
+                                <label for="nombre" class="label">Nombre Completo</label>
+                                <input type="text" name="nombre" id="nombre" class="input" placeholder="Nombre Completo"
+                                    required>
+                            </div>
+
+                            <div class="boxContacto2">
+                                <!-- Email-->
+                                <label for="email" class="label">Direccion de email</label>
+                                <input type="email" name="email" id="email" class="input" placeholder="Email" required>
+                            </div>
+
+                        </div>
+
+                        <!-- Lista Despegable Asunto-->
+                        <br>
+                        <label for="asunto" class="label">Asunto</label>
+                        <select name="asunto" id="asunto" class="input asunto" required>
+                            <option selected disabled>-- Elija una opción --</option>
+                            <option value="">Maquillaje</option>
+                            <option value="">Pedicuria</option>
+                            <option value="">Peinado</option>
+                            <option value="">Pestañas</option>
+                            <option value="">Uñas</option>
+                        </select>
+
+                        <!-- Comentarios -->
+                        <br>
+                        <label for="comentario" class="label">Mensaje</label>
+                        <br>
+                        <textarea id="comentario" name="comentario" cols="51" rows="7" placeholder="Mensaje">
+                    </textarea>
+
+                        <!--Checkbox-->
+                        <br><br>
+                        <label for="notif" class="label">¿Desea recibir Newsletter?</label>
+                        <input type="checkbox" name="chk" id="notif"><br>
+
+                        <br>
+                        <input type="submit" value="Enviar" class="botonContacto">
+                        <input type="reset" value="Reset" class="botonContacto"><br>
+
+                    </form>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- <div class="whatsappWidget">
+        <img src="../images/whatsapp.png" alt="whatsapp">
+    </div> -->
+
+    <div class="separador"></div>
+
+    <!-- Pie de pagina-->
+    <footer>
+        <div class="contenedorFooter">
+
+            <!-- Datos de empresa -->
+            <div class="boxFooter direccion">
+                <div class="map">
+                    <span>
+                        <img src="../images/footer/map.png" alt="">
+                    </span>
+                    Saraza 777, CABA
+                </div>
+                <div class="boxFooter mail">
+                    <span>
+                        <img src="../images/footer/mail.png" alt="Email">
+                    </span>
+                    info@gmail.com
+                </div>
+                <div class="boxFooter cel">
+                    <span>
+                        <img src="../images/footer/cel.png" alt="Telefono">
+                    </span>
+                    +541116235478
+                </div>
+            </div>
+
+            <!-- Link a menu -->
+            <div class="boxFooter linkMenu">
+                <ul class="menuFooter">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="galeria.html">Galeria</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+
+            <!-- Redes Sociales -->
+            <div class=" boxFooter redesSociales">
+                <div class="facebook">
+                    <a href="">
+                        <img src="../images/footer/facebook.png" alt="Facebook">
+                    </a>
+                </div>
+                <div class="twitter">
+                    <a href="">
+                        <img src="../images/footer/twitter.png" alt="Twitter">
+                    </a>
+                </div>
+                <div class="instagram">
+                    <a href="">
+                        <img src="../images/footer/instagram.png" alt="instagram">
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+
+</html>

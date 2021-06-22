@@ -1,0 +1,857 @@
+/**$*$********************************************************************
+*$*$    Resetea todos los elementos                                      *
+*$*$**********************************************************************/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/**$*$********************************************************************
+*$*$                         ELEMENTOS - TAG                             *
+*$*$**********************************************************************/
+body {
+    font-family: 'Fira Sans',
+        sans-serif;
+    background-color: rgb(243, 239, 239);
+}
+
+/* header {
+    height: 300px;
+} */
+
+h1 {
+    /* color: rgb(119, 148, 81); */
+    color: rgb(70, 70, 70);
+    text-transform: uppercase;
+    margin: 20px 0px 10px 0px;
+    text-align: center;
+}
+
+h2 {
+    color: rgb(70, 70, 70);
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px;
+}
+
+h3 {
+    color: rgb(82, 81, 81);
+    text-transform: uppercase;
+    padding: 10px;
+    text-align: center;
+}
+
+p {
+    line-height: 1.5;
+    font-size: 17px;
+    font-weight: 200;
+    padding: 10px;
+}
+
+.separador {
+    width: 100%;
+    margin-top: 30px;
+}
+
+/**$*$********************************************************************
+*$*$                         MENU                                        *
+*$*$**********************************************************************/
+nav {
+    height: 120px;
+    background: url(../images/imgMenu.jpg) no-repeat border-box;
+    background-size: cover;
+    /* background-color: rgb(32, 32, 31); */
+}
+
+.headerNavAncho {
+    width: 80%;
+    height: auto;
+    margin: auto;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+/**$*$****************************************************
+*$*$                         LOGO                        *
+*$*$******************************************************/
+.logo {
+    width: 30%;
+    height: auto;
+    /* background-color: blue; */
+}
+
+.logo__img--center {
+    width: 30%;
+    height: auto;
+    margin: 10px;
+}
+
+/**$*$****************************************************
+*$*$             BARRA NAVEGACION                        *
+*$*$******************************************************/
+.menu {
+    width: 70%;
+    height: auto;
+    /* background-color: greenyellow; */
+}
+
+.menu__items {
+    list-style-type: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    /* background-color: aqua; */
+}
+
+.menu .menu__items a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.menu .menu__items a:hover {
+    color: rgb(132, 206, 22);
+}
+
+/**$*$********************************************************************
+*$*$                         BODY INDEX                                  *
+*$*$**********************************************************************/
+.mainIndex {
+    width: 100%;
+    height: 900px;
+}
+
+.indexFoto1 {
+    background-image: url(../images/img1.jpeg);
+    min-height: 80%;
+}
+
+.indexFoto2 {
+    background-image: url(../images/img2.jpeg);
+    min-height: 70%;
+}
+
+.indexFoto3 {
+    background-image: url(../images/img3.jpeg);
+    min-height: 70%;
+}
+
+.indexFoto4 {
+    background-image: url(../images/img4.jpeg);
+    min-height: 70%;
+}
+
+.indexFoto1,
+.indexFoto2,
+.indexFoto3,
+.indexFoto4 {
+    position: relative;
+    opacity: 0.8;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    vertical-align: top;
+}
+
+.indexFoto1__Texto1 {
+    /* color: #a52a47; */
+    color: white;
+    font-size: 500%;
+    top: 30%;
+}
+
+.indexFoto2__Texto1 {
+    color: white;
+    font-size: 500%;
+    top: 30%;
+}
+
+.indexFoto3__Texto1 {
+    color: white;
+    font-size: 500%;
+    top: 30%;
+}
+
+.indexFoto4__Texto1 {
+    color: white;
+    font-size: 500%;
+    top: 30%;
+}
+
+.indexFoto1__Texto1,
+.indexFoto2__Texto1,
+.indexFoto3__Texto1,
+.indexFoto4__Texto1 {
+    position: absolute;
+    width: 100%;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 8px;
+    text-shadow: 0 0 10px #000;
+    font-family: 'Roboto',
+        condensed,
+        sans-serif;
+    transition: all 2s;
+}
+
+.indexFoto1__Texto1:hover {
+    transform: rotate(360deg);
+}
+
+.indexFoto2__Texto1:hover {
+    font-size: 700%;
+}
+
+.indexFoto3__Texto1:hover {
+    transform: rotateZ(90deg);
+}
+
+.indexFoto4__Texto1:hover {
+    font-size: 700%;
+}
+
+.sectionIndex {
+    padding: 30px 80px;
+    /* background-color: rgb(255, 250, 250); */
+}
+
+.sectionIndex h1 {
+    text-transform: uppercase;
+    animation-duration: 1s;
+    animation-name: izqDer;
+}
+
+.sectionIndex h2 {
+    animation-duration: 2s;
+    animation-name: aparecer;
+}
+
+@keyframes izqDer {
+    0% {
+        opacity: 0;
+        transform: translatex(-100%);
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes aparecer {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/**$*$********************************************************************
+*$*$                         SECCION NOSOTROS                            *
+*$*$**********************************************************************/
+#nosotrosTitulo {
+    display: none;
+}
+
+#main1 {
+    width: 50%;
+    height: auto;
+    /* background-color: red; */
+}
+
+#main1:hover {
+    transform: scale(1.03, 1.03);
+}
+
+#main2 {
+    width: 40%;
+    height: auto;
+    background: rgb(230, 228, 228);
+    padding: 10px;
+    overflow: auto;
+    /* background-color: green; */
+}
+
+/**$*$****************************************************
+*$*$             FUNDADOR                                *
+*$*$******************************************************/
+.contenedorFounder {
+    display: flex;
+    flex-flow: row wrap;
+    width: 80%;
+    height: auto;
+    justify-content: space-evenly;
+    margin: 40px 150px;
+    /* background-color: black; */
+}
+
+#imgFounder {
+    width: 80%;
+    height: auto;
+    margin-left: 90px;
+    padding: 1px;
+}
+
+/**$*$****************************************************
+*$*$             EMPLEADOS                               *
+*$*$******************************************************/
+.contenedorTeam {
+    width: 80%;
+    margin: auto;
+    padding: 10px;
+    /* background-color: orange; */
+}
+
+.contenedorEmp {
+    width: 80%;
+    height: 500px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    /* background-color: hotpink; */
+}
+
+.contenedorFounder h2 {
+    text-align: left;
+}
+
+.contenedorTeam>article>h2 {
+    text-transform: uppercase;
+    padding: 10px;
+    text-align: center;
+    animation-name: izqDer;
+    animation-duration: 2s;
+}
+
+#parrafoEmpleado {
+    line-height: 1.5;
+    font-size: 16px;
+    font-weight: 200;
+    padding: 10px;
+    text-align: center;
+}
+
+.empleado1 {
+    width: 30%;
+    height: auto;
+    border: 4px solid rgb(99, 98, 98);
+    /* background-color: greenyellow; */
+}
+
+.imgEmpleado {
+    width: 100%;
+    height: auto;
+}
+
+.empleado2 {
+    width: 30%;
+    height: auto;
+    border: 4px solid rgb(99, 98, 98);
+    /* background-color: greenyellow; */
+}
+
+.empleado3 {
+    width: 30%;
+    height: auto;
+    order: -1;
+    border: 4px solid rgb(99, 98, 98);
+    /* background-color: greenyellow; */
+}
+
+.empleado1:hover,
+.empleado2:hover,
+.empleado3:hover {
+    transform: scale(1.03, 1.03);
+}
+
+/**$*$********************************************************************
+*$*$                         SECCION SERVICIOS                           *
+*$*$**********************************************************************/
+.gridServicios {
+    height: auto;
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template: repeat(4, 400px) / repeat(2, 45% 45%);
+    gap: 10px 10px;
+    grid-template-areas: "textoMakeup  imgMakeup"
+        "imgCejas     textoCejas"
+        "textoPestana imgPestana"
+        "imgUnas      textoUnas";
+    align-items: center;
+    /* background-color: blue; */
+}
+
+.boxServicios {
+    margin-left: 50px;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: .04em;
+    line-height: 20px;
+}
+
+.boxServicios a img {
+    width: 100%;
+    height: 400px;
+    vertical-align: top;
+}
+
+.textoMakeup {
+    grid-area: textoMakeup;
+}
+
+.imgMakeup {
+    grid-area: imgMakeup;
+}
+
+.imgCejas {
+    grid-area: imgCejas;
+}
+
+.textoCejas {
+    grid-area: textoCejas;
+}
+
+.textoPestana {
+    grid-area: textoPestana;
+}
+
+.imgPestana {
+    grid-area: imgPestana;
+}
+
+.imgUnas {
+    grid-area: imgUnas;
+}
+
+.textoUnas {
+    grid-area: textoUnas;
+}
+
+.imgMakeup:hover,
+.imgCejas:hover,
+.imgPestana:hover,
+.imgUnas:hover {
+    transform: scale(1.03, 1.03);
+}
+
+#linkServicios a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    line-height: 1px;
+    text-transform: uppercase;
+}
+
+#linkServicios {
+    width: 25%;
+    background-color: rgb(204, 73, 80);
+    text-align: center;
+    padding: 5px;
+    margin-left: 10px;
+}
+
+#linkServicios:hover {
+    background-color: black;
+}
+
+/**$*$********************************************************************
+*$*$                         SECCION GALERIA                             *
+*$*$**********************************************************************/
+.mainGaleria {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100px, 293px));
+    justify-content: center;
+    gap: 28px;
+    margin: 20px 0px;
+}
+
+
+.box {
+    width: 100%;
+    height: auto;
+    position: relative;
+    /* background-color: aqua; */
+}
+
+.box a {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.box a img {
+    width: 100%;
+    height: 100%;
+    vertical-align: top;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, .4);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.box a:hover .overlay {
+    display: inline;
+}
+
+.box:hover {
+    transform: scale(1.03, 1.03);
+}
+
+/**$*$********************************************************************
+*$*$                         SECCION CONTACTO                            *
+*$*$**********************************************************************/
+.containerFormulario {
+    width: 85%;
+    height: auto;
+    padding: 10px 15px 40px 40px;
+    margin: 30px auto 0px auto;
+    background: url(../images/contacto/imgForm.jpg) no-repeat;
+    /* background-image: url(../images/contacto/imgForm.jpg);
+    background-repeat: no-repeat; */
+    background-size: cover;
+    background-position: center center;
+    border-radius: 6px;
+    border: none;
+}
+
+.boxFormulario {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    /* background-color: #25d366; */
+}
+
+#h3Formulario {
+    width: 100%;
+    line-height: 1.5;
+    font-weight: 400;
+    /* color: #000; */
+    text-transform: none;
+    font-size: 1.75rem;
+    text-align: left;
+    margin-bottom: 24px;
+    margin-top: 20px;
+    padding: 0px;
+    /* background-color: aqua; */
+}
+
+.contactoFormulario {
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: 600;
+    /* background-color: blue; */
+}
+
+.flexNombre {
+    width: 100%;
+    display: flex;
+    padding-top: 10px;
+    /* background-color: #25d366; */
+}
+
+.boxContacto {
+    width: 100%;
+}
+
+.boxContacto2 {
+    width: 100%;
+    padding-left: 20px;
+}
+
+.label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.input {
+    display: block;
+    /* width: 340px; */
+    width: 100%;
+    padding: 6px 12px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #ffffff;
+    background-clip: padding-box;
+    border: 1px solid white;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s
+}
+
+.asunto {
+    width: 50%;
+}
+
+#comentario {
+    width: 100%;
+    border: 1px solid white;
+    /* background-color: rgb(34, 34, 34); */
+    padding: 6px 12px;
+    background-color: #ffffff;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+}
+
+.botonContacto {
+    width: 30%;
+    color: white;
+    background-color: rgb(34, 34, 34);
+    font-weight: 600;
+    font-size: 1rem;
+    vertical-align: middle;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    margin-right: 0.5rem;
+}
+
+.botonContacto:hover {
+    background-color: rgb(155, 25, 25);
+    transform: scale(1.03, 1.03);
+}
+
+/**$*$********************************************************************
+*$*$                         WIDGET                                      *
+*$*$**********************************************************************/
+.whatsappWidget {
+    position: fixed;
+    width: 45px;
+    height: 45px;
+    bottom: 30px;
+    right: 40px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 70px;
+}
+
+.whatsappWidget p {
+    text-align: center;
+    font-size: 20px;
+    padding-top: 15px;
+}
+
+/**$*$********************************************************************
+*$*$                         FOOTER                                      *
+*$*$**********************************************************************/
+footer {
+    width: 100%;
+    height: auto;
+}
+
+.contenedorFooter {
+    width: 100%;
+    height: 25vh;
+    display: grid;
+    grid-template: repeat(1, 1fr) / repeat(3, 1fr);
+    row-gap: 1px;
+    column-gap: 1px;
+    grid-template-areas: "direccion menu redesSociales";
+    align-items: center;
+    background-image: linear-gradient(to top, rgb(0, 0, 0), rgb(112, 111, 111));
+}
+
+.boxFooter {
+    width: 100%;
+    height: 70%;
+    font-size: 16px;
+    letter-spacing: .06em;
+    color: #faf4f4;
+    line-height: 22px;
+}
+
+.direccion {
+    grid-area: direccion;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding-left: 30px;
+    /* background-color: yellow; */
+}
+
+.linkMenu {
+    grid-area: menu;
+}
+
+.menuFooter {
+    display: flex;
+    list-style-type: none;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding-left: 100px;
+}
+
+.menuFooter a {
+    text-decoration: none;
+    color: #faf4f4;
+}
+
+.menuFooter a:hover {
+    color: rgb(132, 206, 22);
+}
+
+.redesSociales {
+    width: 100%;
+    height: auto;
+    grid-area: redesSociales;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-size: 16px;
+    letter-spacing: .06em;
+    color: #faf4f4;
+    line-height: 22px;
+    padding-right: 200px;
+}
+
+.facebook {
+    width: 33%;
+}
+
+.twitter {
+    width: 33%;
+}
+
+.instagram {
+    width: 33%;
+}
+
+/*DISPOSITIVOS XL LARGOS*/
+/* @media screen and (max-width: 1200px) {} */
+
+/*NOTEBOOK + LAP + ESCRITORIO DISPOSITIVOS LARGOS*/
+@media screen and (max-width: 992px) {
+    .containerFormulario {
+        width: 95%;
+    }
+}
+
+/*TABLET LANDSCAPE UP DISPOSITIVOS MEDIOS*/
+@media screen and (max-width: 768px) {
+
+    .flexNombre {
+        flex-direction: column;
+    }
+
+    .boxContacto2 {
+        padding-left: 0px;
+        padding-top: 10px;
+    }
+
+    .asunto {
+        width: 100%;
+    }
+
+}
+
+/*TELEFONOS - DISPOSITIVOS XS*/
+@media screen and (max-width: 600px) {
+
+    #h3Formulario {
+        line-height: 1.2;
+        font-size: 1.3rem;
+    }
+
+    .containerFormulario {
+        width: 90%;
+    }
+
+    .input {
+        width: 110%;
+    }
+
+    #comentario {
+        width: 110%;
+    }
+
+    .botonContacto {
+        width: 40%;
+    }
+
+    .contenedorFooter {
+        height: 50vh;
+        row-gap: 0px;
+        column-gap: 0px;
+    }
+
+    .boxFooter {
+        font-size: 14px;
+        letter-spacing: none;
+        color: #faf4f4;
+        line-height: 20px;
+    }
+
+    .direccion {
+        padding-left: 20px;
+    }
+
+    .menuFooter {
+        padding-left: 60px;
+    }
+
+    .redesSociales {
+        flex-direction: column;
+        line-height: 20px;
+        padding-right: 20px;
+        padding-left: 60px;
+    }
+
+}
+
+/*TELEFONOS LANDSCAPE + TABLET VERTICAL DISPOSITIVOS SMALLS*/
+@media screen and (max-width: 599px) {
+
+    .boxFormulario {
+        width: 75%;
+        /* background-color: blue; */
+    }
+
+    #h3Formulario {
+        line-height: 1.2;
+        font-size: 1.3rem;
+    }
+
+    .input {
+        width: 110%;
+    }
+
+    #comentario {
+        width: 110%;
+    }
+
+}
