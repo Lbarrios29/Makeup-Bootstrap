@@ -54,8 +54,6 @@
 
     <main>
         <section>
-            <!-- <div class="containerFormulario">
-                <div class="boxFormulario"> -->
             <div class="container containerFormulario mt-5">
                 <div class="boxFormulario">
 
@@ -63,39 +61,37 @@
                         Contactate con Nosotros
                     </h3>
 
-                    <!-- <form action="" class="contactoFormulario"> -->
                     <form class="ms-2 contactoFormulario">
 
                         <div class="row flexNombre">
 
                             <!-- Nombre Completo-->
                             <div class="col mb-3">
-                                <label for="nombre" class="form-label form-label-lg form-label-sm">
+                                <label for="nombre" class="form-label">
                                     Nombre Completo
                                 </label>
-                                <input type="text" name="nombre" id="nombre"
-                                    class="form-control form-control-lg form-control-sm" placeholder="Nombre Completo"
-                                    required>
+                                <input type="text" name="nombre" id="nombre" class="form-control"
+                                    placeholder="Nombre Completo" required>
                             </div>
 
                             <!-- Email-->
                             <div class="col mb-3">
-                                <label for="email" class="form-label form-label-lg form-label-sm">
+                                <label for="email" class="form-label">
                                     Direccion de email
                                 </label>
-                                <input type="email" name="email" id="email"
-                                    class="form-control form-control-lg form-control-sm" placeholder="Email" required>
+                                <input type="email" name="email" id="email" class="form-control" placeholder="Email"
+                                    required>
                             </div>
 
                         </div>
 
                         <!-- Lista desplegable -->
                         <div class="mb-3">
-                            <label for="DataList" class="form-label form-label-lg form-label-sm">
+                            <label for="DataList" class="form-label">
                                 Asunto
                             </label>
-                            <input class="form-control form-control-lg form-control-sm" list="datalistOptions"
-                                id="DataList" placeholder="Escriba o elija una opción">
+                            <input class="form-control" list="datalistOptions" id="DataList"
+                                placeholder="Escriba o elija una opción">
                             <datalist id="datalistOptions">
                                 <option value="Maquillaje">
                                 <option value="Pedicuria">
@@ -107,13 +103,12 @@
 
                         <!-- Comentarios -->
                         <div class="mb-3">
-                            <label for="FormControlTextarea1" class="form-label form-label-lg form-label-sm">
+                            <label for="FormControlTextarea1" class="form-label">
                                 Mensaje
                             </label>
-                            <textarea class="form-control form-control-lg form-control-sm" id="FormControlTextarea1"
-                                rows="3" placeholder="Mensaje"></textarea>
+                            <textarea class="form-control" id="FormControlTextarea1" rows="3"
+                                placeholder="Mensaje"></textarea>
                         </div>
-
 
                         <!--Checkbox-->
                         <div class="form-check mb-3">
@@ -123,7 +118,6 @@
                             </label>
                         </div>
 
-                        <br>
                         <!-- <input type="submit" value="Enviar" class="botonContacto"> -->
                         <button type="submit" class="btn btn-primary botonContacto">
                             Enviar

@@ -527,7 +527,7 @@ nav {
 *$*$                         SECCION CONTACTO                            *
 *$*$**********************************************************************/
 .containerFormulario {
-    width: 85%;
+    width: 80%;
     background: url(../images/contacto/imgForm.jpg) no-repeat;
     background-size: cover;
     background-position: center center;
@@ -699,19 +699,14 @@ footer {
         flex-direction: column;
     }
 
-    /* .boxContacto2 {
-        padding-left: 0px;
-        padding-top: 10px;
-    }
-
-    .asunto {
-        width: 100%;
-    } */
-
 }
 
 /*TELEFONOS - DISPOSITIVOS XS*/
 @media screen and (max-width: 600px) {
+
+    /* .flexNombre {
+        flex-direction: column;
+    } */
 
     #h3Formulario {
         line-height: 1.2;
@@ -721,18 +716,6 @@ footer {
     .containerFormulario {
         width: 90%;
     }
-
-    /* .input {
-        width: 110%;
-    }
-
-    #comentario {
-        width: 110%;
-    }
-
-    .botonContacto {
-        width: 40%;
-    } */
 
     .contenedorFooter {
         height: 50vh;
@@ -772,17 +755,8 @@ footer {
         /* background-color: blue; */
     }
 
-    /* #h3Formulario {
-        line-height: 1.2;
-        font-size: 1.3rem;
-    }
-
-    .input {
-        width: 110%;
-    }
-
-    #comentario {
-        width: 110%;
+    /* .flexNombre {
+        flex-direction: column;
     } */
 
 }
