@@ -527,7 +527,7 @@ nav {
 *$*$                         SECCION CONTACTO                            *
 *$*$**********************************************************************/
 .containerFormulario {
-    width: 80%;
+    width: 70%;
     background: url(../images/contacto/imgForm.jpg) no-repeat;
     background-size: cover;
     background-position: center center;
@@ -537,24 +537,17 @@ nav {
 
 .boxFormulario {
     width: 60%;
-    /* display: flex;
-    flex-direction: column; */
-    /* background-color: #25d366; */
 }
 
 .h3Formulario {
-    /* width: 100%; */
     line-height: 1.5;
     font-weight: 400;
-    /* color: #000; */
     text-transform: none;
 }
 
 .contactoFormulario {
     width: 100%;
-    text-transform: uppercase;
     font-weight: 600;
-    /* background-color: blue; */
 }
 
 .flexNombre {
@@ -562,7 +555,6 @@ nav {
 }
 
 .botonContacto {
-    width: 30%;
     color: white;
     background-color: rgb(34, 34, 34);
     font-weight: 600;
@@ -694,7 +686,6 @@ footer {
 
 /*TABLET LANDSCAPE UP DISPOSITIVOS MEDIOS*/
 @media screen and (max-width: 768px) {
-
     .flexNombre {
         flex-direction: column;
     }
@@ -703,15 +694,6 @@ footer {
 
 /*TELEFONOS - DISPOSITIVOS XS*/
 @media screen and (max-width: 600px) {
-
-    /* .flexNombre {
-        flex-direction: column;
-    } */
-
-    /* #h3Formulario {
-        line-height: 1.2;
-        font-size: 1.3rem;
-    } */
 
     .containerFormulario {
         width: 90%;
@@ -759,10 +741,4 @@ footer {
         /* background-image: none; */
         background: white;
     }
-
-
-    /* .flexNombre {
-        flex-direction: column;
-    } */
-
 }
