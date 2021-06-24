@@ -5,11 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/logo.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/logodiaz.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../css/estilo.css">
     <title>Galeria</title>
 </head>
@@ -18,38 +21,59 @@
 
     <!--Menu-->
     <header>
-        <nav>
-            <div class="headerNavAncho">
 
-                <div class="logo">
-                    <a href="../index.html">
-                        <img src="../images/logodiaz.png" alt="logo" class="logo__img--center">
+        <!-- Bootstrap Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-expand-md navbar-expand-sm navbar-light">
+            <div class="container">
+                <div class="navbar-header mt-3">
+                    <a class="navbar-brand" href="../index.html">
+                        <div>
+                            <img src="../images/logodiaz.png" alt="logo" class="logo__img--center">
+                        </div>
                     </a>
                 </div>
-
-                <div class="menu">
-                    <ul class="menu__items">
-
-                        <li>
-                            <a href="../index.html">HOME</a>
+                <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse  ms-5" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active text-white fw-bold text-uppercase menuSecciones"
+                                aria-current="page" href="../index.html">
+                                Home
+                            </a>
                         </li>
-                        <li>
-                            <a href="../html/nosotros.html">NOSOTROS</a>
+                        <li class="nav-item">
+                            <a class="nav-link active text-white fw-bold text-uppercase menuSecciones"
+                                aria-current="page" href="../html/nosotros.html">
+                                Nosotros
+                            </a>
                         </li>
-                        <li>
-                            <a href="../html/servicios.html">SERVICIOS</a>
+                        <li class="nav-item">
+                            <a class="nav-link active text-white fw-bold text-uppercase menuSecciones"
+                                aria-current="page" href="../html/servicios.html">
+                                Servicios
+                            </a>
                         </li>
-                        <li>
-                            <a href="../html/galeria.html">GALERIA</a>
+                        <li class="nav-item">
+                            <a class="nav-link text-white fw-bold text-uppercase menuSecciones"
+                                href="../html/galeria.html">
+                                Galeria
+                            </a>
                         </li>
-                        <li>
-                            <a href="../html/contacto.html">CONTACTO</a>
+                        <li class="nav-item">
+                            <a class="nav-link text-white fw-bold text-uppercase menuSecciones"
+                                href="../html/contacto.html">
+                                Contacto
+                            </a>
                         </li>
                     </ul>
                 </div>
-
             </div>
         </nav>
+
     </header>
 
     <main>
@@ -194,64 +218,123 @@
 
     <div class="separador"></div>
 
-    <!-- Pie de pagina-->
-    <footer>
-        <div class="contenedorFooter">
+    <footer class="text-center text-lg-start bg-dark text-white">
 
-            <!-- Datos de empresa -->
-            <div class="boxFooter direccion">
-                <div class="map">
-                    <span>
-                        <img src="../images/footer/map.png" alt="">
-                    </span>
-                    Saraza 777, Caba, Buenos Aires, Argentina
+        <section class="">
+            <div class="container text-center text-md-start">
+
+                <!-- Row -->
+                <div class="row p-5">
+
+                    <!-- Column Contacto-->
+                    <div class="col-md-4 col-lg-4 col-xl-4 mx-auto">
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Contacto
+                        </h6>
+                        <div class="mb-3">
+                            <!-- <i class="fas fa-home me-3"></i> -->
+                            <i class="bi bi-house"></i>
+                            Saraza 777, Caba, Argentina
+                        </div>
+                        <div class="mb-3">
+                            <!-- <i class="fas fa-envelope me-3"></i> -->
+                            <i class="bi bi-envelope"></i>
+                            info@gmail.com
+                        </div>
+                        <div class="mb-3">
+                            <!-- <i class="fas fa-phone me-3"></i> -->
+                            <i class="bi bi-telephone"></i>
+                            +541116235478
+                        </div>
+
+                    </div>
+
+                    <!-- Column -->
+                    <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Secciones
+                        </h6>
+                        <div class="mb-2">
+                            <a href="../index.html" class="text-reset text-decoration-none">
+                                Home
+                            </a>
+                        </div>
+
+                        <div class="mb-2">
+                            <a href="../html/nosotros.html" class="text-reset text-decoration-none">
+                                Nosotros
+                            </a>
+                        </div>
+
+                        <div class="mb-2">
+                            <a href="../html/servicios.html" class="text-reset text-decoration-none">
+                                Servicios
+                            </a>
+                        </div>
+
+                        <div class="mb-2">
+                            <a href="../html/galeria.html" class="text-reset text-decoration-none">
+                                Galeria
+                            </a>
+                        </div>
+
+                        <div class="mb-2">
+                            <a href="../html/contacto.html" class="text-reset text-decoration-none">
+                                Contacto
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <!-- Column -->
+                    <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mb-md-0 mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Redes Sociales
+                        </h6>
+                        <div class="mb-3">
+                            <a href="" class="me-4 text-reset text-decoration-none">
+                                <i class="bi bi-facebook"></i>
+                            </a>
+                            Facebook
+                        </div>
+
+                        <div class="mb-3">
+                            <a href="" class="me-4 text-reset text-decoration-none">
+                                <i class="bi bi-twitter"></i>
+                            </a>
+                            Twitter
+                        </div>
+
+                        <div class="mb-3">
+                            <a href="" class="me-4 text-reset text-decoration-none">
+                                <i class="bi bi-instagram"></i>
+                            </a>
+                            Instagram
+                        </div>
+
+                        <div class="mb-3">
+                            <a href="" class="me-4 text-reset text-decoration-none">
+                                <i class="bi bi-linkedin"></i>
+                            </a>
+                            Linkedin
+                        </div>
+
+                    </div>
                 </div>
-                <div class="boxFooter mail">
-                    <span>
-                        <img src="../images/footer/mail.png" alt="Email">
-                    </span>
-                    info@gmail.com
-                </div>
-                <div class="boxFooter cel">
-                    <span>
-                        <img src="../images/footer/cel.png" alt="Telefono">
-                    </span>
-                    +541116235478
-                </div>
+
             </div>
+        </section>
 
-            <!-- Link a menu -->
-            <div class="boxFooter linkMenu">
-                <ul class="menuFooter">
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="nosotros.html">Nosotros</a></li>
-                    <li><a href="servicios.html">Servicios</a></li>
-                    <li><a href="galeria.html">Galeria</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                </ul>
-            </div>
-
-            <!-- Redes Sociales -->
-            <div class=" boxFooter redesSociales">
-                <div class="facebook">
-                    <a href="">
-                        <img src="../images/footer/facebook.png" alt="Facebook">
-                    </a>
-                </div>
-                <div class="twitter">
-                    <a href="">
-                        <img src="../images/footer/twitter.png" alt="Twitter">
-                    </a>
-                </div>
-                <div class="instagram">
-                    <a href="">
-                        <img src="../images/footer/instagram.png" alt="instagram">
-                    </a>
-                </div>
-            </div>
-
+        <!-- Copyright -->
+        <div class="text-center p-2">
+            © 2021 Copyright
         </div>
+
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+    </script>
 
 </body>
 

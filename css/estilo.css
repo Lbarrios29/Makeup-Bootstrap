@@ -16,10 +16,6 @@ body {
     background-color: rgb(243, 239, 239);
 }
 
-/* header {
-    height: 300px;
-} */
-
 h1 {
     /* color: rgb(119, 148, 81); */
     color: rgb(70, 70, 70);
@@ -58,7 +54,6 @@ p {
 *$*$                         MENU                                        *
 *$*$**********************************************************************/
 nav {
-    height: 120px;
     background: url(../images/imgMenu.jpg) no-repeat border-box;
     background-size: cover;
     /* background-color: rgb(32, 32, 31); */
@@ -66,26 +61,18 @@ nav {
 
 .headerNavAncho {
     width: 80%;
-    height: auto;
-    margin: auto;
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
 }
 
 /**$*$****************************************************
 *$*$                         LOGO                        *
 *$*$******************************************************/
 .logo {
-    width: 30%;
-    height: auto;
-    /* background-color: blue; */
+    width: 100%;
 }
 
 .logo__img--center {
-    width: 30%;
-    height: auto;
-    margin: 10px;
+    width: 35%;
+    /* width: 100%; */
 }
 
 /**$*$****************************************************
@@ -109,16 +96,13 @@ nav {
     /* background-color: aqua; */
 }
 
-.menu .menu__items a {
-    color: #fff;
-    text-decoration: none;
-    text-transform: uppercase;
+.menuSecciones {
+    /* color: #fff; */
     letter-spacing: 1px;
-    font-size: 16px;
-    font-weight: 600;
+    /* font-weight: 600; */
 }
 
-.menu .menu__items a:hover {
+.menuSecciones:hover {
     color: rgb(132, 206, 22);
 }
 
@@ -164,7 +148,6 @@ nav {
 }
 
 .indexFoto1__Texto1 {
-    /* color: #a52a47; */
     color: white;
     font-size: 500%;
     top: 30%;
@@ -589,90 +572,8 @@ nav {
 }
 
 /**$*$********************************************************************
-*$*$                         FOOTER                                      *
+*$*$                         MEDIA QUERYS                                *
 *$*$**********************************************************************/
-footer {
-    width: 100%;
-    height: auto;
-}
-
-.contenedorFooter {
-    width: 100%;
-    height: 25vh;
-    display: grid;
-    grid-template: repeat(1, 1fr) / repeat(3, 1fr);
-    row-gap: 1px;
-    column-gap: 1px;
-    grid-template-areas: "direccion menu redesSociales";
-    align-items: center;
-    background-image: linear-gradient(to top, rgb(0, 0, 0), rgb(112, 111, 111));
-}
-
-.boxFooter {
-    width: 100%;
-    height: 70%;
-    font-size: 16px;
-    letter-spacing: .06em;
-    color: #faf4f4;
-    line-height: 22px;
-}
-
-.direccion {
-    grid-area: direccion;
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    padding-left: 30px;
-    /* background-color: yellow; */
-}
-
-.linkMenu {
-    grid-area: menu;
-}
-
-.menuFooter {
-    display: flex;
-    list-style-type: none;
-    flex-direction: column;
-    flex-wrap: wrap;
-    padding-left: 100px;
-}
-
-.menuFooter a {
-    text-decoration: none;
-    color: #faf4f4;
-}
-
-.menuFooter a:hover {
-    color: rgb(132, 206, 22);
-}
-
-.redesSociales {
-    width: 100%;
-    height: auto;
-    grid-area: redesSociales;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    font-size: 16px;
-    letter-spacing: .06em;
-    color: #faf4f4;
-    line-height: 22px;
-    padding-right: 200px;
-}
-
-.facebook {
-    width: 33%;
-}
-
-.twitter {
-    width: 33%;
-}
-
-.instagram {
-    width: 33%;
-}
 
 /*DISPOSITIVOS XL LARGOS*/
 /* @media screen and (max-width: 1200px) {} */
@@ -690,41 +591,20 @@ footer {
         flex-direction: column;
     }
 
+    .logo__img--center {
+        width: 100%;
+    }
 }
 
 /*TELEFONOS - DISPOSITIVOS XS*/
 @media screen and (max-width: 600px) {
 
+    .logo__img--center {
+        width: 100%;
+    }
+
     .containerFormulario {
         width: 90%;
-    }
-
-    .contenedorFooter {
-        height: 50vh;
-        row-gap: 0px;
-        column-gap: 0px;
-    }
-
-    .boxFooter {
-        font-size: 14px;
-        letter-spacing: none;
-        color: #faf4f4;
-        line-height: 20px;
-    }
-
-    .direccion {
-        padding-left: 20px;
-    }
-
-    .menuFooter {
-        padding-left: 60px;
-    }
-
-    .redesSociales {
-        flex-direction: column;
-        line-height: 20px;
-        padding-right: 20px;
-        padding-left: 60px;
     }
 
 }
@@ -732,13 +612,15 @@ footer {
 /*TELEFONOS LANDSCAPE + TABLET VERTICAL DISPOSITIVOS SMALLS*/
 @media screen and (max-width: 599px) {
 
+    .logo__img--center {
+        width: 30%;
+    }
+
     .boxFormulario {
         width: 90%;
-        /* background-color: blue; */
     }
 
     .containerFormulario {
-        /* background-image: none; */
         background: white;
     }
 }
