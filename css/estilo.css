@@ -17,32 +17,31 @@ body {
 }
 
 h1 {
-    /* color: rgb(119, 148, 81); */
     color: rgb(70, 70, 70);
-    text-transform: uppercase;
+    /* text-transform: uppercase;
     margin: 20px 0px 10px 0px;
-    text-align: center;
+    text-align: center; */
 }
 
 h2 {
     color: rgb(70, 70, 70);
-    text-transform: uppercase;
+    /* text-transform: uppercase;
     text-align: center;
-    padding: 10px;
+    padding: 10px; */
 }
 
 h3 {
     color: rgb(82, 81, 81);
-    text-transform: uppercase;
+    /* text-transform: uppercase;
     padding: 10px;
-    text-align: center;
+    text-align: center; */
 }
 
 p {
     line-height: 1.5;
     font-size: 17px;
     font-weight: 200;
-    padding: 10px;
+    /* padding: 10px; */
 }
 
 .separador {
@@ -149,25 +148,25 @@ nav {
 
 .indexFoto1__Texto1 {
     color: white;
-    font-size: 500%;
+    /* font-size: 500%; */
     top: 30%;
 }
 
 .indexFoto2__Texto1 {
     color: white;
-    font-size: 500%;
+    /* font-size: 500%; */
     top: 30%;
 }
 
 .indexFoto3__Texto1 {
     color: white;
-    font-size: 500%;
+    /* font-size: 500%; */
     top: 30%;
 }
 
 .indexFoto4__Texto1 {
     color: white;
-    font-size: 500%;
+    /* font-size: 500%; */
     top: 30%;
 }
 
@@ -203,13 +202,12 @@ nav {
     font-size: 700%;
 }
 
-.sectionIndex {
+/* .sectionIndex {
     padding: 30px 80px;
-    /* background-color: rgb(255, 250, 250); */
-}
+} */
 
 .sectionIndex h1 {
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     animation-duration: 1s;
     animation-name: izqDer;
 }
@@ -244,57 +242,65 @@ nav {
 /**$*$********************************************************************
 *$*$                         SECCION NOSOTROS                            *
 *$*$**********************************************************************/
-#nosotrosTitulo {
-    display: none;
+.articuloFounder {
+    background: rgb(230, 228, 228);
 }
 
-#main1 {
+/* #nosotrosTitulo {
+    display: none;
+} */
+
+/* #main1 {
     width: 50%;
     height: auto;
-    /* background-color: red; */
-}
+} */
 
 #main1:hover {
     transform: scale(1.03, 1.03);
 }
 
 #main2 {
-    width: 40%;
-    height: auto;
+    /* width: 40%;
+    height: auto; */
     background: rgb(230, 228, 228);
-    padding: 10px;
-    overflow: auto;
-    /* background-color: green; */
+    /* padding: 10px;
+    overflow: auto; */
 }
 
 /**$*$****************************************************
 *$*$             FUNDADOR                                *
 *$*$******************************************************/
-.contenedorFounder {
+
+/* .contenedorFounder {
     display: flex;
     flex-flow: row wrap;
     width: 80%;
     height: auto;
     justify-content: space-evenly;
     margin: 40px 150px;
-    /* background-color: black; */
-}
+} */
 
 #imgFounder {
-    width: 80%;
+    width: 100%;
     height: auto;
-    margin-left: 90px;
-    padding: 1px;
 }
 
 /**$*$****************************************************
 *$*$             EMPLEADOS                               *
 *$*$******************************************************/
-.contenedorTeam {
+.imgEmpleado {
+    width: 100%;
+    height: auto;
+}
+
+.empleado:hover {
+    transform: scale(1.03, 1.03);
+}
+
+/* .contenedorTeam {
     width: 80%;
     margin: auto;
     padding: 10px;
-    /* background-color: orange; */
 }
 
 .contenedorEmp {
@@ -305,7 +311,6 @@ nav {
     justify-content: space-between;
     align-items: center;
     margin: auto;
-    /* background-color: hotpink; */
 }
 
 .contenedorFounder h2 {
@@ -332,7 +337,6 @@ nav {
     width: 30%;
     height: auto;
     border: 4px solid rgb(99, 98, 98);
-    /* background-color: greenyellow; */
 }
 
 .imgEmpleado {
@@ -344,7 +348,6 @@ nav {
     width: 30%;
     height: auto;
     border: 4px solid rgb(99, 98, 98);
-    /* background-color: greenyellow; */
 }
 
 .empleado3 {
@@ -352,14 +355,13 @@ nav {
     height: auto;
     order: -1;
     border: 4px solid rgb(99, 98, 98);
-    /* background-color: greenyellow; */
 }
 
 .empleado1:hover,
 .empleado2:hover,
 .empleado3:hover {
     transform: scale(1.03, 1.03);
-}
+} */
 
 /**$*$********************************************************************
 *$*$                         SECCION SERVICIOS                           *
@@ -603,17 +605,23 @@ nav {
         flex-direction: column;
     }
 
-    .logo__img--center {
-        width: 100%;
+    #parrafo2Founder {
+        display: none;
     }
+
+    #imgFounder {
+        width: 100%;
+        height: 500px;
+    }
+
 }
 
 /*TELEFONOS - DISPOSITIVOS XS*/
 @media screen and (max-width: 600px) {
 
-    .logo__img--center {
-        width: 100%;
-    }
+    /* .logo__img--center {
+        width: 500px;
+    } */
 
     .containerFormulario {
         width: 90%;
@@ -624,8 +632,24 @@ nav {
 /*TELEFONOS LANDSCAPE + TABLET VERTICAL DISPOSITIVOS SMALLS*/
 @media screen and (max-width: 599px) {
 
+    #imgFounder {
+        width: 90%;
+    }
+
+    #main1 {
+        width: 90%;
+    }
+
+    #main2 {
+        width: 85%;
+    }
+
+    #parrafo2Founder {
+        display: none;
+    }
+
     .logo__img--center {
-        width: 30%;
+        width: 80px;
     }
 
     .boxFormulario {
@@ -634,5 +658,25 @@ nav {
 
     .containerFormulario {
         background: white;
+    }
+}
+
+/*TELEFONOS LANDSCAPE + TABLET VERTICAL DISPOSITIVOS SMALLS*/
+@media screen and (max-width: 370px) {
+
+    #imgFounder {
+        width: 95%;
+    }
+
+    #main1 {
+        width: 95%;
+    }
+
+    #main2 {
+        width: 90%;
+    }
+
+    .mainGaleria {
+        grid-template-columns: repeat(2, minmax(100px, 293px));
     }
 }
