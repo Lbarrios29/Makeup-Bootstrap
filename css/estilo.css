@@ -18,30 +18,20 @@ body {
 
 h1 {
     color: rgb(70, 70, 70);
-    /* text-transform: uppercase;
-    margin: 20px 0px 10px 0px;
-    text-align: center; */
 }
 
 h2 {
     color: rgb(70, 70, 70);
-    /* text-transform: uppercase;
-    text-align: center;
-    padding: 10px; */
 }
 
 h3 {
     color: rgb(82, 81, 81);
-    /* text-transform: uppercase;
-    padding: 10px;
-    text-align: center; */
 }
 
 p {
     line-height: 1.5;
     font-size: 17px;
     font-weight: 200;
-    /* padding: 10px; */
 }
 
 .separador {
@@ -55,7 +45,6 @@ p {
 nav {
     background: url(../images/imgMenu.jpg) no-repeat border-box;
     background-size: cover;
-    /* background-color: rgb(32, 32, 31); */
 }
 
 .headerNavAncho {
@@ -71,7 +60,6 @@ nav {
 
 .logo__img--center {
     width: 35%;
-    /* width: 100%; */
 }
 
 /**$*$****************************************************
@@ -80,7 +68,6 @@ nav {
 .menu {
     width: 70%;
     height: auto;
-    /* background-color: greenyellow; */
 }
 
 .menu__items {
@@ -92,13 +79,10 @@ nav {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    /* background-color: aqua; */
 }
 
 .menuSecciones {
-    /* color: #fff; */
     letter-spacing: 1px;
-    /* font-weight: 600; */
 }
 
 .menuSecciones:hover {
@@ -148,25 +132,21 @@ nav {
 
 .indexFoto1__Texto1 {
     color: white;
-    /* font-size: 500%; */
     top: 30%;
 }
 
 .indexFoto2__Texto1 {
     color: white;
-    /* font-size: 500%; */
     top: 30%;
 }
 
 .indexFoto3__Texto1 {
     color: white;
-    /* font-size: 500%; */
     top: 30%;
 }
 
 .indexFoto4__Texto1 {
     color: white;
-    /* font-size: 500%; */
     top: 30%;
 }
 
@@ -202,12 +182,7 @@ nav {
     font-size: 700%;
 }
 
-/* .sectionIndex {
-    padding: 30px 80px;
-} */
-
 .sectionIndex h1 {
-    /* text-transform: uppercase; */
     animation-duration: 1s;
     animation-name: izqDer;
 }
@@ -246,40 +221,17 @@ nav {
     background: rgb(230, 228, 228);
 }
 
-/* #nosotrosTitulo {
-    display: none;
-} */
-
-/* #main1 {
-    width: 50%;
-    height: auto;
-} */
-
 #main1:hover {
     transform: scale(1.03, 1.03);
 }
 
 #main2 {
-    /* width: 40%;
-    height: auto; */
     background: rgb(230, 228, 228);
-    /* padding: 10px;
-    overflow: auto; */
 }
 
 /**$*$****************************************************
 *$*$             FUNDADOR                                *
 *$*$******************************************************/
-
-/* .contenedorFounder {
-    display: flex;
-    flex-flow: row wrap;
-    width: 80%;
-    height: auto;
-    justify-content: space-evenly;
-    margin: 40px 150px;
-} */
-
 #imgFounder {
     width: 100%;
     height: auto;
@@ -297,72 +249,6 @@ nav {
     transform: scale(1.03, 1.03);
 }
 
-/* .contenedorTeam {
-    width: 80%;
-    margin: auto;
-    padding: 10px;
-}
-
-.contenedorEmp {
-    width: 80%;
-    height: 500px;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: center;
-    margin: auto;
-}
-
-.contenedorFounder h2 {
-    text-align: left;
-}
-
-.contenedorTeam>article>h2 {
-    text-transform: uppercase;
-    padding: 10px;
-    text-align: center;
-    animation-name: izqDer;
-    animation-duration: 2s;
-}
-
-#parrafoEmpleado {
-    line-height: 1.5;
-    font-size: 16px;
-    font-weight: 200;
-    padding: 10px;
-    text-align: center;
-}
-
-.empleado1 {
-    width: 30%;
-    height: auto;
-    border: 4px solid rgb(99, 98, 98);
-}
-
-.imgEmpleado {
-    width: 100%;
-    height: auto;
-}
-
-.empleado2 {
-    width: 30%;
-    height: auto;
-    border: 4px solid rgb(99, 98, 98);
-}
-
-.empleado3 {
-    width: 30%;
-    height: auto;
-    order: -1;
-    border: 4px solid rgb(99, 98, 98);
-}
-
-.empleado1:hover,
-.empleado2:hover,
-.empleado3:hover {
-    transform: scale(1.03, 1.03);
-} */
-
 /**$*$********************************************************************
 *$*$                         SECCION SERVICIOS                           *
 *$*$**********************************************************************/
@@ -378,7 +264,6 @@ nav {
         "textoPestana imgPestana"
         "imgUnas      textoUnas";
     align-items: center;
-    /* background-color: blue; */
 }
 
 .boxServicios {
@@ -472,7 +357,6 @@ nav {
     width: 100%;
     height: auto;
     position: relative;
-    /* background-color: aqua; */
 }
 
 .box a {
@@ -534,9 +418,9 @@ nav {
     height: 45px;
     bottom: 30px;
     right: 40px;
-    background-color: #25d366;
+    /* background-color: #25d366;
     color: #FFF;
-    border-radius: 70px;
+    border-radius: 70px; */
 }
 
 .whatsappWidget p {
@@ -553,7 +437,6 @@ nav {
 }
 
 .custom-toggler.navbar-toggler {
-    /* border-color: rgb(240, 240, 229) */
     border-color: rgb(240, 240, 229)
 }
 
@@ -574,6 +457,10 @@ nav {
 /*TABLET LANDSCAPE UP DISPOSITIVOS MEDIOS*/
 @media screen and (max-width: 768px) {
 
+    .mainGaleria {
+        grid-template-columns: repeat(2, minmax(350px, 760px));
+    }
+
     #parrafo2Founder {
         display: none;
     }
@@ -588,10 +475,6 @@ nav {
 /*TELEFONOS - DISPOSITIVOS XS*/
 @media screen and (max-width: 600px) {
 
-    /* .logo__img--center {
-        width: 500px;
-    } */
-
     .containerFormulario {
         width: 90%;
     }
@@ -601,8 +484,16 @@ nav {
 /*TELEFONOS LANDSCAPE + TABLET VERTICAL DISPOSITIVOS SMALLS*/
 @media screen and (max-width: 599px) {
 
+    .mainGaleria {
+        grid-template-columns: repeat(1, minmax(100px, 599px));
+    }
+
     #imgFounder {
         width: 90%;
+    }
+
+    .imgEmpleado {
+        width: 80%;
     }
 
     #main1 {
@@ -628,6 +519,18 @@ nav {
     .containerFormulario {
         background: white;
     }
+
+    nav {
+        background: url(../images/img1.jpeg) no-repeat border-box;
+        background-size: cover;
+    }
+
+    .menuSecciones {
+        font-weight: normal;
+        font-size: 14px;
+        letter-spacing: 1px;
+        margin-left: 60px;
+    }
 }
 
 /*TELEFONOS LANDSCAPE + TABLET VERTICAL DISPOSITIVOS SMALLS*/
@@ -645,7 +548,7 @@ nav {
         width: 90%;
     }
 
-    .mainGaleria {
-        grid-template-columns: repeat(2, minmax(100px, 293px));
+    .imgEmpleado {
+        width: 90%;
     }
 }
