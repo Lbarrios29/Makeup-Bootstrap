@@ -47,16 +47,16 @@ nav {
     background-size: cover;
 }
 
-.headerNavAncho {
+/* .headerNavAncho {
     width: 80%;
-}
+} */
 
 /**$*$****************************************************
 *$*$                         LOGO                        *
 *$*$******************************************************/
-.logo {
+/* .logo {
     width: 100%;
-}
+} */
 
 .logo__img--center {
     width: 35%;
@@ -65,12 +65,12 @@ nav {
 /**$*$****************************************************
 *$*$             BARRA NAVEGACION                        *
 *$*$******************************************************/
-.menu {
+/* .menu {
     width: 70%;
     height: auto;
-}
+} */
 
-.menu__items {
+/* .menu__items {
     list-style-type: none;
     width: 100%;
     height: 100%;
@@ -79,7 +79,7 @@ nav {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-}
+} */
 
 .menuSecciones {
     letter-spacing: 1px;
@@ -217,9 +217,9 @@ nav {
 /**$*$********************************************************************
 *$*$                         SECCION NOSOTROS                            *
 *$*$**********************************************************************/
-.articuloFounder {
+/* .articuloFounder {
     background: rgb(230, 228, 228);
-}
+} */
 
 #main1:hover {
     transform: scale(1.03, 1.03);
@@ -252,7 +252,7 @@ nav {
 /**$*$********************************************************************
 *$*$                         SECCION SERVICIOS                           *
 *$*$**********************************************************************/
-.gridServicios {
+/* .gridServicios {
     height: auto;
     width: 90%;
     margin: auto;
@@ -264,23 +264,23 @@ nav {
         "textoPestana imgPestana"
         "imgUnas      textoUnas";
     align-items: center;
-}
+} */
 
-.boxServicios {
+/* .boxServicios {
     margin-left: 50px;
     font-size: 16px;
     font-weight: 500;
     letter-spacing: .04em;
     line-height: 20px;
-}
+} */
 
-.boxServicios a img {
+/* .boxServicios a img {
     width: 100%;
     height: 400px;
     vertical-align: top;
-}
+} */
 
-.textoMakeup {
+/* .textoMakeup {
     grid-area: textoMakeup;
 }
 
@@ -310,16 +310,16 @@ nav {
 
 .textoUnas {
     grid-area: textoUnas;
-}
+} */
 
-.imgMakeup:hover,
+/* .imgMakeup:hover,
 .imgCejas:hover,
 .imgPestana:hover,
 .imgUnas:hover {
     transform: scale(1.03, 1.03);
-}
+} */
 
-#linkServicios a {
+/* #linkServicios a {
     text-decoration: none;
     color: white;
     font-weight: 600;
@@ -337,7 +337,7 @@ nav {
 
 #linkServicios:hover {
     background-color: black;
-}
+} */
 
 /**$*$********************************************************************
 *$*$                         SECCION GALERIA                             *
