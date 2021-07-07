@@ -78,22 +78,24 @@ nav {
 }
 
 .indexFoto1 {
-    background-image: url(../images/img1.jpeg);
+    background-image: url(../images/index/img1.jpeg);
     min-height: 80%;
 }
 
 .indexFoto2 {
-    background-image: url(../images/img2.jpeg);
+    /* background-image: url(../images/img2.jpeg); */
+    background-image: url(../images/index/indexPestania2.jpg);
     min-height: 70%;
 }
 
 .indexFoto3 {
-    background-image: url(../images/img3.jpeg);
+    background-image: url(../images/index/img3.jpeg);
     min-height: 70%;
 }
 
 .indexFoto4 {
-    background-image: url(../images/img4.jpeg);
+    /* background-image: url(../images/img4.jpeg); */
+    background-image: url(../images/index/indexUltimo2.jpg);
     min-height: 70%;
 }
 
@@ -148,7 +150,7 @@ nav {
 
 .shimmer {
     position: absolute;
-    top: 30%;
+    top: 40%;
     width: 100%;
     text-transform: uppercase;
     letter-spacing: 8px;
