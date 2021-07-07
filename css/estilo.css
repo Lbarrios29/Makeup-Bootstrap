@@ -166,13 +166,23 @@ nav {
     font-size: 700%;
 } */
 
-.sectionIndex h1 {
+/* .sectionIndex h1 {
     animation-duration: 1s;
     animation-name: izqDer;
 }
 
 .sectionIndex h2 {
     animation-duration: 2s;
+    animation-name: aparecer;
+} */
+
+.interactividadH1 {
+    animation-duration: 2s;
+    animation-name: izqDer;
+}
+
+.interactividadH2 {
+    animation-duration: 4s;
     animation-name: aparecer;
 }
 
