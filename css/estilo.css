@@ -94,7 +94,6 @@ nav {
 }
 
 .indexFoto4 {
-    /* background-image: url(../images/img4.jpeg); */
     background-image: url(../images/index/indexUltimo2.jpg);
     min-height: 70%;
 }
@@ -112,52 +111,12 @@ nav {
     vertical-align: top;
 }
 
-/* .indexFoto1__Texto1 {
-    color: white;
-    top: 30%;
-}
-
-.indexFoto2__Texto1 {
-    color: white;
-    top: 30%;
-}
-
-.indexFoto3__Texto1 {
-    color: white;
-    top: 30%;
-}
-
-.indexFoto4__Texto1 {
-    color: white;
-    top: 30%;
-} */
-
-/* .indexFoto1__Texto1,
-.indexFoto2__Texto1,
-.indexFoto3__Texto1,
-.indexFoto4__Texto1 {
-    position: absolute;
-    width: 100%;
-    text-transform: uppercase;
-    text-align: center;
-    letter-spacing: 8px;
-    text-shadow: 0 0 10px #000;
-    font-family: 'Roboto',
-        condensed,
-        sans-serif;
-    transition: all 2s;
-} */
-
 .shimmer {
     position: absolute;
     top: 40%;
     width: 100%;
     text-transform: uppercase;
     letter-spacing: 8px;
-    /* text-shadow: 0 0 10px #000; */
-    /* font-family: 'Roboto',
-        condensed,
-        sans-serif; */
     text-align: center;
     color: rgba(255, 255, 255, 0.1);
     background: linear-gradient(to right,
