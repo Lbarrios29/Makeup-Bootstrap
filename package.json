@@ -1,0 +1,25 @@
+{
+  "name": "proyecto_final_coderhouse_bootstrap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "node-sass --include-path scss scss/estilo.scss css/estilo.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\""  
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lbarrios29/Makeup-Bootstrap.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lbarrios29/Makeup-Bootstrap/issues"
+  },
+  "homepage": "https://github.com/Lbarrios29/Makeup-Bootstrap#readme",
+  "devDependencies": {
+    "node-sass": "^6.0.1",
+    "nodemon": "^2.0.12"
+  }
+}

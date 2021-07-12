@@ -1,0 +1,4 @@
+node_modules/
+scss/components/
+scss/layout/_grid.scss
+scss/layout/_header.scss

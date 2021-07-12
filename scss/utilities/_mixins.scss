@@ -1,0 +1,7 @@
+/*Declaramos nuestro mixin para ser reutilizado*/
+@mixin fondoImagen($urlImagen, $repeat, $size, $position) {
+    background-image: url($urlImagen);
+    background-repeat: $repeat;
+    background-size: $size;
+    background-position: $position;
+}

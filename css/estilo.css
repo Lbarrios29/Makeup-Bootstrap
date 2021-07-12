@@ -2,427 +2,388 @@
 *$*$    Resetea todos los elementos                                      *
 *$*$**********************************************************************/
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+/**$*$********************************************************************
+*$*$                         Imagenes                                    *
+*$*$**********************************************************************/
+/**$*$********************************************************************
+*$*$                    Background-color - Color                         *
+*$*$**********************************************************************/
+/**$*$********************************************************************
+*$*$                    Width                                            *
+*$*$**********************************************************************/
+/*Declaramos nuestro mapa de clases con width variables*/
+/*Declaramos nuestro mixin para ser reutilizado*/
+/*Declaramos nuestro mixin para ser reutilizado*/
+/**$*$********************************************************************
+*$*$                         MENU                                        *
+*$*$**********************************************************************/
+nav {
+  background-image: url("../images/imgMenu.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
 
 /**$*$********************************************************************
 *$*$                         ELEMENTOS - TAG                             *
 *$*$**********************************************************************/
 body {
-    font-family: 'Fira Sans',
-        sans-serif;
-    background-color: rgb(243, 239, 239);
-}
+  font-family: "Fira Sans", sans-serif;
+  background-color: #f3efef; }
 
 h1 {
-    color: rgb(70, 70, 70);
-}
+  color: #464646; }
 
 h2 {
-    color: rgb(70, 70, 70);
-}
+  color: #464646; }
 
 h3 {
-    color: rgb(82, 81, 81);
-}
+  color: #525151; }
 
 p {
-    line-height: 1.5;
-    font-size: 17px;
-    font-weight: 200;
-}
+  line-height: 1.5;
+  font-size: 17px;
+  font-weight: 200; }
 
 .separador {
-    width: 100%;
-    margin-top: 30px;
-}
-
-/**$*$********************************************************************
-*$*$                         MENU                                        *
-*$*$**********************************************************************/
-nav {
-    background: url(../images/imgMenu.jpg) no-repeat border-box;
-    background-size: cover;
-}
-
-/**$*$****************************************************
-*$*$                         LOGO                        *
-*$*$******************************************************/
-.logo__img--center {
-    width: 35%;
-}
+  width: 100%;
+  margin-top: 30px; }
 
 /**$*$****************************************************
 *$*$             BARRA NAVEGACION                        *
 *$*$******************************************************/
 .menuSecciones {
-    letter-spacing: 1px;
-}
+  letter-spacing: 1px; }
 
 .menuSecciones:hover {
-    color: rgb(132, 206, 22);
-}
+  color: #84ce16; }
 
 /**$*$********************************************************************
 *$*$                         BODY INDEX                                  *
 *$*$**********************************************************************/
 .mainIndex {
-    width: 100%;
-    height: 900px;
-}
+  width: 100%;
+  height: 900px; }
+  .mainIndex h1 {
+    animation-duration: 1s;
+    animation-name: izqDer; }
+  .mainIndex h2 {
+    animation-duration: 2s;
+    animation-name: aparecer; }
 
 .indexFoto1 {
-    background-image: url(../images/index/img1.jpeg);
-    min-height: 80%;
-}
+  background-image: url("../images/index/img1.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 70%;
+  position: relative;
+  opacity: 0.8;
+  background-attachment: fixed;
+  vertical-align: top; }
+
+.indexFoto1__Texto1 {
+  color: white;
+  top: 30%;
+  position: absolute;
+  width: 100%;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 8px;
+  text-shadow: 0 0 10px #000;
+  font-family: 'Roboto', condensed, sans-serif;
+  transition: all 2s; }
 
 .indexFoto2 {
-    /* background-image: url(../images/img2.jpeg); */
-    background-image: url(../images/index/indexPestania2.jpg);
-    min-height: 70%;
-}
+  background-image: url("../images/index/indexPestania2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 70%;
+  position: relative;
+  opacity: 0.8;
+  background-attachment: fixed;
+  vertical-align: top; }
+
+.indexFoto2__Texto1 {
+  color: white;
+  top: 30%;
+  position: absolute;
+  width: 100%;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 8px;
+  text-shadow: 0 0 10px #000;
+  font-family: 'Roboto', condensed, sans-serif;
+  transition: all 2s; }
 
 .indexFoto3 {
-    background-image: url(../images/index/img3.jpeg);
-    min-height: 70%;
-}
+  background-image: url("../images/index/img3.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 70%;
+  position: relative;
+  opacity: 0.8;
+  background-attachment: fixed;
+  vertical-align: top; }
+
+.indexFoto3__Texto1 {
+  color: white;
+  top: 30%;
+  position: absolute;
+  width: 100%;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 8px;
+  text-shadow: 0 0 10px #000;
+  font-family: 'Roboto', condensed, sans-serif;
+  transition: all 2s; }
 
 .indexFoto4 {
-    background-image: url(../images/index/indexUltimo2.jpg);
-    min-height: 70%;
-}
+  background-image: url("../images/index/indexUltimo2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 70%;
+  position: relative;
+  opacity: 0.8;
+  background-attachment: fixed;
+  vertical-align: top; }
 
-.indexFoto1,
-.indexFoto2,
-.indexFoto3,
-.indexFoto4 {
-    position: relative;
-    opacity: 0.8;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    vertical-align: top;
-}
+.indexFoto4__Texto1 {
+  color: white;
+  top: 30%;
+  position: absolute;
+  width: 100%;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 8px;
+  text-shadow: 0 0 10px #000;
+  font-family: 'Roboto', condensed, sans-serif;
+  transition: all 2s; }
 
 .shimmer {
-    position: absolute;
-    top: 40%;
-    width: 100%;
-    text-transform: uppercase;
-    letter-spacing: 8px;
-    text-align: center;
-    color: rgba(255, 255, 255, 0.1);
-    background: linear-gradient(to right,
-            #ed8080 0%,
-            #2a77d6 16%,
-            #5eb524 32%,
-            #eacd25 48%,
-            #ed8080 64%,
-            #2a77d6 80%,
-            #5eb524 100%);
-
-    background-size: 300% 300%;
-    background-repeat: no-repeat;
-    background-position: top left;
-    background-color: #222;
-
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    background-clip: text;
-
-    animation: shimmer infinite 3s linear;
-}
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.1);
+  background: linear-gradient(to right, #ed8080 0%, #2a77d6 16%, #5eb524 32%, #eacd25 48%, #ed8080 64%, #2a77d6 80%, #5eb524 100%);
+  background-size: 300% 300%;
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-color: #222;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  animation: shimmer infinite 3s linear; }
 
 @keyframes shimmer {
-    0% {
-        background-position: top left;
-    }
-
-    100% {
-        background-position: top right;
-    }
-}
+  0% {
+    background-position: top left; }
+  100% {
+    background-position: top right; } }
 
 .interactividadH1 {
-    animation-duration: 2s;
-    animation-name: izqDer;
-}
+  animation-duration: 2s;
+  animation-name: izqDer; }
 
 .interactividadH2 {
-    animation-duration: 4s;
-    animation-name: aparecer;
-}
+  animation-duration: 4s;
+  animation-name: aparecer; }
 
 @keyframes izqDer {
-    0% {
-        opacity: 0;
-        transform: translatex(-100%);
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
+  0% {
+    opacity: 0;
+    transform: translatex(-100%); }
+  100% {
+    opacity: 1; } }
 
 @keyframes aparecer {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
 
 /**$*$********************************************************************
 *$*$                         SECCION NOSOTROS                            *
 *$*$**********************************************************************/
 #main1:hover {
-    transform: scale(1.03, 1.03);
-}
+  transform: scale(1.03, 1.03); }
 
 #main2 {
-    background: rgb(230, 228, 228);
-}
-
-/**$*$****************************************************
-*$*$             FUNDADOR                                *
-*$*$******************************************************/
-#imgFounder {
-    width: 100%;
-    height: auto;
-}
-
-/**$*$****************************************************
-*$*$             EMPLEADOS                               *
-*$*$******************************************************/
-.imgEmpleado {
-    width: 100%;
-    height: auto;
-}
+  background: #e6e4e4; }
 
 .empleado:hover {
-    transform: scale(1.03, 1.03);
-}
-
-/**$*$********************************************************************
-*$*$                         SECCION SERVICIOS                           *
-*$*$**********************************************************************/
+  transform: scale(1.03, 1.03); }
 
 /**$*$********************************************************************
 *$*$                         SECCION GALERIA                             *
 *$*$**********************************************************************/
 .mainGaleria {
-    width: 100%;
-    height: auto;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(100px, 293px));
-    justify-content: center;
-    gap: 28px;
-    margin: 20px 0px;
-}
-
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(100px, 293px));
+  justify-content: center;
+  gap: 28px;
+  margin: 20px 0px; }
 
 .box {
-    width: 100%;
-    height: auto;
-    position: relative;
-}
-
-.box a {
+  width: 100%;
+  height: auto;
+  position: relative; }
+  .box a {
     margin: 0;
     width: 100%;
-    height: 100%;
-}
-
-.box a img {
-    width: 100%;
-    height: 100%;
-    vertical-align: top;
-}
+    height: 100%; }
+    .box a img {
+      width: 100%;
+      height: 100%;
+      vertical-align: top; }
 
 .overlay {
-    background-color: rgba(0, 0, 0, .4);
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    color: white;
-}
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  color: white; }
 
 .box a:hover .overlay {
-    display: inline;
-}
+  display: inline; }
 
 .box:hover {
-    transform: scale(1.03, 1.03);
-}
+  transform: scale(1.03, 1.03); }
 
 /**$*$********************************************************************
 *$*$                         SECCION CONTACTO                            *
 *$*$**********************************************************************/
 .containerFormulario {
-    width: 70%;
-    background: url(../images/contacto/imgForm.jpg) no-repeat;
-    background-size: cover;
-    background-position: center center;
-    border-radius: 6px;
-    border: none;
-}
+  width: 70%;
+  background-image: url("../images/contacto/imgForm.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 6px; }
+
+/*Creamos el bucle para usar los valores del mapa*/
+.logo__img--center {
+  width: 35%;
+  height: auto; }
+
+.imgFounder {
+  width: 100%;
+  height: auto; }
+
+.imgEmpleado {
+  width: 100%;
+  height: auto; }
 
 .boxFormulario {
-    width: 60%;
-}
-
-
-/**$*$********************************************************************
-*$*$                         WIDGET                                      *
-*$*$**********************************************************************/
-.whatsappWidget {
-    position: fixed;
-    width: 45px;
-    height: 45px;
-    bottom: 30px;
-    right: 40px;
-    /* background-color: #25d366;
-    color: #FFF;
-    border-radius: 70px; */
-}
-
-.whatsappWidget p {
-    text-align: center;
-    font-size: 20px;
-    padding-top: 15px;
-}
+  width: 60%;
+  height: auto; }
 
 /**$*$********************************************************************
 *$*$                         CUSTOM ICON HAMBURGUESA                     *
 *$*$**********************************************************************/
 .custom-toggler .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(240, 240, 229, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
-}
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(240, 240, 229, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"); }
 
 .custom-toggler.navbar-toggler {
-    border-color: rgb(240, 240, 229)
-}
+  border-color: #f0f0e5; }
+
+/**$*$********************************************************************
+*$*$                         WIDGET                                      *
+*$*$**********************************************************************/
+.whatsappWidget {
+  position: fixed;
+  width: 45px;
+  height: 45px;
+  bottom: 30px;
+  right: 40px;
+  /* background-color: #25d366;
+    color: #FFF;
+    border-radius: 70px; */ }
+
+.whatsappWidget p {
+  text-align: center;
+  font-size: 20px;
+  padding-top: 15px; }
 
 /**$*$********************************************************************
 *$*$                         MEDIA QUERYS                                *
 *$*$**********************************************************************/
-
 /*DISPOSITIVOS XL LARGOS*/
 /* @media screen and (max-width: 1200px) {} */
-
 /*NOTEBOOK + LAP + ESCRITORIO DISPOSITIVOS LARGOS*/
 @media screen and (max-width: 992px) {
-    .containerFormulario {
-        width: 95%;
-    }
-}
+  .containerFormulario {
+    width: 95%; } }
 
 /*TABLET LANDSCAPE UP DISPOSITIVOS MEDIOS*/
 @media screen and (max-width: 768px) {
-
-    .mainGaleria {
-        grid-template-columns: repeat(2, minmax(350px, 760px));
-    }
-
-    #parrafo2Founder {
-        display: none;
-    }
-
-    #imgFounder {
-        width: 100%;
-        height: 500px;
-    }
-
-}
+  .mainGaleria {
+    grid-template-columns: repeat(2, minmax(350px, 760px)); }
+  #parrafo2Founder {
+    display: none; }
+  #imgFounder {
+    width: 100%;
+    height: 500px; } }
 
 /*TELEFONOS - DISPOSITIVOS XS*/
 @media screen and (max-width: 600px) {
-
-    .containerFormulario {
-        width: 90%;
-    }
-
-}
+  .containerFormulario {
+    width: 90%; } }
 
 /*TELEFONOS LANDSCAPE + TABLET VERTICAL DISPOSITIVOS SMALLS*/
 @media screen and (max-width: 599px) {
-
-    .mainGaleria {
-        grid-template-columns: repeat(1, minmax(100px, 599px));
-    }
-
-    #imgFounder {
-        width: 90%;
-    }
-
-    .imgEmpleado {
-        width: 80%;
-    }
-
-    #main1 {
-        width: 90%;
-    }
-
-    #main2 {
-        width: 85%;
-    }
-
-    #parrafo2Founder {
-        display: none;
-    }
-
-    .logo__img--center {
-        width: 80px;
-    }
-
-    .boxFormulario {
-        width: 90%;
-    }
-
-    .containerFormulario {
-        background: white;
-    }
-
-    nav {
-        background: url(../images/img1.jpeg) no-repeat border-box;
-        background-size: cover;
-    }
-
-    .menuSecciones {
-        font-weight: normal;
-        font-size: 14px;
-        letter-spacing: 1px;
-        margin-left: 60px;
-    }
-}
+  .mainGaleria {
+    grid-template-columns: repeat(1, minmax(100px, 599px)); }
+  #imgFounder {
+    width: 90%; }
+  .imgEmpleado {
+    width: 80%; }
+  #main1 {
+    width: 90%; }
+  #main2 {
+    width: 85%; }
+  #parrafo2Founder {
+    display: none; }
+  .logo__img--center {
+    width: 80px; }
+  .boxFormulario {
+    width: 90%; }
+  .containerFormulario {
+    background: white; }
+  nav {
+    background-image: url("../images/img1.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; }
+  .menuSecciones {
+    font-weight: normal;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-left: 60px; } }
 
 /*TELEFONOS LANDSCAPE + TABLET VERTICAL DISPOSITIVOS SMALLS*/
 @media screen and (max-width: 370px) {
-
-    #imgFounder {
-        width: 95%;
-    }
-
-    #main1 {
-        width: 95%;
-    }
-
-    #main2 {
-        width: 90%;
-    }
-
-    .imgEmpleado {
-        width: 90%;
-    }
-}
+  #imgFounder {
+    width: 95%; }
+  #main1 {
+    width: 95%; }
+  #main2 {
+    width: 90%; }
+  .imgEmpleado {
+    width: 90%; } }
