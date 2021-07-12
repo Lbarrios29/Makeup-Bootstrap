@@ -47,10 +47,6 @@ nav {
     background-size: cover;
 }
 
-/* .headerNavAncho {
-    width: 80%;
-} */
-
 /**$*$****************************************************
 *$*$                         LOGO                        *
 *$*$******************************************************/
@@ -149,32 +145,6 @@ nav {
         background-position: top right;
     }
 }
-
-/* .indexFoto1__Texto1:hover {
-    transform: rotate(360deg);
-}
-
-.indexFoto2__Texto1:hover {
-    font-size: 700%;
-}
-
-.indexFoto3__Texto1:hover {
-    transform: rotateZ(90deg);
-}
-
-.indexFoto4__Texto1:hover {
-    font-size: 700%;
-} */
-
-/* .sectionIndex h1 {
-    animation-duration: 1s;
-    animation-name: izqDer;
-}
-
-.sectionIndex h2 {
-    animation-duration: 2s;
-    animation-name: aparecer;
-} */
 
 .interactividadH1 {
     animation-duration: 2s;
