@@ -1,2 +1,11 @@
 $font-principal: 'Fira Sans',
 sans-serif;
+$font-secundario: 'Roboto',
+condensed,
+sans-serif;
+$font-size-parrafo:17px;
+$font-weight-parrafo:200;
+
+// @media screen and (max-width: 599px)
+$font-weight-menu: normal;
+$font-size-menu: 14px;

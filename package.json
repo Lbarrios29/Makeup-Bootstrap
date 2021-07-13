@@ -1,7 +1,7 @@
 {
   "name": "proyecto_final_coderhouse_bootstrap",
   "version": "1.0.0",
-  "description": "",
+  "description": "Proyecto Final Coderhouse - Sitio Makeup",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

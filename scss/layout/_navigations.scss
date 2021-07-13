@@ -6,3 +6,25 @@
 nav {
     @include fondoImagen($fondoMenu, no-repeat, cover, center);
 }
+
+/**$*$********************************************************************
+*$*$             BARRA NAVEGACION                                        *
+*$*$*********************************************************************/
+.menuSecciones {
+    letter-spacing: 1px;
+}
+
+.menuSecciones:hover {
+    color: $colorMenuHover;
+}
+
+/**$*$********************************************************************
+*$*$                         CUSTOM ICON HAMBURGUESA                     *
+*$*$**********************************************************************/
+.custom-toggler .navbar-toggler-icon {
+    background-image: url($menuResponsive);
+}
+
+.custom-toggler.navbar-toggler {
+    border-color: $colorMenuResponsive
+}
