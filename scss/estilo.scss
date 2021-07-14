@@ -282,20 +282,21 @@ $ancho in $width {
 *$*$**********************************************************************/
 .whatsappWidget {
     position: fixed;
-    // width: 45px;
-    // height: 45px;
-    @include anchoAlto(45px, 45px);
-    bottom: 30px;
+    @include anchoAlto(60px, 60px);
+    bottom: 40px;
     right: 40px;
-    /* background-color: #25d366;
-    color: #FFF;
-    border-radius: 70px; */
+    background-color: $fondoWhatsapp;
+    color: $iconWhatsapp;
+    border-radius: 40px;
+    text-align: center;
+    font-size: 37px;
+    z-index: 100;
 }
 
-.whatsappWidget p {
-    text-align: center;
-    font-size: 20px;
-    padding-top: 15px;
+.whatsappWidget:hover {
+    text-decoration: none;
+    background-color: $fondoWhatsapp;
+    color: $iconWhatsapp;
 }
 
 /**$*$********************************************************************
@@ -396,6 +397,14 @@ $ancho in $width {
         font-size: $font-size-menu;
         letter-spacing: 1px;
         margin-left: 60px;
+    }
+
+    .whatsappWidget {
+        @include anchoAlto(50px, 50px);
+        bottom: 20px;
+        right: 20px;
+        font-size: 33px;
+        z-index: 100;
     }
 }
 
