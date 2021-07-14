@@ -24,7 +24,7 @@
 *$*$                         MENU                                        *
 *$*$**********************************************************************/
 nav {
-  background-image: url("../images/imgMenu.jpg");
+  background-image: url("../images/imgMenu.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center; }
@@ -93,7 +93,7 @@ p {
     animation-name: aparecer; }
 
 .indexFoto1 {
-  background-image: url("../images/index/img1.jpeg");
+  background-image: url("../images/index/img1.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -116,7 +116,7 @@ p {
   transition: all 2s; }
 
 .indexFoto2 {
-  background-image: url("../images/index/indexPestania2.jpg");
+  background-image: url("../images/index/indexPestania.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -139,7 +139,7 @@ p {
   transition: all 2s; }
 
 .indexFoto3 {
-  background-image: url("../images/index/img3.jpeg");
+  background-image: url("../images/index/img3.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -162,7 +162,7 @@ p {
   transition: all 2s; }
 
 .indexFoto4 {
-  background-image: url("../images/index/indexUltimo2.jpg");
+  background-image: url("../images/index/indexUltimo.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -290,7 +290,7 @@ p {
 .containerFormulario {
   width: 70%;
   height: auto;
-  background-image: url("../images/contacto/imgForm.jpg");
+  background-image: url("../images/contacto/imgForm.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -385,7 +385,7 @@ p {
   .containerFormulario {
     background: white; }
   nav {
-    background-image: url("../images/img1.jpeg");
+    background-image: url("../images/img1.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center; }
