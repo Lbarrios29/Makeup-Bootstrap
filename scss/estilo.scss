@@ -4,6 +4,7 @@
 @import "utilities/maps";
 @import "utilities/mixins";
 @import "layout/navigations";
+@import "layout/parallaxIndex";
 
 /**$*$********************************************************************
 *$*$                         ELEMENTOS - TAG                             *
@@ -37,8 +38,6 @@ p {
     margin-top: 30px;
 }
 
-
-
 /**$*$********************************************************************
 *$*$             FOOTER                                                  *
 *$*$*********************************************************************/
@@ -57,15 +56,15 @@ p {
 
     @include anchoAlto(100%, 900px);
 
-    h1 {
-        animation-duration: 1s;
-        animation-name: izqDer;
-    }
+    // h1 {
+    //     animation-duration: 1s;
+    //     animation-name: izqDer;
+    // }
 
-    h2 {
-        animation-duration: 2s;
-        animation-name: aparecer;
-    }
+    // h2 {
+    //     animation-duration: 2s;
+    //     animation-name: aparecer;
+    // }
 }
 
 $img:"";
@@ -153,36 +152,36 @@ $img:"";
     }
 }
 
-.interactividadH1 {
-    animation-duration: 2s;
-    animation-name: izqDer;
-}
+// .interactividadH1 {
+//     animation-duration: 2s;
+//     animation-name: izqDer;
+// }
 
-.interactividadH2 {
-    animation-duration: 4s;
-    animation-name: aparecer;
-}
+// .interactividadH2 {
+//     animation-duration: 4s;
+//     animation-name: aparecer;
+// }
 
-@keyframes izqDer {
-    0% {
-        opacity: 0;
-        transform: translatex(-100%);
-    }
+// @keyframes izqDer {
+//     0% {
+//         opacity: 0;
+//         transform: translatex(-100%);
+//     }
 
-    100% {
-        opacity: 1;
-    }
-}
+//     100% {
+//         opacity: 1;
+//     }
+// }
 
-@keyframes aparecer {
-    0% {
-        opacity: 0;
-    }
+// @keyframes aparecer {
+//     0% {
+//         opacity: 0;
+//     }
 
-    100% {
-        opacity: 1;
-    }
-}
+//     100% {
+//         opacity: 1;
+//     }
+// }
 
 
 /**$*$********************************************************************
@@ -388,15 +387,19 @@ $ancho in $width {
         background: $fondoFormResponsive;
     }
 
-    nav {
-        @include fondoImagen($navFondoResponsive, no-repeat, cover, center);
+    // nav {
+    //     @include fondoImagen($navFondoResponsive, no-repeat, cover, center);
+    // }
+
+    .title {
+        top: 50%;
     }
 
     .menuSecciones {
         font-weight: $font-weight-menu;
         font-size: $font-size-menu;
         letter-spacing: 1px;
-        margin-left: 60px;
+        margin-left: 30px;
     }
 
     .whatsappWidget {

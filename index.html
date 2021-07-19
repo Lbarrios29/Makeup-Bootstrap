@@ -20,107 +20,140 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="css/estilo.css">
     <title>Elizabeth Diaz Makeup</title>
 </head>
 
 <body>
+    <div class="parallax">
+        <!--Menu-->
+        <header>
+            <nav class="navbar navbar-expand-sm">
+                <div class="container">
 
-    <!--Menu-->
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-            <div class="container-fluid">
+                    <!-- Logo -->
+                    <a class="navbar-brand ms-3" href="index.html">
+                        <img src="images/logodiaz.png" alt="logo"
+                            class="logo__img--center wow animate__animated animate__flip" data-wow-delay="0.2s">
+                    </a>
 
-                <!-- Logo -->
-                <a class="navbar-brand ms-3" href="index.html">
-                    <img src="images/logodiaz.png" alt="logo" class="logo__img--center">
-                </a>
+                    <!-- Boton Hamburguesa -->
+                    <button class="navbar-toggler custom-toggler me-4 wow animate__animated animate__bounceInDown"
+                        type=" button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
-                <!-- Boton Hamburguesa -->
-                <button class="navbar-toggler custom-toggler me-4" type=" button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                    <!-- Menu listado de opciones -->
+                    <div class="collapse navbar-collapse pe-5" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a id="home"
+                                    class="nav-link text-white fw-bold text-uppercase menuSecciones wow animate__animated animate__bounceInDown"
+                                    href="index.html" data-wow-delay="0.4s">
+                                    Home
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white fw-bold text-uppercase menuSecciones wow animate__animated animate__bounceInDown"
+                                    href="html/nosotros.html" data-wow-delay="0.6s">
+                                    Nosotros
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white fw-bold text-uppercase menuSecciones wow animate__animated animate__bounceInDown"
+                                    href="html/servicios.html" data-wow-delay="0.8s">
+                                    Servicios
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white fw-bold text-uppercase menuSecciones wow animate__animated animate__bounceInDown"
+                                    href="html/galeria.html" data-wow-delay="1s">
+                                    Galeria
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white fw-bold text-uppercase menuSecciones wow animate__animated animate__bounceInDown"
+                                    href="html/contacto.html" data-wow-delay="1.2s">
+                                    Contacto
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
 
-                <div class="collapse navbar-collapse pe-5" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link text-white fw-bold text-uppercase menuSecciones" href="index.html">
-                                Home
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white fw-bold text-uppercase menuSecciones"
-                                href="html/nosotros.html">
-                                Nosotros
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white fw-bold text-uppercase menuSecciones"
-                                href="html/servicios.html">
-                                Servicios
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white fw-bold text-uppercase menuSecciones"
-                                href="html/galeria.html">
-                                Galeria
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white fw-bold text-uppercase menuSecciones"
-                                href="html/contacto.html">
-                                Contacto
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                </div> <!-- container -->
+            </nav>
+        </header>
 
-            </div> <!-- container -->
-        </nav>
-    </header>
+        <!-- <div class="parallax"> -->
+        <div id='stars'></div>
+        <div id='stars2'></div>
+        <div id='stars3'></div>
+        <div class="display-3 fw-bold title wow animate__animated animate__backInDown" data-wow-delay="1.4s">
+            Makeup
+            <br>
+            En su máxima expresión
+        </div>
+    </div>
 
     <main>
         <div class="mainIndex">
 
             <section class="m-3 p-4">
-                <h1 class=" text-uppercase text-center pb-3 interactividadH1">Maquillaje</h1>
-                <p class="text-start">
-                    ¡Tu mirada lo dice todo! Y las posibilidades son infinitas. Estilos recatados para el día o
-                    dramáticos para la noche. Líneas sutiles y definidas, tonos ahumados en tendencia, looks de cejas
-                    personalizados, tonos clásicos o un estallido de color vibrante. Nuestras sombras de ojos y prebases
-                    para la sombra, los delineadores de ojos y lápices de cejas, y la increíble colección de mascaras
-                    han sido diseñados para transformar tu look en un abrir y cerrar de ojos.
-
-                    Los estilos impecables son posibles gracias al mejor maquillaje de rostro que ofrecemos.
-                    Tonos de rubores perfectos, bases sutiles, correctores, prebases y maquillaje para contornear el
-                    rostro para ayudarte a crear el look perfecto, no importa qué lado de ti quieras destacar.
-                </p>
+                <h1 class="text-uppercase text-center pb-3 wow animate__animated animate__backInLeft"
+                    data-wow-duration="2s">
+                    Maquillaje
+                </h1>
+                <div class="wow animate__animated animate__zoomIn text-start" data-wow-duration="2s">
+                    <p>
+                        ¡Tu mirada lo dice todo! Y las posibilidades son infinitas. Estilos recatados para el día o
+                        dramáticos para la noche. Líneas sutiles y definidas, tonos ahumados en tendencia, looks de
+                        cejas
+                        personalizados, tonos clásicos o un estallido de color vibrante. Nuestras sombras de ojos y
+                        prebases
+                        para la sombra, los delineadores de ojos y lápices de cejas, y la increíble colección de
+                        mascaras
+                        han sido diseñados para transformar tu look en un abrir y cerrar de ojos.
+                    </p>
+                    <p>
+                        Los estilos impecables son posibles gracias al mejor maquillaje de rostro que ofrecemos.
+                        Tonos de rubores perfectos, bases sutiles, correctores, prebases y maquillaje para contornear el
+                        rostro para ayudarte a crear el look perfecto, no importa qué lado de ti quieras destacar.
+                    </p>
+                </div>
             </section>
 
             <div class="indexFoto1 img-fluid">
-                <div class="display-3 fw-bold shimmer">
+                <div class="display-3 fw-bold shimmer wow animate__animated animate__fadeIn">
                     Makeup <br> Style Design
                 </div>
             </div>
 
             <section class="m-3 p-4">
-                <h2 class="text-uppercase text-center pb-3 interactividadH2">Pestañas</h2>
-                <p class="text-start">
-                    Los ojos son el rasgo facial más prominente que podemos mostrar ante el mundo, y ahora se han
-                    convertido en el centro de atención desde que cubrimos la nariz y la boca con mascarillas para
-                    evitar la propagación de la COVID-19. La pandemia sin duda es responsable de por lo menos parte del
-                    creciente interés en la belleza de los ojos, que incluye procedimientos para aumentar el volumen de
-                    las pestañas en el salón de belleza y en el hogar.
-                </p>
-                <p>
-                    Con la gran variedad de extensiones que hay para elegir —de diferente longitud, grosor, material y
-                    tipo de ondulación, podemos transformar tus ojos. “Por ejemplo, en las
-                    mujeres de 50 años o más, las pestañas naturales comienzan a perder volumen y los párpados
-                    exteriores pueden comenzar a descender levemente”. “Mediante el uso de pestañas
-                    de diversas longitudes, podemos crear volumen donde no existe y realmente levantar los ojos”.
-                </p>
+                <h2 class="text-uppercase text-center pb-3 wow animate__animated animate__backInLeft"
+                    data-wow-duration="2s">
+                    Pestañas
+                </h2>
+                <div class="wow animate__animated animate__zoomIn text-start" data-wow-duration="2s">
+                    <p>
+                        Los ojos son el rasgo facial más prominente que podemos mostrar ante el mundo, y ahora se han
+                        convertido en el centro de atención desde que cubrimos la nariz y la boca con mascarillas para
+                        evitar la propagación de la COVID-19. La pandemia sin duda es responsable de por lo menos parte
+                        del
+                        creciente interés en la belleza de los ojos, que incluye procedimientos para aumentar el volumen
+                        de
+                        las pestañas en el salón de belleza y en el hogar.
+                    </p>
+                    <p>
+                        Con la gran variedad de extensiones que hay para elegir —de diferente longitud, grosor, material
+                        y
+                        tipo de ondulación, podemos transformar tus ojos. “Por ejemplo, en las
+                        mujeres de 50 años o más, las pestañas naturales comienzan a perder volumen y los párpados
+                        exteriores pueden comenzar a descender levemente”. “Mediante el uso de pestañas
+                        de diversas longitudes, podemos crear volumen donde no existe y realmente levantar los ojos”.
+                    </p>
+                </div>
             </section>
 
             <div class="indexFoto2 img-fluid">
@@ -130,21 +163,32 @@
             </div>
 
             <section class="m-3 p-4">
-                <h2 class="text-uppercase text-center pb-3 interactividadH2">Maquillaje Artístico</h2>
-                <p class="text-start">
-                    Normalmente, se trabaja con unos bocetos previos y se trata de adaptar el dibujo al cuerpo y al
-                    rostro. Las técnicas de aerógrafo en esta clase de dibujos, son esenciales para que el trabajo sea
-                    aún más perfecto.
-                    El maquillaje de fantasía o profesional se diferencia al maquillaje convencional en que en este
-                    último, se intenta disimular o dar un toque o un aspecto natural, sin embargo, en el de fantasía o
-                    artístico se busca todo lo contrario, se busca realzar y trabajar el surrealismo lo máximo posible,
-                    figuras de animales, monstruos, unicornios, dioses…y un sinfín de figuras más propias del cine y del
-                    teatro son tratadas con esta clase de maquillaje.
-                </p>
-                <p> Con esta clase de maquillaje, no nos referimos solo a aplicar color con pincel, sino también a
-                    extensiones de pelo, de piel, de telas originales y extravagantes que hagan aparentar lo que no se
-                    es a diferencia muy notoria del maquillaje natural y convencional.
-                </p>
+                <h2 class="text-uppercase text-center pb-3 wow animate__animated animate__backInLeft"
+                    data-wow-duration="2s">
+                    Maquillaje Artístico
+                </h2>
+                <div class="wow animate__animated animate__zoomIn text-start" data-wow-duration="2s">
+                    <p>
+                        Normalmente, se trabaja con unos bocetos previos y se trata de adaptar el dibujo al cuerpo y al
+                        rostro. Las técnicas de aerógrafo en esta clase de dibujos, son esenciales para que el trabajo
+                        sea
+                        aún más perfecto.
+                        El maquillaje de fantasía o profesional se diferencia al maquillaje convencional en que en este
+                        último, se intenta disimular o dar un toque o un aspecto natural, sin embargo, en el de fantasía
+                        o
+                        artístico se busca todo lo contrario, se busca realzar y trabajar el surrealismo lo máximo
+                        posible,
+                        figuras de animales, monstruos, unicornios, dioses…y un sinfín de figuras más propias del cine y
+                        del
+                        teatro son tratadas con esta clase de maquillaje.
+                    </p>
+                    <p> Con esta clase de maquillaje, no nos referimos
+                        solo a aplicar color con pincel, sino también a
+                        extensiones de pelo, de piel, de telas originales y extravagantes que hagan aparentar lo que no
+                        se
+                        es a diferencia muy notoria del maquillaje natural y convencional.
+                    </p>
+                </div>
             </section>
 
             <div class="indexFoto3 img-fluid">
@@ -154,9 +198,11 @@
             </div>
 
             <section class="m-3 p-4">
-                <h2 class="text-uppercase text-center pb-3 interactividadH2">Productos de alta calidad
+                <h2 class="text-uppercase text-center pb-3 wow animate__animated animate__backInLeft"
+                    data-wow-duration="2s">
+                    Productos de alta calidad
                 </h2>
-                <p class="text-start">
+                <p class="wow animate__animated animate__zoomIn text-start" data-wow-duration="2s">
                     Contamos con líneaa de productos profesionales del mercado nacional e internacional. Tenemos a
                     disposición
                     más de 400 productos, los mejores desarrollos en productos HD y Ultra HD, y una novedosa línea 100%
@@ -281,13 +327,20 @@
         </div>
     </main>
 
+    <!-- Whatsapp -->
     <a href="https://api.whatsapp.com/send?phone=5411618107&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Makeup."
-        class="whatsappWidget" target="_blank">
+        class="whatsappWidget wow animate__animated animate__zoomInDown" target="_blank" data-wow-delay="2s">
         <i class="bi bi-whatsapp"></i>
     </a>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+    </script>
+
+    <!-- Script animaciones -->
+    <script src="js/wow.min.js"></script>
+    <script>
+        new WOW().init();
     </script>
 
 </body>

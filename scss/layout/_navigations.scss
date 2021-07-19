@@ -3,19 +3,19 @@
 /**$*$********************************************************************
 *$*$                         MENU                                        *
 *$*$**********************************************************************/
-nav {
-    @include fondoImagen($fondoMenu, no-repeat, cover, center);
-}
+// nav {
+//     @include fondoImagen($fondoMenu, no-repeat, cover, center);
+// }
 
 /**$*$********************************************************************
 *$*$             BARRA NAVEGACION                                        *
 *$*$*********************************************************************/
 .menuSecciones {
-    letter-spacing: 1px;
+    letter-spacing: 2px;
 }
 
 .menuSecciones:hover {
-    color: $colorMenuHover;
+    background-color: $colorMenuHover;
 }
 
 /**$*$********************************************************************
