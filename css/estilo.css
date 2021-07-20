@@ -21,9 +21,6 @@
 /*Fondo de imagenes*/
 /*Ancho y alto*/
 /**$*$********************************************************************
-*$*$                         MENU                                        *
-*$*$**********************************************************************/
-/**$*$********************************************************************
 *$*$             BARRA NAVEGACION                                        *
 *$*$*********************************************************************/
 .menuSecciones {
@@ -41,7 +38,7 @@
 .custom-toggler.navbar-toggler {
   border-color: #f0f0e5; }
 
-.parallax {
+.parallaxStars {
   height: 100vh;
   background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
   overflow: hidden; }
@@ -145,6 +142,15 @@ p {
 .text-footer {
   color: #aaa8a8; }
 
+.letterSpacing {
+  letter-spacing: 2px; }
+
+.hoverFooter {
+  line-height: 1; }
+
+.footerParallax {
+  transform: scale(1.03); }
+
 /**$*$********************************************************************
 *$*$                         BODY INDEX                                  *
 *$*$**********************************************************************/
@@ -156,12 +162,13 @@ p {
   background-image: url("../images/index/img1.png");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   min-height: 70%;
   position: relative;
   opacity: 0.8;
   background-attachment: fixed;
-  vertical-align: top; }
+  vertical-align: top;
+  transform: scale(1.03); }
 
 .indexFoto1__Texto1 {
   color: white;
@@ -179,12 +186,13 @@ p {
   background-image: url("../images/index/indexPestania.png");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   min-height: 70%;
   position: relative;
   opacity: 0.8;
   background-attachment: fixed;
-  vertical-align: top; }
+  vertical-align: top;
+  transform: scale(1.03); }
 
 .indexFoto2__Texto1 {
   color: white;
@@ -202,12 +210,13 @@ p {
   background-image: url("../images/index/img3.png");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   min-height: 70%;
   position: relative;
   opacity: 0.8;
   background-attachment: fixed;
-  vertical-align: top; }
+  vertical-align: top;
+  transform: scale(1.03); }
 
 .indexFoto3__Texto1 {
   color: white;
@@ -225,12 +234,13 @@ p {
   background-image: url("../images/index/indexUltimo.png");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   min-height: 70%;
   position: relative;
   opacity: 0.8;
   background-attachment: fixed;
-  vertical-align: top; }
+  vertical-align: top;
+  transform: scale(1.03); }
 
 .indexFoto4__Texto1 {
   color: white;
@@ -332,7 +342,7 @@ p {
   background-image: url("../images/contacto/imgForm.png");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   border-radius: 6px; }
 
 /*Creamos el bucle para usar los valores del mapa*/
@@ -433,6 +443,8 @@ p {
     font-size: 14px;
     letter-spacing: 1px;
     margin-left: 30px; }
+  .menuSecciones:hover {
+    background-color: none; }
   .whatsappWidget {
     width: 50px;
     height: 50px;

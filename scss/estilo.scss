@@ -33,7 +33,6 @@ p {
 }
 
 .separador {
-    // width: 100%;
     @include anchoAlto(100%, auto);
     margin-top: 30px;
 }
@@ -45,26 +44,27 @@ p {
     color: $colorTextoFooter;
 }
 
+.letterSpacing {
+    letter-spacing: 2px;
+}
+
+.hoverFooter {
+    line-height: 1;
+}
+
+// .text-reset.text-decoration-none.hoverFooter a:hover {
+//     color: #2a77d6;
+// }
+
+.footerParallax {
+    transform: scale(1.03);
+}
 
 /**$*$********************************************************************
 *$*$                         BODY INDEX                                  *
 *$*$**********************************************************************/
 .mainIndex {
-
-    // width: 100%;
-    // height: 900px;
-
     @include anchoAlto(100%, 900px);
-
-    // h1 {
-    //     animation-duration: 1s;
-    //     animation-name: izqDer;
-    // }
-
-    // h2 {
-    //     animation-duration: 2s;
-    //     animation-name: aparecer;
-    // }
 }
 
 $img:"";
@@ -95,6 +95,8 @@ $img:"";
         opacity: 0.8;
         background-attachment: fixed;
         vertical-align: top;
+        // Hace que la imagen se mueva al scrolear
+        transform: scale(1.03);
     }
 
     .indexFoto#{$i}__Texto1 {
@@ -152,38 +154,6 @@ $img:"";
     }
 }
 
-// .interactividadH1 {
-//     animation-duration: 2s;
-//     animation-name: izqDer;
-// }
-
-// .interactividadH2 {
-//     animation-duration: 4s;
-//     animation-name: aparecer;
-// }
-
-// @keyframes izqDer {
-//     0% {
-//         opacity: 0;
-//         transform: translatex(-100%);
-//     }
-
-//     100% {
-//         opacity: 1;
-//     }
-// }
-
-// @keyframes aparecer {
-//     0% {
-//         opacity: 0;
-//     }
-
-//     100% {
-//         opacity: 1;
-//     }
-// }
-
-
 /**$*$********************************************************************
 *$*$                         SECCION NOSOTROS                            *
 *$*$**********************************************************************/
@@ -203,8 +173,6 @@ $img:"";
 *$*$                         SECCION GALERIA                             *
 *$*$**********************************************************************/
 .mainGaleria {
-    // width: 100%;
-    // height: auto;
     @include anchoAlto(100%, auto);
     display: grid;
     grid-template-columns: repeat(3, minmax(100px, 293px));
@@ -214,20 +182,14 @@ $img:"";
 }
 
 .box {
-    // width: 100%;
-    // height: auto;
     @include anchoAlto(100%, auto);
     position: relative;
 
     a {
         margin: 0;
-        // width: 100%;
-        // height: 100%;
         @include anchoAlto(100%, 100%);
 
         img {
-            // width: 100%;
-            // height: 100%;
             @include anchoAlto(100%, 100%);
             vertical-align: top;
         }
@@ -260,7 +222,6 @@ $img:"";
 *$*$                         SECCION CONTACTO                            *
 *$*$**********************************************************************/
 .containerFormulario {
-    // width: 70%;
     @include anchoAlto(70%, auto);
     @include fondoImagen($fondoContacto, no-repeat, cover, center);
     border-radius: 6px;
@@ -270,8 +231,6 @@ $img:"";
 @each $clase,
 $ancho in $width {
     .#{$clase} {
-        // width: $ancho;
-        // height: auto;
         @include anchoAlto($ancho, auto);
     }
 }
@@ -325,8 +284,6 @@ $ancho in $width {
     }
 
     #imgFounder {
-        // width: 100%;
-        // height: 500px;
         @include anchoAlto(100%, 500px);
     }
 
@@ -336,7 +293,6 @@ $ancho in $width {
 @media screen and (max-width: 600px) {
 
     .containerFormulario {
-        // width: 90%;
         @include anchoAlto(90%, auto);
     }
 
@@ -350,22 +306,18 @@ $ancho in $width {
     }
 
     #imgFounder {
-        // width: 90%;
         @include anchoAlto(90%, auto);
     }
 
     .imgEmpleado {
-        // width: 80%;
         @include anchoAlto(80%, auto);
     }
 
     #main1 {
-        // width: 90%;
         @include anchoAlto(90%, auto);
     }
 
     #main2 {
-        // width: 85%;
         @include anchoAlto(85%, auto);
     }
 
@@ -374,22 +326,16 @@ $ancho in $width {
     }
 
     .logo__img--center {
-        // width: 80px;
         @include anchoAlto(80px, auto);
     }
 
     .boxFormulario {
-        // width: 90%;
         @include anchoAlto(90%, auto);
     }
 
     .containerFormulario {
         background: $fondoFormResponsive;
     }
-
-    // nav {
-    //     @include fondoImagen($navFondoResponsive, no-repeat, cover, center);
-    // }
 
     .title {
         top: 50%;
@@ -400,6 +346,10 @@ $ancho in $width {
         font-size: $font-size-menu;
         letter-spacing: 1px;
         margin-left: 30px;
+    }
+
+    .menuSecciones:hover {
+        background-color: none;
     }
 
     .whatsappWidget {
@@ -415,22 +365,18 @@ $ancho in $width {
 @media screen and (max-width: 370px) {
 
     #imgFounder {
-        // width: 95%;
         @include anchoAlto(95%, auto);
     }
 
     #main1 {
-        // width: 95%;
         @include anchoAlto(95%, auto);
     }
 
     #main2 {
-        // width: 90%;
         @include anchoAlto(90%, auto);
     }
 
     .imgEmpleado {
-        // width: 90%;
         @include anchoAlto(90%, auto);
     }
 }
