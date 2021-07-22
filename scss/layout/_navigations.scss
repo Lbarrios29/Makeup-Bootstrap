@@ -5,10 +5,12 @@
 *$*$*********************************************************************/
 .menuSecciones {
     letter-spacing: 2px;
+    color: white;
 }
 
 .menuSecciones:hover {
-    background-color: $colorMenuHover;
+    color: $colorMenuHover;
+    transform: scale(1.1, 1.1);
 }
 
 /**$*$********************************************************************

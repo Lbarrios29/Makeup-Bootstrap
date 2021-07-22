@@ -40,21 +40,18 @@ p {
 /**$*$********************************************************************
 *$*$             FOOTER                                                  *
 *$*$*********************************************************************/
-.text-footer {
-    color: $colorTextoFooter;
-}
-
 .letterSpacing {
     letter-spacing: 2px;
 }
 
-.hoverFooter {
-    line-height: 1;
+.textoFooter {
+    line-height: 1.1;
+    color: $colorTextoFooter;
 }
 
-// .text-reset.text-decoration-none.hoverFooter a:hover {
-//     color: #2a77d6;
-// }
+.textoFooter:hover {
+    color: $colorTextoHoverFooter;
+}
 
 .footerParallax {
     transform: scale(1.03);
@@ -152,6 +149,16 @@ $img:"";
     100% {
         background-position: top right;
     }
+}
+
+.linkServicios {
+    background-color: $colorLinkServicios;
+    color: white;
+}
+
+.linkServicios:hover {
+    background-color: #2a77d6;
+    color: white;
 }
 
 /**$*$********************************************************************
@@ -267,7 +274,6 @@ $ancho in $width {
 /*NOTEBOOK + LAP + ESCRITORIO DISPOSITIVOS LARGOS*/
 @media screen and (max-width: 992px) {
     .containerFormulario {
-        // width: 95%;
         @include anchoAlto(95%, auto);
     }
 }
@@ -279,7 +285,8 @@ $ancho in $width {
         grid-template-columns: repeat(2, minmax(350px, 760px));
     }
 
-    #parrafo2Founder {
+    #parrafo2Founder,
+    #parrafo3Founder {
         display: none;
     }
 
@@ -294,6 +301,15 @@ $ancho in $width {
 
     .containerFormulario {
         @include anchoAlto(90%, auto);
+    }
+
+    #imgFounder {
+        margin-left: 20px;
+    }
+
+    #parrafo2Founder,
+    #parrafo3Founder {
+        display: block;
     }
 
 }
@@ -319,10 +335,10 @@ $ancho in $width {
 
     #main2 {
         @include anchoAlto(85%, auto);
-    }
 
-    #parrafo2Founder {
-        display: none;
+        h2 {
+            text-align: center;
+        }
     }
 
     .logo__img--center {

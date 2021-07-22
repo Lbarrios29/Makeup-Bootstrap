@@ -24,10 +24,12 @@
 *$*$             BARRA NAVEGACION                                        *
 *$*$*********************************************************************/
 .menuSecciones {
-  letter-spacing: 2px; }
+  letter-spacing: 2px;
+  color: white; }
 
 .menuSecciones:hover {
-  background-color: #5eb524; }
+  color: #2a77d6;
+  transform: scale(1.1, 1.1); }
 
 /**$*$********************************************************************
 *$*$                         CUSTOM ICON HAMBURGUESA                     *
@@ -139,14 +141,15 @@ p {
 /**$*$********************************************************************
 *$*$             FOOTER                                                  *
 *$*$*********************************************************************/
-.text-footer {
-  color: #aaa8a8; }
-
 .letterSpacing {
   letter-spacing: 2px; }
 
-.hoverFooter {
-  line-height: 1; }
+.textoFooter {
+  line-height: 1.1;
+  color: #aaa8a8; }
+
+.textoFooter:hover {
+  color: #2a77d6; }
 
 .footerParallax {
   transform: scale(1.03); }
@@ -278,6 +281,14 @@ p {
   100% {
     background-position: top right; } }
 
+.linkServicios {
+  background-color: #464646;
+  color: white; }
+
+.linkServicios:hover {
+  background-color: #2a77d6;
+  color: white; }
+
 /**$*$********************************************************************
 *$*$                         SECCION NOSOTROS                            *
 *$*$**********************************************************************/
@@ -398,7 +409,8 @@ p {
 @media screen and (max-width: 768px) {
   .mainGaleria {
     grid-template-columns: repeat(2, minmax(350px, 760px)); }
-  #parrafo2Founder {
+  #parrafo2Founder,
+  #parrafo3Founder {
     display: none; }
   #imgFounder {
     width: 100%;
@@ -408,7 +420,12 @@ p {
 @media screen and (max-width: 600px) {
   .containerFormulario {
     width: 90%;
-    height: auto; } }
+    height: auto; }
+  #imgFounder {
+    margin-left: 20px; }
+  #parrafo2Founder,
+  #parrafo3Founder {
+    display: block; } }
 
 /*TELEFONOS LANDSCAPE + TABLET VERTICAL DISPOSITIVOS SMALLS*/
 @media screen and (max-width: 599px) {
@@ -426,8 +443,8 @@ p {
   #main2 {
     width: 85%;
     height: auto; }
-  #parrafo2Founder {
-    display: none; }
+    #main2 h2 {
+      text-align: center; }
   .logo__img--center {
     width: 80px;
     height: auto; }
