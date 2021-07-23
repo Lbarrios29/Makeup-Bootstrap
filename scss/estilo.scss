@@ -3,6 +3,7 @@
 @import "utilities/variables";
 @import "utilities/maps";
 @import "utilities/mixins";
+@import "layout/grid";
 @import "layout/navigations";
 @import "layout/parallaxIndex";
 
@@ -183,15 +184,6 @@ $img:"";
 /**$*$********************************************************************
 *$*$                         SECCION GALERIA                             *
 *$*$**********************************************************************/
-.mainGaleria {
-    @include anchoAlto(100%, auto);
-    display: grid;
-    grid-template-columns: repeat(3, minmax(100px, 293px));
-    justify-content: center;
-    gap: 28px;
-    margin: 20px 0px;
-}
-
 .box {
     @include anchoAlto(100%, auto);
     position: relative;

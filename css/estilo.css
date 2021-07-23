@@ -18,6 +18,16 @@
 /*Declaramos nuestro mapa de clases con width variables*/
 /*Ancho y alto*/
 /*Ancho y alto*/
+.mainGaleria {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(100px, 293px));
+  justify-content: center;
+  gap: 28px;
+  margin: 20px 0px; }
+
+/*Ancho y alto*/
 /**$*$********************************************************************
 *$*$             BARRA NAVEGACION                                        *
 *$*$*********************************************************************/
@@ -290,15 +300,6 @@ p {
 /**$*$********************************************************************
 *$*$                         SECCION GALERIA                             *
 *$*$**********************************************************************/
-.mainGaleria {
-  width: 100%;
-  height: auto;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(100px, 293px));
-  justify-content: center;
-  gap: 28px;
-  margin: 20px 0px; }
-
 .box {
   width: 100%;
   height: auto;
