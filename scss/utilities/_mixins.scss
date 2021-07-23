@@ -1,11 +1,3 @@
-/*Fondo de imagenes*/
-@mixin fondoImagen($urlImagen, $repeat, $size, $position) {
-    background-image: url($urlImagen);
-    background-repeat: $repeat;
-    background-size: $size;
-    background-position: $position $position;
-}
-
 /*Ancho y alto*/
 @mixin anchoAlto($width, $height) {
     width: $width;

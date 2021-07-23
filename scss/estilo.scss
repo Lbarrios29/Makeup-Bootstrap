@@ -38,6 +38,14 @@ p {
 }
 
 /**$*$********************************************************************
+*$*$             404                                                     *
+*$*$*********************************************************************/
+.error404 {
+    @include anchoAlto(100%, 300px);
+    background: url(../images/404.png) no-repeat center center/cover;
+}
+
+/**$*$********************************************************************
 *$*$             FOOTER                                                  *
 *$*$*********************************************************************/
 .letterSpacing {
@@ -86,11 +94,11 @@ $img:"";
     }
 
     .indexFoto#{$i} {
-        @include fondoImagen($img, no-repeat, cover, center);
+        //bg-color bg-image bg-repeat bg-position/bg-size bg-attachment: ;
+        background: url($img) no-repeat center center/cover fixed;
         min-height: $widthIndexFoto;
         position: relative;
         opacity: 0.8;
-        background-attachment: fixed;
         vertical-align: top;
         // Hace que la imagen se mueva al scrolear
         transform: scale(1.03);
@@ -120,6 +128,7 @@ $img:"";
     letter-spacing: 8px;
     text-align: center;
     color: rgba(255, 255, 255, 0.1);
+    //bg-color bg-image bg-repeat bg-position/bg-size
     background: linear-gradient(to right,
             #ed8080 0%,
             #2a77d6 16%,
@@ -127,18 +136,13 @@ $img:"";
             #eacd25 48%,
             #ed8080 64%,
             #2a77d6 80%,
-            #5eb524 100%);
-
-    background-size: 300% 300%;
-    background-repeat: no-repeat;
-    background-position: top left;
-    background-color: #222;
+            #5eb524 100%) no-repeat top left/300%;
 
     -webkit-background-clip: text;
     -moz-background-clip: text;
     background-clip: text;
 
-    animation: shimmer infinite 3s linear;
+    animation: shimmer infinite 2s linear;
 }
 
 @keyframes shimmer {
@@ -230,7 +234,8 @@ $img:"";
 *$*$**********************************************************************/
 .containerFormulario {
     @include anchoAlto(70%, auto);
-    @include fondoImagen($fondoContacto, no-repeat, cover, center);
+    //bg-color bg-image bg-repeat bg-position/bg-size,
+    background: url($fondoContacto) no-repeat center/cover;
     border-radius: 6px;
 }
 

@@ -16,9 +16,7 @@
 *$*$                    Width                                            *
 *$*$**********************************************************************/
 /*Declaramos nuestro mapa de clases con width variables*/
-/*Fondo de imagenes*/
 /*Ancho y alto*/
-/*Fondo de imagenes*/
 /*Ancho y alto*/
 /**$*$********************************************************************
 *$*$             BARRA NAVEGACION                                        *
@@ -139,6 +137,14 @@ p {
   margin-top: 30px; }
 
 /**$*$********************************************************************
+*$*$             404                                                     *
+*$*$*********************************************************************/
+.error404 {
+  width: 100%;
+  height: 300px;
+  background: url(../images/404.png) no-repeat center center/cover; }
+
+/**$*$********************************************************************
 *$*$             FOOTER                                                  *
 *$*$*********************************************************************/
 .letterSpacing {
@@ -162,14 +168,10 @@ p {
   height: 900px; }
 
 .indexFoto1 {
-  background-image: url("../images/index/img1.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
+  background: url("../images/index/img1.png") no-repeat center center/cover fixed;
   min-height: 70%;
   position: relative;
   opacity: 0.8;
-  background-attachment: fixed;
   vertical-align: top;
   transform: scale(1.03); }
 
@@ -186,14 +188,10 @@ p {
   transition: all 2s; }
 
 .indexFoto2 {
-  background-image: url("../images/index/indexPestania.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
+  background: url("../images/index/indexPestania.png") no-repeat center center/cover fixed;
   min-height: 70%;
   position: relative;
   opacity: 0.8;
-  background-attachment: fixed;
   vertical-align: top;
   transform: scale(1.03); }
 
@@ -210,14 +208,10 @@ p {
   transition: all 2s; }
 
 .indexFoto3 {
-  background-image: url("../images/index/img3.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
+  background: url("../images/index/img3.png") no-repeat center center/cover fixed;
   min-height: 70%;
   position: relative;
   opacity: 0.8;
-  background-attachment: fixed;
   vertical-align: top;
   transform: scale(1.03); }
 
@@ -234,14 +228,10 @@ p {
   transition: all 2s; }
 
 .indexFoto4 {
-  background-image: url("../images/index/indexUltimo.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
+  background: url("../images/index/indexUltimo.png") no-repeat center center/cover fixed;
   min-height: 70%;
   position: relative;
   opacity: 0.8;
-  background-attachment: fixed;
   vertical-align: top;
   transform: scale(1.03); }
 
@@ -265,15 +255,11 @@ p {
   letter-spacing: 8px;
   text-align: center;
   color: rgba(255, 255, 255, 0.1);
-  background: linear-gradient(to right, #ed8080 0%, #2a77d6 16%, #5eb524 32%, #eacd25 48%, #ed8080 64%, #2a77d6 80%, #5eb524 100%);
-  background-size: 300% 300%;
-  background-repeat: no-repeat;
-  background-position: top left;
-  background-color: #222;
+  background: linear-gradient(to right, #ed8080 0%, #2a77d6 16%, #5eb524 32%, #eacd25 48%, #ed8080 64%, #2a77d6 80%, #5eb524 100%) no-repeat top left/300%;
   -webkit-background-clip: text;
   -moz-background-clip: text;
   background-clip: text;
-  animation: shimmer infinite 3s linear; }
+  animation: shimmer infinite 2s linear; }
 
 @keyframes shimmer {
   0% {
@@ -350,10 +336,7 @@ p {
 .containerFormulario {
   width: 70%;
   height: auto;
-  background-image: url("../images/contacto/imgForm.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
+  background: url("../images/contacto/imgForm.png") no-repeat center/cover;
   border-radius: 6px; }
 
 /*Creamos el bucle para usar los valores del mapa*/
