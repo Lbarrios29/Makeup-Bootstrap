@@ -173,7 +173,7 @@ p {
 /**$*$********************************************************************
 *$*$                         BODY INDEX                                  *
 *$*$**********************************************************************/
-.mainIndex {
+.contenidoPrincipal {
   width: 100%;
   height: 900px; }
 
@@ -277,6 +277,9 @@ p {
   100% {
     background-position: top right; } }
 
+/**$*$********************************************************************
+*$*$                         SECCION SERVICIOS                           *
+*$*$**********************************************************************/
 .linkServicios {
   background-color: #464646;
   color: white; }
@@ -288,10 +291,10 @@ p {
 /**$*$********************************************************************
 *$*$                         SECCION NOSOTROS                            *
 *$*$**********************************************************************/
-#main1:hover {
+#colFounder:hover {
   transform: scale(1.03, 1.03); }
 
-#main2 {
+#colResenaFounder {
   background: #e6e4e4; }
 
 .empleado:hover {
@@ -421,13 +424,13 @@ p {
   .imgEmpleado {
     width: 80%;
     height: auto; }
-  #main1 {
+  #colFounder {
     width: 90%;
     height: auto; }
-  #main2 {
+  #colResenaFounder {
     width: 85%;
     height: auto; }
-    #main2 h2 {
+    #colResenaFounder h2 {
       text-align: center; }
   .logo__img--center {
     width: 80px;
@@ -459,10 +462,10 @@ p {
   #imgFounder {
     width: 95%;
     height: auto; }
-  #main1 {
+  #colFounder {
     width: 95%;
     height: auto; }
-  #main2 {
+  #colResenaFounder {
     width: 90%;
     height: auto; }
   .imgEmpleado {
