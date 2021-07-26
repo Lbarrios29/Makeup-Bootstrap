@@ -168,7 +168,7 @@ p {
   color: #2a77d6; }
 
 .footerParallax {
-  transform: scale(1.03); }
+  transform: scaleY(1.03); }
 
 /**$*$********************************************************************
 *$*$                         BODY INDEX                                  *
@@ -183,7 +183,7 @@ p {
   position: relative;
   opacity: 0.8;
   vertical-align: top;
-  transform: scale(1.03); }
+  transform: scaleY(1.03); }
 
 .indexFoto1__Texto1 {
   color: white;
@@ -203,7 +203,7 @@ p {
   position: relative;
   opacity: 0.8;
   vertical-align: top;
-  transform: scale(1.03); }
+  transform: scaleY(1.03); }
 
 .indexFoto2__Texto1 {
   color: white;
@@ -223,7 +223,7 @@ p {
   position: relative;
   opacity: 0.8;
   vertical-align: top;
-  transform: scale(1.03); }
+  transform: scaleY(1.03); }
 
 .indexFoto3__Texto1 {
   color: white;
@@ -243,7 +243,7 @@ p {
   position: relative;
   opacity: 0.8;
   vertical-align: top;
-  transform: scale(1.03); }
+  transform: scaleY(1.03); }
 
 .indexFoto4__Texto1 {
   color: white;
@@ -416,6 +416,14 @@ p {
 
 /*TELEFONOS - DISPOSITIVOS XS*/
 @media screen and (max-width: 600px) {
+  .indexFoto1 {
+    background: url("../images/index/img1_cel.png") no-repeat center center/cover fixed; }
+  .indexFoto2 {
+    background: url("../images/index/indexPestania_cel.png") no-repeat center center/cover fixed; }
+  .indexFoto3 {
+    background: url("../images/index/img3_cel.png") no-repeat center center/cover fixed; }
+  .indexFoto4 {
+    background: url("../images/index/indexUltimo_cel.png") no-repeat center center/cover fixed; }
   .containerFormulario {
     width: 90%;
     height: auto; }
