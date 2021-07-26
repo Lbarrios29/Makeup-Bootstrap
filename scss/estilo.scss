@@ -160,6 +160,19 @@ $img:"";
 /**$*$********************************************************************
 *$*$                         SECCION SERVICIOS                           *
 *$*$**********************************************************************/
+.flexServicios,
+.flexCejas,
+.flexUnas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxServicios {
+    width: 50%;
+    margin: 1%;
+}
+
 .linkServicios {
     background-color: $colorLinkServicios;
     color: white;
@@ -313,6 +326,20 @@ $ancho in $width {
         display: block;
     }
 
+    .flexServicios {
+        flex-direction: column;
+    }
+
+    .flexCejas,
+    .flexUnas {
+        flex-direction: column-reverse;
+    }
+
+    .boxServicios {
+        width: 100%;
+        margin-bottom: 4%;
+    }
+
 }
 
 /*TELEFONOS LANDSCAPE + TABLET VERTICAL DISPOSITIVOS SMALLS*/
@@ -366,7 +393,7 @@ $ancho in $width {
     }
 
     .menuSecciones:hover {
-        background-color: none;
+        background-color: transparent;
     }
 
     .whatsappWidget {
