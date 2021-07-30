@@ -193,6 +193,19 @@ p {
   vertical-align: top;
   transform: scaleY(1.03); }
 
+.parallax1 {
+  /* can be put in a seperate class for better control */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../images/index/img1.png");
+  /* --------------------------- */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  transform: translate3d(0, 0, 0);
+  transform-style: preserve-3d; }
+
 .indexFoto1__Texto1 {
   color: white;
   text-shadow: 0 0 10px #000;
@@ -206,6 +219,19 @@ p {
   opacity: 0.75;
   vertical-align: top;
   transform: scaleY(1.03); }
+
+.parallax2 {
+  /* can be put in a seperate class for better control */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../images/index/indexPestania.png");
+  /* --------------------------- */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  transform: translate3d(0, 0, 0);
+  transform-style: preserve-3d; }
 
 .indexFoto2__Texto1 {
   color: white;
@@ -221,6 +247,19 @@ p {
   vertical-align: top;
   transform: scaleY(1.03); }
 
+.parallax3 {
+  /* can be put in a seperate class for better control */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../images/index/img3.png");
+  /* --------------------------- */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  transform: translate3d(0, 0, 0);
+  transform-style: preserve-3d; }
+
 .indexFoto3__Texto1 {
   color: white;
   text-shadow: 0 0 10px #000;
@@ -234,6 +273,19 @@ p {
   opacity: 0.75;
   vertical-align: top;
   transform: scaleY(1.03); }
+
+.parallax4 {
+  /* can be put in a seperate class for better control */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../images/index/indexUltimo.png");
+  /* --------------------------- */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  transform: translate3d(0, 0, 0);
+  transform-style: preserve-3d; }
 
 .indexFoto4__Texto1 {
   color: white;
@@ -254,6 +306,31 @@ p {
     background-position: top left; }
   100% {
     background-position: top right; } }
+
+.altoParallax {
+  min-height: 70%; }
+
+.parallax__container {
+  clip: rect(0, auto, auto, 0);
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -100; }
+  .parallax__container .parallax {
+    /* can be put in a seperate class for better control */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* --------------------------- */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    transform: translate3d(0, 0, 0);
+    transform-style: preserve-3d;
+    opacity: 0.80; }
 
 /**$*$********************************************************************
 *$*$                         SECCION SERVICIOS                           *

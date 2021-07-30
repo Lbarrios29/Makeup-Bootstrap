@@ -21,6 +21,7 @@
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <script src="https://marrio-h.github.io/universal-parallax/dist/universal-parallax.min.js"></script>
     <link rel="stylesheet" href="css/estilo.css">
     <title>Elizabeth Makeup</title>
 </head>
@@ -122,12 +123,13 @@
             </section>
 
             <!-- Texto sobre imagen 1 -->
-            <div class="indexFoto1 img-fluid">
-                <!-- <div> -->
-                <div class="display-3 fw-bold shimmer">
-                    Makeup <br> Style Design
+            <section class="altoParallax">
+                <div class="parallax" data-parallax-image="images/index/img1.png">
+                    <div class="display-3 fw-bold shimmer">
+                        Makeup <br> Style Design
+                    </div>
                 </div>
-            </div>
+            </section>
 
             <!-- Parrafo Pestañas -->
             <section class="m-3 p-4">
@@ -156,12 +158,13 @@
             </section>
 
             <!-- Texto sobre imagen 2 -->
-            <div class="indexFoto2 img-fluid">
-                <!-- <div> -->
-                <div class="display-3 fw-bold shimmer">
-                    Lifting <br> Pestañas Magneticas
+            <section class="altoParallax">
+                <div class="parallax" data-parallax-image="images/index/IndexPestania.png">
+                    <div class="display-3 fw-bold shimmer">
+                        Lifting <br> Pestañas Magneticas
+                    </div>
                 </div>
-            </div>
+            </section>
 
             <!-- Parrafo Maquillaje Artístico -->
             <section class="m-3 p-4">
@@ -193,12 +196,13 @@
             </section>
 
             <!-- Texto sobre imagen 3 -->
-            <div class="indexFoto3 img-fluid">
-                <!-- <div> -->
-                <div class="display-3 fw-bold shimmer">
-                    Makeup <br>Artístico
+            <section class="altoParallax">
+                <div class="parallax" data-parallax-image="images/index/img3.png">
+                    <div class="display-3 fw-bold shimmer">
+                        Makeup <br>Artístico
+                    </div>
                 </div>
-            </div>
+            </section>
 
             <!-- Parrafo Productos de alta calidad -->
             <section class="m-3 p-4">
@@ -218,12 +222,13 @@
             </section>
 
             <!-- Texto sobre imagen 4 -->
-            <div class="indexFoto4 img-fluid">
-                <!-- <div> -->
-                <div class="display-3 fw-bold shimmer">
-                    El mejor producto <br>del Mercado
+            <section class="altoParallax">
+                <div class="parallax" data-parallax-image="images/index/indexUltimo.png">
+                    <div class="display-3 fw-bold shimmer">
+                        El mejor producto <br>del Mercado
+                    </div>
                 </div>
-            </div>
+            </section>
 
             <!-- Footer -->
             <footer class="bg-dark footerParallax">
@@ -362,6 +367,13 @@
     <script src="js/wow.min.js"></script>
     <script>
         new WOW().init();
+    </script>
+
+    <!-- Script Parallax -->
+    <script>
+        new universalParallax().init({
+            speed: 8.0
+        });
     </script>
 
 </body>

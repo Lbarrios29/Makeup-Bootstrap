@@ -108,6 +108,20 @@ $img:"";
         transform: scaleY(1.03);
     }
 
+    .parallax#{$i} {
+        /* can be put in a seperate class for better control */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url($img);
+        /* --------------------------- */
+        position: fixed;
+        width: 100%;
+        top: 0;
+        transform: translate3d(0, 0, 0);
+        transform-style: preserve-3d;
+    }
+
     .indexFoto#{$i}__Texto1 {
         color: $colorTextoImgIndex;
         @extend .estilo1;
@@ -147,6 +161,36 @@ $img:"";
     100% {
         background-position: top right;
     }
+}
+
+.altoParallax {
+    min-height: $widthIndexFoto;
+}
+
+.parallax__container {
+    clip: rect(0, auto, auto, 0);
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -100;
+
+    .parallax {
+        /* can be put in a seperate class for better control */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        /* --------------------------- */
+        position: fixed;
+        width: 100%;
+        top: 0;
+        transform: translate3d(0, 0, 0);
+        transform-style: preserve-3d;
+        opacity: 0.80;
+    }
+
 }
 
 /**$*$********************************************************************
