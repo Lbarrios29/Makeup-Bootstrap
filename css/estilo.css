@@ -471,14 +471,6 @@ p {
 
 /*TELEFONOS - DISPOSITIVOS XS*/
 @media screen and (max-width: 600px) {
-  .indexFoto1 {
-    background: url("../images/index/img1_cel.png") no-repeat center center/cover fixed; }
-  .indexFoto2 {
-    background: url("../images/index/indexPestania_cel.png") no-repeat center center/cover fixed; }
-  .indexFoto3 {
-    background: url("../images/index/img3_cel.png") no-repeat center center/cover fixed; }
-  .indexFoto4 {
-    background: url("../images/index/indexUltimo_cel.png") no-repeat center center/cover fixed; }
   .containerFormulario {
     width: 90%;
     height: auto; }

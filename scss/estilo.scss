@@ -349,25 +349,25 @@ $ancho in $width {
 /*TELEFONOS - DISPOSITIVOS XS*/
 @media screen and (max-width: 600px) {
 
-    .indexFoto1 {
-        //bg-color bg-image bg-repeat bg-position/bg-size bg-attachment: ;
-        background: url($imgIndex1Cel) no-repeat center center/cover fixed;
-    }
+    // .indexFoto1 {
+    //     //bg-color bg-image bg-repeat bg-position/bg-size bg-attachment: ;
+    //     background: url($imgIndex1Cel) no-repeat center center/cover fixed;
+    // }
 
-    .indexFoto2 {
-        //bg-color bg-image bg-repeat bg-position/bg-size bg-attachment: ;
-        background: url($imgIndex2Cel) no-repeat center center/cover fixed;
-    }
+    // .indexFoto2 {
+    //     //bg-color bg-image bg-repeat bg-position/bg-size bg-attachment: ;
+    //     background: url($imgIndex2Cel) no-repeat center center/cover fixed;
+    // }
 
-    .indexFoto3 {
-        //bg-color bg-image bg-repeat bg-position/bg-size bg-attachment: ;
-        background: url($imgIndex3Cel) no-repeat center center/cover fixed;
-    }
+    // .indexFoto3 {
+    //     //bg-color bg-image bg-repeat bg-position/bg-size bg-attachment: ;
+    //     background: url($imgIndex3Cel) no-repeat center center/cover fixed;
+    // }
 
-    .indexFoto4 {
-        //bg-color bg-image bg-repeat bg-position/bg-size bg-attachment: ;
-        background: url($imgIndex4Cel) no-repeat center center/cover fixed;
-    }
+    // .indexFoto4 {
+    //     //bg-color bg-image bg-repeat bg-position/bg-size bg-attachment: ;
+    //     background: url($imgIndex4Cel) no-repeat center center/cover fixed;
+    // }
 
     .containerFormulario {
         @include anchoAlto(90%, auto);
