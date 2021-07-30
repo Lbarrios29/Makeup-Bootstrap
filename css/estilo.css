@@ -175,9 +175,6 @@ p {
 .textoFooter:hover {
   color: #2a77d6; }
 
-.footerParallax {
-  transform: scaleY(1.03); }
-
 /**$*$********************************************************************
 *$*$                         BODY INDEX                                  *
 *$*$**********************************************************************/
@@ -186,12 +183,7 @@ p {
   height: 900px; }
 
 .indexFoto1 {
-  background: url("../images/index/img1.png") no-repeat center center/cover fixed;
-  min-height: 70%;
-  position: relative;
-  opacity: 0.75;
-  vertical-align: top;
-  transform: scaleY(1.03); }
+  background-image: url("../images/index/img1.png"); }
 
 .parallax1 {
   /* can be put in a seperate class for better control */
@@ -213,12 +205,7 @@ p {
   transition: all 2s; }
 
 .indexFoto2 {
-  background: url("../images/index/indexPestania.png") no-repeat center center/cover fixed;
-  min-height: 70%;
-  position: relative;
-  opacity: 0.75;
-  vertical-align: top;
-  transform: scaleY(1.03); }
+  background-image: url("../images/index/indexPestania.png"); }
 
 .parallax2 {
   /* can be put in a seperate class for better control */
@@ -240,12 +227,7 @@ p {
   transition: all 2s; }
 
 .indexFoto3 {
-  background: url("../images/index/img3.png") no-repeat center center/cover fixed;
-  min-height: 70%;
-  position: relative;
-  opacity: 0.75;
-  vertical-align: top;
-  transform: scaleY(1.03); }
+  background-image: url("../images/index/img3.png"); }
 
 .parallax3 {
   /* can be put in a seperate class for better control */
@@ -267,12 +249,7 @@ p {
   transition: all 2s; }
 
 .indexFoto4 {
-  background: url("../images/index/indexUltimo.png") no-repeat center center/cover fixed;
-  min-height: 70%;
-  position: relative;
-  opacity: 0.75;
-  vertical-align: top;
-  transform: scaleY(1.03); }
+  background-image: url("../images/index/indexUltimo.png"); }
 
 .parallax4 {
   /* can be put in a seperate class for better control */
@@ -292,20 +269,6 @@ p {
   text-shadow: 0 0 10px #000;
   font-family: "Roboto", condensed, sans-serif;
   transition: all 2s; }
-
-.shimmer {
-  color: rgba(255, 255, 255, 0.1);
-  background: linear-gradient(to right, #ed8080 0%, #2a77d6 16%, #5eb524 32%, #eacd25 48%, #ed8080 64%, #2a77d6 80%, #5eb524 100%) no-repeat top left/300%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  background-clip: text;
-  animation: shimmer infinite 2s linear; }
-
-@keyframes shimmer {
-  0% {
-    background-position: top left; }
-  100% {
-    background-position: top right; } }
 
 .altoParallax {
   min-height: 70%; }
@@ -330,7 +293,53 @@ p {
     top: 0;
     transform: translate3d(0, 0, 0);
     transform-style: preserve-3d;
-    opacity: 0.80; }
+    opacity: 0.75; }
+
+.cont {
+  -webkit-align-items: center;
+  align-items: center;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 15px;
+  position: relative;
+  width: 100%; }
+
+.container--full {
+  height: 100vh; }
+
+.cont .content {
+  border-radius: 8px;
+  margin: 0 auto;
+  padding: 30px 35px;
+  text-align: center; }
+
+.estiloTexto {
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+  width: 100%;
+  font-size: 40px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1; }
+
+.shimmer {
+  color: rgba(255, 255, 255, 0.1);
+  background: linear-gradient(to right, #ed8080 0%, #2a77d6 16%, #5eb524 32%, #eacd25 48%, #ed8080 64%, #2a77d6 80%, #5eb524 100%) no-repeat top left/300%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  animation: shimmer infinite 2s linear; }
+
+@keyframes shimmer {
+  0% {
+    background-position: top left; }
+  100% {
+    background-position: top right; } }
 
 /**$*$********************************************************************
 *$*$                         SECCION SERVICIOS                           *
@@ -471,6 +480,14 @@ p {
 
 /*TELEFONOS - DISPOSITIVOS XS*/
 @media screen and (max-width: 600px) {
+  .indexFoto1 {
+    background: url("../images/index/img1_cel.png") no-repeat center center/cover fixed !important; }
+  .indexFoto2 {
+    background: url("../images/index/indexPestania_cel.png") no-repeat center center/cover fixed !important; }
+  .indexFoto3 {
+    background: url("../images/index/img3_cel.png") no-repeat center center/cover fixed !important; }
+  .indexFoto4 {
+    background: url("../images/index/indexUltimo_cel.png") no-repeat center center/cover fixed !important; }
   .containerFormulario {
     width: 90%;
     height: auto; }

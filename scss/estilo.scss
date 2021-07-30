@@ -64,9 +64,9 @@ p {
 }
 
 // Se usa para lograr el efecto parallax
-.footerParallax {
-    transform: scaleY(1.03)
-}
+// .footerParallax {
+//     transform: scaleY(1.03)
+// }
 
 /**$*$********************************************************************
 *$*$                         BODY INDEX                                  *
@@ -98,14 +98,8 @@ $img:"";
 
     .indexFoto#{$i} {
         //bg-color bg-image bg-repeat bg-position/bg-size bg-attachment: ;
-        background: url($img) no-repeat center center/cover fixed;
-        min-height: $widthIndexFoto;
-        position: relative;
-        opacity: 0.75;
-        vertical-align: top;
-        // Hace que la imagen se mueva al scrolear
-        // transform: scale(1.03);
-        transform: scaleY(1.03);
+        // background: url($img) no-repeat center center/cover fixed;
+        background-image: url($img);
     }
 
     .parallax#{$i} {
@@ -130,6 +124,72 @@ $img:"";
         transition: all 2s;
     }
 
+}
+
+.altoParallax {
+    min-height: $widthIndexFoto;
+}
+
+.parallax__container {
+    clip: rect(0, auto, auto, 0);
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -100;
+
+    .parallax {
+        /* can be put in a seperate class for better control */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        /* --------------------------- */
+        position: fixed;
+        width: 100%;
+        top: 0;
+        transform: translate3d(0, 0, 0);
+        transform-style: preserve-3d;
+        opacity: 0.75;
+    }
+
+}
+
+.cont {
+    -webkit-align-items: center;
+    align-items: center;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 15px;
+    position: relative;
+    width: 100%;
+}
+
+.container--full {
+    height: 100vh;
+}
+
+.cont .content {
+    border-radius: 8px;
+    margin: 0 auto;
+    padding: 30px 35px;
+    text-align: center;
+}
+
+.estiloTexto {
+    text-shadow: 0 0 5px rgba(0, 0, 0, .6);
+    width: 100%;
+    font-size: 40px;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1;
 }
 
 // Animacion del texto sobre la imagen
@@ -161,36 +221,6 @@ $img:"";
     100% {
         background-position: top right;
     }
-}
-
-.altoParallax {
-    min-height: $widthIndexFoto;
-}
-
-.parallax__container {
-    clip: rect(0, auto, auto, 0);
-    overflow: hidden;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -100;
-
-    .parallax {
-        /* can be put in a seperate class for better control */
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        /* --------------------------- */
-        position: fixed;
-        width: 100%;
-        top: 0;
-        transform: translate3d(0, 0, 0);
-        transform-style: preserve-3d;
-        opacity: 0.80;
-    }
-
 }
 
 /**$*$********************************************************************
@@ -349,25 +379,26 @@ $ancho in $width {
 /*TELEFONOS - DISPOSITIVOS XS*/
 @media screen and (max-width: 600px) {
 
-    // .indexFoto1 {
-    //     //bg-color bg-image bg-repeat bg-position/bg-size bg-attachment: ;
-    //     background: url($imgIndex1Cel) no-repeat center center/cover fixed;
-    // }
+    //Se agrega !important ya que la imagen es pasada inline por una libreria
+    .indexFoto1 {
+        //bg-color bg-image bg-repeat bg-position/bg-size bg-attachment: ;
+        background: url($imgIndex1Cel) no-repeat center center/cover fixed !important;
+    }
 
-    // .indexFoto2 {
-    //     //bg-color bg-image bg-repeat bg-position/bg-size bg-attachment: ;
-    //     background: url($imgIndex2Cel) no-repeat center center/cover fixed;
-    // }
+    .indexFoto2 {
+        //bg-color bg-image bg-repeat bg-position/bg-size bg-attachment: ;
+        background: url($imgIndex2Cel) no-repeat center center/cover fixed !important;
+    }
 
-    // .indexFoto3 {
-    //     //bg-color bg-image bg-repeat bg-position/bg-size bg-attachment: ;
-    //     background: url($imgIndex3Cel) no-repeat center center/cover fixed;
-    // }
+    .indexFoto3 {
+        //bg-color bg-image bg-repeat bg-position/bg-size bg-attachment: ;
+        background: url($imgIndex3Cel) no-repeat center center/cover fixed !important;
+    }
 
-    // .indexFoto4 {
-    //     //bg-color bg-image bg-repeat bg-position/bg-size bg-attachment: ;
-    //     background: url($imgIndex4Cel) no-repeat center center/cover fixed;
-    // }
+    .indexFoto4 {
+        //bg-color bg-image bg-repeat bg-position/bg-size bg-attachment: ;
+        background: url($imgIndex4Cel) no-repeat center center/cover fixed !important;
+    }
 
     .containerFormulario {
         @include anchoAlto(90%, auto);
