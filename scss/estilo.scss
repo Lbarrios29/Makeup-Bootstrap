@@ -63,11 +63,6 @@ p {
     color: $colorTextoHoverFooter;
 }
 
-// Se usa para lograr el efecto parallax
-// .footerParallax {
-//     transform: scaleY(1.03)
-// }
-
 /**$*$********************************************************************
 *$*$                         BODY INDEX                                  *
 *$*$**********************************************************************/
@@ -97,23 +92,8 @@ $img:"";
     }
 
     .indexFoto#{$i} {
-        //bg-color bg-image bg-repeat bg-position/bg-size bg-attachment: ;
-        // background: url($img) no-repeat center center/cover fixed;
+        //bg-color bg-image bg-repeat bg-position/bg-size bg-attachment: 
         background-image: url($img);
-    }
-
-    .parallax#{$i} {
-        /* can be put in a seperate class for better control */
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-image: url($img);
-        /* --------------------------- */
-        position: fixed;
-        width: 100%;
-        top: 0;
-        transform: translate3d(0, 0, 0);
-        transform-style: preserve-3d;
     }
 
     .indexFoto#{$i}__Texto1 {
@@ -141,11 +121,9 @@ $img:"";
     z-index: -100;
 
     .parallax {
-        /* can be put in a seperate class for better control */
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        /* --------------------------- */
         position: fixed;
         width: 100%;
         top: 0;
