@@ -43,8 +43,8 @@
 
                 <!-- Menu listado de opciones -->
                 <div class="collapse navbar-collapse pe-5" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
+                    <ul id="menuHeader" class="navbar-nav ms-auto">
+                        <!-- <li class="nav-item">
                             <a class="nav-link  fw-bold text-uppercase menuSecciones" href="../index.html">
                                 Home
                             </a>
@@ -68,7 +68,7 @@
                             <a class="nav-link  fw-bold text-uppercase menuSecciones" href="../html/contacto.html">
                                 Contacto
                             </a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
 
@@ -312,6 +312,14 @@
     <script src="../js/wow.min.js"></script>
     <script>
         new WOW().init();
+    </script>
+
+    <!-- Script manejo de eventos del formulario -->
+    <script src="../js/contacto.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+        const app = new mainApp(document, localStorage);
+        app.buildMenu();
     </script>
 
 </body>
