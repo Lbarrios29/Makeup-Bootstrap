@@ -23,7 +23,7 @@ class mainApp{
     counterItemsShoppingCart(){
 
         // Se obtiene la lista de contactos del storage
-        let arrayCarrito = JSON.parse(localStorage.getItem('Carrito'));
+        let arrayCarrito = JSON.parse(this.localStorage.getItem('Carrito'));
 
         if (!arrayCarrito) {
             arrayCarrito = [];
@@ -78,7 +78,8 @@ class mainApp{
                 let value = element.textContent;
 
                 if (element.tagName == 'IMG') {
-                    value = element.getAttribute("src");
+                    // value = element.getAttribute("src");
+                    value = element.currentSrc;
                     return value;
                 }
 
