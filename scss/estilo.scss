@@ -228,6 +228,28 @@ $img:"";
 }
 
 /**$*$********************************************************************
+*$*$                         SECCION SERVICIO MAKEUP                     *
+*$*$**********************************************************************/
+.productoMakeup {
+    color: #525151;
+}
+
+.cantidadCarrito {
+    padding: 10px 8px;
+    width: 50%;
+    font-size: 16px;
+    border: 1px solid #6c757d;
+    background-color: #f3efef;
+}
+
+.iconoCarrito {
+    text-align: center;
+    font-size: 40px;
+    cursor: pointer;
+    color: #525151;
+}
+
+/**$*$********************************************************************
 *$*$                         SECCION NOSOTROS                            *
 *$*$**********************************************************************/
 #colFounder:hover {
@@ -320,6 +342,40 @@ $ancho in $width {
     text-decoration: none;
     background-color: $fondoWhatsapp;
     color: $iconWhatsapp;
+}
+
+.shoppingCartWidget {
+    position: fixed;
+    @include anchoAlto(60px, 60px);
+    bottom: 120px;
+    right: 40px;
+    background-color: $fondoShoppingCart;
+    color: $iconShoppingCart;
+    border-radius: 40px;
+    text-align: center;
+    font-size: 37px;
+    z-index: 100;
+}
+
+.shoppingCartWidget:hover {
+    text-decoration: none;
+    background-color: $fondoShoppingCart;
+    color: $iconShoppingCart
+}
+
+.contador {
+    background-color: #2a77d6;
+    color: #fff;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 170px;
+    right: 70px;
+    font-size: 13px;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    overflow: hidden;
 }
 
 /**$*$********************************************************************

@@ -109,7 +109,7 @@
                         tendencia
                         instagram, técnicas actuales en tendencia ( maquillajes variables ).
                         <div>
-                            <a href="404.html" class="p-2 rounded linkServicios text-decoration-none wow animate__animated
+                            <a href="servicioMakeup.html" class="p-2 rounded linkServicios text-decoration-none wow animate__animated
                                 animate__fadeInUp" data-wow-delay="0.2">
                                 Ver mas...
                             </a>
@@ -348,14 +348,39 @@
             </div>
 
         </footer>
-
-        <!-- Whatsapp -->
-        <a href="https://api.whatsapp.com/send?phone=5411618107&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Makeup."
-            class="whatsappWidget" target="_blank" rel="noopener noreferrer">
-            <i class="bi bi-whatsapp"></i>
-        </a>
-
     </main>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Carrito de Compras</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div id="detalleCarrito" class="modal-body">
+                </div>
+                <div id="total" class="container"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Salir</button>
+                    <button id="comprar" type="button" class="btn btn-primary" data-bs-dismiss="modal">Iniciar
+                        Compra</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Carrito de compras -->
+    <span id="count" class="contador">0</span>
+    <a id="idCarrito" href="#" class="shoppingCartWidget" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <i class="bi bi-cart4"></i>
+    </a>
+
+    <!-- Whatsapp -->
+    <a href="https://api.whatsapp.com/send?phone=5411618107&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Makeup."
+        class="whatsappWidget" target="_blank" rel="noopener noreferrer">
+        <i class="bi bi-whatsapp"></i>
+    </a>
 
     <!-- Script animaciones -->
     <script src="../js/wow.min.js"></script>
@@ -375,11 +400,13 @@
     </script>
 
     <!-- Script manejo de eventos del formulario -->
-    <script src="../js/contacto.js"></script>
+    <script src="../js/carrito.js"></script>
     <script src="../js/main.js"></script>
     <script>
         const app = new mainApp(document, localStorage);
         app.buildMenu();
+        app.counterItemsShoppingCart();
+        app.eventHandlerDetalleShoppingCart();
     </script>
 
 </body>

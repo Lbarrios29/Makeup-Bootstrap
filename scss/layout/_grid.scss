@@ -8,3 +8,12 @@
     gap: 28px;
     margin: 20px 0px;
 }
+
+.mainServicioMakeup {
+    @include anchoAlto(100%, auto);
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100px, 293px));
+    justify-content: center;
+    gap: 60px;
+    margin: 20px 0px;
+}
