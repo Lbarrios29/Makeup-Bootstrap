@@ -48,8 +48,8 @@
 
                     <!-- Menu listado de opciones -->
                     <div class="collapse navbar-collapse pe-5" id="navbarNav">
-                        <ul class="navbar-nav ms-auto">
-                            <li class="nav-item">
+                        <ul id="menuHeader" class="navbar-nav ms-auto">
+                            <!-- <li class="nav-item">
                                 <a class="nav-link fw-bold text-uppercase menuSecciones wow animate__animated animate__bounceInDown"
                                     href="index.html" data-wow-delay="0.2s">
                                     Home
@@ -78,7 +78,7 @@
                                     href="html/contacto.html" data-wow-delay="0.6s">
                                     Contacto
                                 </a>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
 
@@ -408,14 +408,13 @@
         });
     </script>
 
-    <!-- Script manejo de eventos del formulario -->
-    <script src="js/carrito.js"></script>
-    <script src="js/main.js"></script>
-    <script>
-        const app = new mainApp(document, localStorage);
-        app.counterItemsShoppingCart();
-        app.eventHandlerDetalleShoppingCart();
+    <!-- Script JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
     </script>
+
+    <!-- Script manejo de eventos y vlidaciones -->
+    <script type="module" src="js/main.js"></script>
 
 </body>
 

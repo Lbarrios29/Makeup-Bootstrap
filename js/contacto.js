@@ -73,3 +73,6 @@ class contactoService {
 
 } // class ContactoService
 
+export { Contacto,
+        contactoService } 
+

@@ -138,7 +138,7 @@
 
                         <!-- Newsletter -->
                         <div class="form-check mb-3 wow animate__animated animate__fadeIn" data-wow-delay="0.5s">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                            <input class="form-check-input" type="checkbox" id="flexCheckChecked">
                             <label class="form-check-label" for="flexCheckChecked">
                                 ¿Desea recibir Newsletter?
                             </label>
@@ -323,16 +323,13 @@
         new wow().init();
     </script> -->
 
-    <!-- Script manejo de eventos del formulario -->
-    <script src="../js/contacto.js"></script>
-    <script src="../js/main.js"></script>
-    <script>
-        const app = new mainApp(document, localStorage);
-        app.eventHandlerSubmit();
-        app.buildMenu();
-        app.counterItemsShoppingCart();
-        app.eventHandlerDetalleShoppingCart();
+    <!-- Script JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
     </script>
+
+    <!-- Script manejo de eventos y vlidaciones -->
+    <script type="module" src="../js/main.js"></script>
 
 </body>
 

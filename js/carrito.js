@@ -5,9 +5,8 @@ class Carrito {
         this.id = id;
         this.producto = producto;
         this.cantidad = cantidad;
-        this.precio = precio;
+        this.precio = parseFloat(precio).toFixed(2);
         this.srcImagen = pathImagen;
-        // this.precioTotal = precio * cantidad;
     
     }
 
@@ -27,21 +26,21 @@ class carritoService {
     create(carrito) {
 
         this.carrito.push(carrito);
-        this.localStorage.setItem('Carrito', JSON.stringify(this.carrito));
+        this.localStorage.setItem('carrito', JSON.stringify(this.carrito));
     
     }
 
     // Encuentra un Carrito por su nombre
-    // read(nombre) {
+    read(id,carrito) {
         
-    //     const CarritoOne = this.Carritos.find( Carrito => Carrito.nombre === nombre.toLowerCase());
+        const carritoOne = carrito.find( item => item.id === id);
 
-    //     // if (!CarritoOne) {
-    //     //     throw Error('No existe Carrito con ese Nombre');
-    //     // }
-    //     return CarritoOne;
+        if (!carritoOne) {
+            throw Error('No existe Carrito con ese Id');
+        }
+        return carritoOne;
 
-    // }
+    }
 
     // // Actualiza un Carrito por su nombre
     // update(Carrito,email,newsletter) {
@@ -52,19 +51,24 @@ class carritoService {
     
     // }
 
-    // // Elimina un Carrito por su id
-    // delete(nombre) {
+    // Elimina un Carrito por su id
+    delete(id,carrito) {
     
-    //     const usuario = this.read(nombre);
-    //     const index = this.Carritos.findIndex( Carrito => Carrito.id === usuario.id );
+        const item = this.read(id,carrito);
+        const index = carrito.findIndex( producto => producto.id === item.id );
 
-    //     if (index >= 0) {
-    //         this.Carritos.splice(index, 1)
-    //     }
+        if (index >= 0) {
+            carrito.splice(index, 1)
+        }
 
-    //     // localStorage.setItem('Carritos', JSON.stringify(Carritos))
+        if (carrito.length == 0) {
+            this.localStorage.clear();            
+        }
+        else{
+            this.localStorage.setItem('carrito', JSON.stringify(carrito));
+        }
     
-    // }
+    }
 
     // // Obtiene todos los Carritos
     // getAll(){
@@ -74,4 +78,7 @@ class carritoService {
     // }
 
 } // class CarritoService
+
+export { Carrito,
+        carritoService } 
 
