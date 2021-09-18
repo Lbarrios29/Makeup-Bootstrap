@@ -384,7 +384,8 @@ class mainApp{
         }
 
 // MAIN
-$( document ).ready(function() {
+// $( document ).ready(function() {
+window.onload = () => {    
     const app = new mainApp(document, localStorage);
     app.buildMenu();
     app.buildProductos();
@@ -392,4 +393,5 @@ $( document ).ready(function() {
     app.eventHandlerShoppingCart();
     app.counterItemsShoppingCart();
     app.eventHandlerDetalleShoppingCart();
-});
+}
+    // });
