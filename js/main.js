@@ -90,13 +90,16 @@ class mainApp{
         let page2 = page.split(".");
         let clasesMenu = "";
 
-         if (page2[0].toUpperCase() == 'INDEX') {
-             secciones = seccionesIndex;
-             clasesMenu = "nav-link fw-bold text-uppercase menuSecciones wow animate__animated animate__bounceInDown";
+        //  if (page2[0].toUpperCase() == 'INDEX') {
+        if (page2[0].toUpperCase() === 'NOSOTROS' || page2[0].toUpperCase() || 'CONTACTO'
+            || page2[0].toUpperCase() === 'GALERIA' || page2[0].toUpperCase() === 'SERVICIOS'
+            || page2[0].toUpperCase() === 'SERVICIOMAKEUP' ) {    
+            secciones = seccionesOtras;
+            clasesMenu = "nav-link fw-bold text-uppercase menuSecciones";
          }
          else{
-             secciones = seccionesOtras;
-             clasesMenu = "nav-link fw-bold text-uppercase menuSecciones";
+            secciones = seccionesIndex;
+            clasesMenu = "nav-link fw-bold text-uppercase menuSecciones wow animate__animated animate__bounceInDown";
          }               
 
         // SEGUNDA FORMA JS VANILLA MEJORADA
