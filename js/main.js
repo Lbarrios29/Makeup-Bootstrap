@@ -36,49 +36,49 @@ class mainApp{
                                 }, 
                                 {
                                     texto: "Nosotros",
-                                    href: "Proyecto-Final-Coderhouse/html/nosotros.html", 
+                                    href: "html/nosotros.html", 
                                     delay: "data-wow-delay='0.3s'"
                                 }, 
                                 { 
                                     texto: "Servicios",
-                                    href: "Proyecto-Final-Coderhouse/html/servicios.html",
+                                    href: "html/servicios.html",
                                     delay: "data-wow-delay='0.4s'"
                                 }, 
                                 { 
                                     texto: "Galería",
-                                    href: "Proyecto-Final-Coderhouse/html/galeria.html",
+                                    href: "html/galeria.html",
                                     delay: "data-wow-delay='0.5s'"
                                 }, 
                                 { 
                                     texto: "Contacto",
-                                    href: "Proyecto-Final-Coderhouse/html/contacto.html",
+                                    href: "html/contacto.html",
                                     delay: "data-wow-delay='0.6s'"
                                 }
                             ];
         let seccionesOtras = [
                                 {
                                     texto: "Home",
-                                    href: "/index.html",
+                                    href: "../index.html",
                                     delay:""
                                 }, 
                                 {
                                     texto: "Nosotros",
-                                    href: "/html/nosotros.html",
+                                    href: "../html/nosotros.html",
                                     delay:"" 
                                 }, 
                                 { 
                                     texto: "Servicios",
-                                    href: "/html/servicios.html",
+                                    href: "../html/servicios.html",
                                     delay:""
                                 }, 
                                 { 
                                     texto: "Galería",
-                                    href: "/html/galeria.html",
+                                    href: "../html/galeria.html",
                                     delay:""
                                 }, 
                                 { 
                                     texto: "Contacto",
-                                    href: "/html/contacto.html",
+                                    href: "../html/contacto.html",
                                     delay:""
                                 }
                             ];
