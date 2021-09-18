@@ -383,6 +383,7 @@ class mainApp{
         }
 
 // MAIN
+$( document ).ready(function() {
     const app = new mainApp(document, localStorage);
     app.buildMenu();
     app.buildProductos();
@@ -390,3 +391,4 @@ class mainApp{
     app.eventHandlerShoppingCart();
     app.counterItemsShoppingCart();
     app.eventHandlerDetalleShoppingCart();
+});
