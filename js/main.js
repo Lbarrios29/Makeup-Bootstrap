@@ -87,18 +87,11 @@ class mainApp{
         // el path de secciones y clases correspondiente                    
         let path = window.location.pathname;
         let page = path.split("/").pop();
-        let page2;
-
-        if (page === "") {
-            page2 = [];
-        }
-        else{
-            page2 = page.split(".");
-        }
-
+        let page2 = page.split(".");
         let clasesMenu = "";
+        let pagina = page2[0].toUpperCase();
 
-         if (page2.length === 0 ) {
+         if (pagina === 'INDEX') {    
             secciones = seccionesIndex;
             clasesMenu = "nav-link fw-bold text-uppercase menuSecciones wow animate__animated animate__bounceInDown";
          }
