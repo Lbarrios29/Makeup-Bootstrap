@@ -91,7 +91,7 @@ class mainApp{
         let clasesMenu = "";
         let pagina = page2[0].toUpperCase();
 
-         if (pagina === 'INDEX') {    
+         if (pagina === 'INDEX' || pagina === "") {    
             secciones = seccionesIndex;
             clasesMenu = "nav-link fw-bold text-uppercase menuSecciones wow animate__animated animate__bounceInDown";
          }
