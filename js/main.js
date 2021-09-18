@@ -58,27 +58,27 @@ class mainApp{
         let seccionesOtras = [
                                 {
                                     texto: "Home",
-                                    href: "Proyecto-Final-Coderhouse/index.html",
+                                    href: "/index.html",
                                     delay:""
                                 }, 
                                 {
                                     texto: "Nosotros",
-                                    href: "Proyecto-Final-Coderhouse/html/nosotros.html",
+                                    href: "/html/nosotros.html",
                                     delay:"" 
                                 }, 
                                 { 
                                     texto: "Servicios",
-                                    href: "Proyecto-Final-Coderhouse/html/servicios.html",
+                                    href: "/html/servicios.html",
                                     delay:""
                                 }, 
                                 { 
                                     texto: "Galería",
-                                    href: "Proyecto-Final-Coderhouse/html/galeria.html",
+                                    href: "/html/galeria.html",
                                     delay:""
                                 }, 
                                 { 
                                     texto: "Contacto",
-                                    href: "Proyecto-Final-Coderhouse/html/contacto.html",
+                                    href: "/html/contacto.html",
                                     delay:""
                                 }
                             ];
