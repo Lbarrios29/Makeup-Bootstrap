@@ -24,9 +24,23 @@ class contactoService {
     // Agrega un nuevo contacto a la lista de contactos y lo persiste en el storage
     create(contacto) {
 
+        // Envia el contacto al Local Storage
         this.contactos.push(contacto);
         this.localStorage.setItem('contactos', JSON.stringify(this.contactos));
     
+        // POST
+        const URL_JSON_POST = "https://jsonplaceholder.typicode.com/posts";
+        
+        const contactoData = { id: `${contacto.id}`, nombre:`${contacto.nombre}`, email:`${contacto.email}`};
+
+        $.post(URL_JSON_POST, contactoData, function (respuesta, estado) {
+            
+            if(estado === "success"){
+                console.log(respuesta);
+            }
+
+        })
+
     }
 
     // Encuentra un contacto por su nombre
@@ -47,7 +61,7 @@ class contactoService {
         contacto.email = email;
         contacto.newsletter = newsletter;
         this.localStorage.setItem('contactos', JSON.stringify(this.contactos));
-    
+     
     }
 
     // Elimina un contacto por su id

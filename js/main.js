@@ -1,17 +1,13 @@
-import { productos } from "./productos.js";
+// import { productos } from "./productos.js";
 import { Contacto, contactoService } from "./contacto.js";
 import { Carrito, carritoService } from "./carrito.js";
 
+// Guarda los productos en memoria al hacer el primer Get 
+let globalProductos = [];
+
 class mainApp{
 
-    constructor(document){
-        
-        this.contactos = [];
-        this.carrito = [];
-        this.document = document;
-    
-    }
-
+    // Actualiza en tiempo real el contador de items del carrito
     counterItemsShoppingCart(){
 
         // Se obtiene la lista de contactos del storage
@@ -25,6 +21,7 @@ class mainApp{
 
     }
 
+    // Construye el menu en el header dinamicamente
     buildMenu(){
 
         let secciones = [];
@@ -91,30 +88,14 @@ class mainApp{
         let clasesMenu = "";
         let pagina = page2[0].toUpperCase();
 
-         if (pagina === 'INDEX' || pagina === "") {    
+        if (pagina === 'INDEX' || pagina === "") {    
             secciones = seccionesIndex;
             clasesMenu = "nav-link fw-bold text-uppercase menuSecciones wow animate__animated animate__bounceInDown";
-         }
-         else{
+        }
+        else{
             secciones = seccionesOtras;
             clasesMenu = "nav-link fw-bold text-uppercase menuSecciones";
-         }               
-
-        // SEGUNDA FORMA JS VANILLA MEJORADA
-        //Creamos una variable que va a iniciar como un string vacio
-        /*let html = '';
-        for (const seccion of secciones) {
-
-            html += `<li class="nav-item">
-                        <a class="${clasesMenu}" href="${seccion.href}" ${seccion.delay}>
-                            ${seccion.texto}
-                        </a>
-                    </li>`;
-
-        }
-
-        //Luego que termina de iterar el for lo agregamos todo con el innerHTML
-        ulMenuHeader.innerHTML = html;*/
+        }               
 
         // TERCERA FORMA JQUERY
         for (const seccion of secciones) {
@@ -127,156 +108,175 @@ class mainApp{
                                     );
 
         }        
-        
-
     }
 
+    // Construye los productos obtenidos del .json y suscribe addShoppinCart
     buildProductos(){
 
-        for (const producto of productos) {
+        //Declaramos la url del archivo JSON local
+        // const URL_JSON = "../data/productos.json",
+        const URL_JSON_GET = "http://localhost:3000/productos",
+              dirImagen = "../images/carritoMakeup/"  
 
-            $(".mainServicioMakeup").append(`
-                <div>
-                    <img src="${producto.srcImagen}" alt="${producto.alt}"
-                        loading="lazy" class="img-fluid">
-                    <div class="h5 pt-3 fw-bold productoMakeup">
-                        ${producto.nombre}
-                    </div>
-                    <span class="h6 text-muted">
-                        $${parseFloat(producto.precio).toFixed(2)}
-                    </span>
-                    <div class="d-flex pt-3">
-                        <input id="idCant${producto.id}" type="number" value="1" min="1" class="cantidadCarrito">
-                        <span class="ps-4">
-                            <i id="${producto.id}" class="bi bi-cart3 iconoCarrito"></i>
-                        </span>
-                    </div>
-                </div>            
-            `);        
-        }
+        // Se obtiene los productos del archivo .json cargado localmente
+        $.get(URL_JSON_GET, function (respuesta, estado) {
+
+            if(estado === "success"){
+                
+                const productos = respuesta;
+                globalProductos = respuesta;    
+                
+                for (const producto of productos) {
+
+                    $(".mainServicioMakeup").append(`
+                        <div>
+                            <img src="${dirImagen + producto.imagen}" alt="${producto.descripcion}"
+                                loading="lazy" class="img-fluid">
+                            <div class="h5 pt-3 fw-bold productoMakeup">
+                                ${producto.nombre}
+                            </div>
+                            <span class="h6 text-muted">
+                                $${parseFloat(producto.precio).toFixed(2)}
+                            </span>
+                            <div class="d-flex pt-3">
+                                <input id="idCant-${producto.id}" type="number" value="1" min="1" class="cantidadCarrito">
+                                <span class="ps-4">
+                                    <i id="${producto.id}" class="bi bi-cart3 iconoCarrito"></i>
+                                </span>
+                            </div>
+                        </div>            
+                    `);        
+                    
+                    // Suscribe el evento click al presionar icono carrito
+                    $(`#${producto.id}`).click(eventHandlerAddShoppingCart) ;
+                }
+            }
+        });
+
     }
 
+    // Suscribe al evento submit del formulario de contacto
     eventHandlerSubmit() {
         
         // FORMA JQUERY
         $("#form-contacto").submit(function(event){
 
             // Se obtiene la lista de contactos del storage
-            this.contactos = JSON.parse(localStorage.getItem('contactos'));
+            let contactos = JSON.parse(localStorage.getItem('contactos'));
 
-            if(!this.contactos){
-                this.contactos = [];
+            if(!contactos){
+                contactos = [];
             }
 
             // Instancia la clase contactoService para hacer el crud
-            const crudContacto = new contactoService(this.contactos, localStorage);
+            const crudContacto = new contactoService(contactos, localStorage);
 
             // Previene el refresh por default
-            //event.preventDefault()
+            event.preventDefault()
 
-            const id = this.contactos.length + 1;
+            const id = contactos.length + 1;
             const nombre = $("#nombre").val();
             const email = $("#email").val();
             const newsletter = $("#flexCheckChecked").val();
 
             // Verifica si ya existe contacto con ese nombre
             let contacto = crudContacto.read(nombre);
+            let respuesta;
 
             // Si no existe lo crea
             if (!contacto) {
                 // Se crea un nuevo contacto
-                const contacto = new Contacto(id, nombre, email, newsletter);
-                crudContacto.create(contacto);                
+                const newContacto = new Contacto(id, nombre, email, newsletter);
+                crudContacto.create(newContacto);                
             }
             else {
                 // Si existe actualiza
                 crudContacto.update(contacto, email, newsletter);
-            }            
+            }  
+            
+            // Mensaje de Exito al enviar formulario
+            $("#mensajeSubmit").show("slow",function(){
+                $("#mensajeSubmit").fadeOut(2000);
+            });
+
+            $("#form-contacto").trigger("reset");
+     
         });
-    }
+    }    
 
-    // Agregar producto al carrito de compras presionando el icono carrito 
-    // y agregando cantidad
-    eventHandlerShoppingCart() {
-        
-        // FORMA CON JQUERY
-        for (const producto of productos) {
-
-            $(`#${producto.id}`).click( function(event){
-                
-                // Se obtiene el carrito del storage
-                let carritoLocalStorage = JSON.parse(localStorage.getItem('carrito'));
-
-                if(!carritoLocalStorage){
-                    carritoLocalStorage = [];
-                }
-
-                // Instancia la clase carritoService para hacer el crud
-                const crudCarrito = new carritoService(carritoLocalStorage,localStorage);
-
-                // Previene el refresh por default
-                // event.preventDefault()
-
-                let cant = $(`#idCant${producto.id}`).val();
-                const itemCarrito = new Carrito(producto.id, producto.nombre, cant, producto.precio, producto.srcImagen);
-                crudCarrito.create(itemCarrito);
-
-                // Actualiza en tiempo real el icono fijo contador del carrito de compras
-                $("#count").text(`${crudCarrito.carrito.length}`);
-
-                // Actualiza la cantidad del carrito de compras clickeado al valor default 1
-                $(`#idCant${producto.id}`).val("1");
-
-            });            
-
-        }
-
-    }
-
-    // Se ejecuta cuando presiono el icono fijo de carrito de compras
-    // y el boton Iniciar compra en el detalle de items en el carrito de compras
+    // Suscribe al evento Click icono fijo de carrito y boton iniciar compra en el modal
     eventHandlerDetalleShoppingCart(){
 
-        // FORMA JQUERY
-        
-        // Evento Iniciar Compra 
-        $("#comprar").click( function(event) {
+        // Suscribe al Evento Modal - Detalle del carrito
+        $("#idCarrito").click( buildItemsInShoppingCart ) ;
 
-            let key; 
-            for (let i = 0; i < localStorage.length; i++) {   
-                
-                key = localStorage.key(i);   
-                
-                if(key == "carrito"){ 
-                    localStorage.removeItem(key);
-                }
-
-             }
-
-            $("#count").text("0");    
-
-        })
-
-        // Evento Modal - Detalle del carrito
-        $("#idCarrito").click( buildItemsShoppingCart ) ;
+        // Suscribe al Evento Iniciar Compra
+        $("#comprar").click( iniciarCompra ) ;
 
     }
 
 } // class mainApp
 
-    function buildItemsShoppingCart(){
+    // Agrega producto al carrito de compras presionando el icono carrito 
+    // y agregando cantidad
+    function eventHandlerAddShoppingCart(event) {
+        
+        let idProducto = parseInt(event.target.id);
+        const dirImagen = "../images/carritoMakeup/";
+
+        // Se obtiene el carrito del storage
+        let carritoLocalStorage = JSON.parse(localStorage.getItem('carrito'));
+
+        if(!carritoLocalStorage){
+            carritoLocalStorage = [];
+        }
+
+        // Instancia la clase carritoService para hacer el crud
+        const crudCarrito = new carritoService(carritoLocalStorage,localStorage);
+
+        // Previene el refresh por default
+        // event.preventDefault()
+
+        const producto = globalProductos.find(producto => producto.id === idProducto);
+        let cant = parseInt($(`#idCant-${idProducto}`).val());
+
+        /*let nombre = $(`#idNombre-${idProducto}`).text().trim(),
+            cant = parseInt($(`#idCant-${idProducto}`).val()),
+            precio = $(`#idPrecio-${idProducto}`).text().trim(),
+            imagen = $(`#idImagen-${idProducto}`).attr('src').trim();
+
+            precio = parseFloat(precio.replace("$","").trim()).toFixed(2);*/
+
+        // const itemCarrito = new Carrito(idProducto, nombre, cant, precio, imagen);
+        const itemCarrito = new Carrito(producto.id, producto.nombre, cant, producto.precio, (dirImagen + producto.imagen));
+        crudCarrito.create(itemCarrito);
+
+        // Actualiza en tiempo real el icono fijo contador del carrito de compras
+        $("#count").text(`${crudCarrito.carrito.length}`);
+
+        // Actualiza la cantidad del carrito de compras clickeado al valor default 1
+        $(`#idCant-${idProducto}`).val("1");
+
+    }
+
+    // Construye el detalle de items en el modal
+    function buildItemsInShoppingCart(){
 
         try {
     
             // Se obtiene la lista de items en el carrito del storage
             let carritoLocalStorage = JSON.parse(localStorage.getItem('carrito'));
 
-            if(!carritoLocalStorage){
+            if(!carritoLocalStorage || carritoLocalStorage.length === 0 ){
+
                 // Inicializamos el detalle
                 $("#detalleCarrito").text("");
                 $("#total").text("");
+                
                 $("#detalleCarrito").append("No existe nada cargado en el carrito");
+                
                 throw Error("No existe nada cargado en el carrito");
+            
             }
 
             // Instancia la clase carritoService para hacer el crud
@@ -320,7 +320,7 @@ class mainApp{
                             </div>
                         </div>   
                         <!-- Eliminar -->
-                        <div id="col-${item.id}" class="col-2">
+                        <div id="delItem-${item.id}" class="col-2">
                             <button class="h6 text-muted p-1">
                                 X 
                             </button>
@@ -328,18 +328,19 @@ class mainApp{
                     </div>
                 
                 `);     
-                
-                // Suscribe al evento eliminar
-                $(`#col-${item.id}`).click( function(){
+
+                $(`#delItem-${item.id}`).click( function(){
 
                     crudCarrito.delete(item.id, carritoLocalStorage);
-                    // $("#total").text("");
-                    buildItemsShoppingCart();
+                    buildItemsInShoppingCart();
+
                     let count = 0;
                     let cart = JSON.parse(localStorage.getItem('carrito'));
+                    
                     if (cart) {
                         count = cart.length;    
                     }
+                    
                     $("#count").text(count);  
                 
                 });
@@ -381,17 +382,34 @@ class mainApp{
             console.log(error);
         }            
 
+    }
+
+    // Al presionar Iniciar compra actualiza el localStorage y el contador
+    function iniciarCompra(){
+
+        let key; 
+        for (let i = 0; i < localStorage.length; i++) {   
+                
+            key = localStorage.key(i);   
+                
+            if(key == "carrito"){ 
+                localStorage.removeItem(key);
+            }
+
         }
 
+        $("#count").text("0"); 
+
+    }
+
 // MAIN
-// $( document ).ready(function() {
-window.onload = () => {    
-    const app = new mainApp(document, localStorage);
+$(document).ready(function() {
+
+    const app = new mainApp();
     app.buildMenu();
     app.buildProductos();
     app.eventHandlerSubmit();
-    app.eventHandlerShoppingCart();
     app.counterItemsShoppingCart();
     app.eventHandlerDetalleShoppingCart();
-}
-    // });
+
+});
