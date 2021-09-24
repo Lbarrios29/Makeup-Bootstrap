@@ -42,14 +42,15 @@ class carritoService {
 
     }
 
-    // // Actualiza un Carrito por su nombre
-    // update(Carrito,email,newsletter) {
+    // Actualiza un Carrito por su nombre
+    update(item) {
         
-    //     Carrito.email = email;
-    //     Carrito.newsletter = newsletter;
-    //     this.localStorage.setItem('Carritos', JSON.stringify(this.Carritos));
+        const index = this.carrito.findIndex( itemCarrito => itemCarrito.id === item.id );
+        // carrito.cantidad = cantidad;
+        this.carrito[index].cantidad = item.cantidad;
+        this.localStorage.setItem('carrito', JSON.stringify(this.carrito));
     
-    // }
+    }
 
     // Elimina un Carrito por su id
     delete(id,carrito) {

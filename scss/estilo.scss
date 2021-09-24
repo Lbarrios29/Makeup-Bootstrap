@@ -523,6 +523,25 @@ $ancho in $width {
         font-size: 33px;
         z-index: 100;
     }
+
+    #idCarrito{
+        @include anchoAlto(50px, 50px);
+        bottom: 80px;
+        right: 20px;
+        font-size: 33px;
+        z-index: 100;
+    }
+
+    #count{
+        bottom: 125px;
+        right: 40px;
+        font-size: 15px;
+    }
+
+    .card-ancho{
+        width: 100%!important;
+    }
+
 }
 
 /*TELEFONOS LANDSCAPE + TABLET VERTICAL DISPOSITIVOS SMALLS*/

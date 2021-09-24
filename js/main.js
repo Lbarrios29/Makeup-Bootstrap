@@ -128,26 +128,53 @@ class mainApp{
                 
                 for (const producto of productos) {
 
-                    $(".mainServicioMakeup").append(`
-                        <div>
-                            <img src="${dirImagen + producto.imagen}" alt="${producto.descripcion}"
-                                loading="lazy" class="img-fluid">
-                            <div class="h5 pt-3 fw-bold productoMakeup">
-                                ${producto.nombre}
+                    $("#mainServicioMakeup").append(`
+
+                        <div class="col">
+                            <div class="card h-100 w-75 card-ancho">
+                                
+                                <img src="${dirImagen + producto.imagen}" class="card-img-top img-fluid" loading="lazy" alt="${producto.descripcion}">
+                                
+                                <div class="card-body">
+                                
+                                    <div class="card-title pt-3 fw-bold productoMakeup text-center pb-3">
+                                        ${producto.nombre}
+                                    </div>
+                                    
+                                    <div class="h6 text-muted d-flex justify-content-center">
+                                        <div>
+                                            Precio:
+                                        </div>
+                                        <div class="ms-2">
+                                            $${parseFloat(producto.precio).toFixed(2)}
+                                        </div>
+                                    </div>
+
+                                    <div class="h6 text-muted d-flex justify-content-center">
+                                        <label for="idCant-${producto.id}" class="">
+                                            Cantidad:
+                                        </label>
+                                        <input id="idCant-${producto.id}" type="number" value="1" min="1" class="ms-1 ps-4 w-25 text-muted border border-secondary">
+                                    </div>
+
+                                    <div class="h6 text-muted d-flex justify-content-center">
+                                        <label>
+                                            Stock:
+                                        </label>
+                                        <div class="ms-1">${producto.stock} uds.</div>
+                                    </div>
+
+                                    <button id="${producto.id}" type="button" class="btn btn-dark w-100 mt-3">
+                                        Agregar al carrito
+                                        <i class="bi bi-cart3 ps-2"></i>
+                                    </button>
+                                </div>
                             </div>
-                            <span class="h6 text-muted">
-                                $${parseFloat(producto.precio).toFixed(2)}
-                            </span>
-                            <div class="d-flex pt-3">
-                                <input id="idCant-${producto.id}" type="number" value="1" min="1" class="cantidadCarrito">
-                                <span class="ps-4">
-                                    <i id="${producto.id}" class="bi bi-cart3 iconoCarrito"></i>
-                                </span>
-                            </div>
-                        </div>            
+                        </div>
+            
                     `);        
                     
-                    // Suscribe el evento click al presionar icono carrito
+                    // Suscribe el evento click al presionar boton carrito
                     $(`#${producto.id}`).click(eventHandlerAddShoppingCart) ;
                 }
             }
@@ -224,6 +251,8 @@ class mainApp{
         let idProducto = parseInt(event.target.id);
         const dirImagen = "../images/carritoMakeup/";
 
+        let itemCarrito=[];
+
         // Se obtiene el carrito del storage
         let carritoLocalStorage = JSON.parse(localStorage.getItem('carrito'));
 
@@ -240,16 +269,21 @@ class mainApp{
         const producto = globalProductos.find(producto => producto.id === idProducto);
         let cant = parseInt($(`#idCant-${idProducto}`).val());
 
-        /*let nombre = $(`#idNombre-${idProducto}`).text().trim(),
-            cant = parseInt($(`#idCant-${idProducto}`).val()),
-            precio = $(`#idPrecio-${idProducto}`).text().trim(),
-            imagen = $(`#idImagen-${idProducto}`).attr('src').trim();
+        // Si ya existe el producto en el carrito suma la cantidad
+        const itemProducto = carritoLocalStorage.find( item => item.id === idProducto);        
 
-            precio = parseFloat(precio.replace("$","").trim()).toFixed(2);*/
+        // Actualiza cantidad
+        if (itemProducto) {
+            itemProducto.cantidad += cant;
+            itemCarrito = new Carrito(producto.id, producto.nombre, itemProducto.cantidad, producto.precio, (dirImagen + producto.imagen));
+            crudCarrito.update(itemCarrito);
+        }
+        // Agrega producto a carrito
+        else{
+            itemCarrito = new Carrito(producto.id, producto.nombre, cant, producto.precio, (dirImagen + producto.imagen));
+            crudCarrito.create(itemCarrito);
+        }
 
-        // const itemCarrito = new Carrito(idProducto, nombre, cant, precio, imagen);
-        const itemCarrito = new Carrito(producto.id, producto.nombre, cant, producto.precio, (dirImagen + producto.imagen));
-        crudCarrito.create(itemCarrito);
 
         // Actualiza en tiempo real el icono fijo contador del carrito de compras
         $("#count").text(`${crudCarrito.carrito.length}`);
@@ -266,12 +300,15 @@ class mainApp{
     
             // Se obtiene la lista de items en el carrito del storage
             let carritoLocalStorage = JSON.parse(localStorage.getItem('carrito'));
+            $(".separator").show();
 
             if(!carritoLocalStorage || carritoLocalStorage.length === 0 ){
 
                 // Inicializamos el detalle
                 $("#detalleCarrito").text("");
+                $("#subTotal").text("");
                 $("#total").text("");
+                $(".separator").hide();
                 
                 $("#detalleCarrito").append("No existe nada cargado en el carrito");
                 
@@ -294,39 +331,39 @@ class mainApp{
 
                 subtotal += (item.precio * item.cantidad);
 
+                // ITEMS - CARRITO
                 $("#detalleCarrito").append(`
-
-                    <div id="item-${item.id}" class="row pt-2 justify-content-center align-items-center">
+                
+                    <div class="row row-cols-5 text-muted justify-content-center align-items-center pt-2">
                         <!-- Imagen -->
                         <div class="col-3">
-                            <img src= "${item.srcImagen}" class="img-fluid">
+                            <img src="${item.srcImagen}" class="img-fluid">
                         </div>
                         <!-- Producto -->
                         <div class="col-3">
-                            <div class="pt-3 fw-bold text-muted"> 
+                            <div class="fw-bold pb-2">
                                 ${item.producto} 
                             </div>
                         </div>
                         <!-- Precio -->
                         <div class="col-2">
-                            <div class="h6 text-muted"> 
-                                $${item.precio} 
+                            <div class="h6">
+                                $${item.precio}
                             </div>
                         </div>
                         <!-- Cantidad -->
                         <div class="col-2">
-                            <div class="h6 text-muted">
-                                ${item.cantidad} Unid. 
+                            <div class="h6">
+                                ${item.cantidad} Unid.
                             </div>
-                        </div>   
+                        </div>
                         <!-- Eliminar -->
                         <div id="delItem-${item.id}" class="col-2">
-                            <button class="h6 text-muted p-1">
-                                X 
+                            <button class="border-1 btn btn-secondary p-1">
+                                X
                             </button>
-                        </div>                                                
-                    </div>
-                
+                        </div>    
+                    </div>                        
                 `);     
 
                 $(`#delItem-${item.id}`).click( function(){
@@ -347,36 +384,56 @@ class mainApp{
             }
 
             total = subtotal + envios;
-            $("#total").text("");
-            $("#total").append(`
-                <!-- Subtotal -->
-                <div class="row justify-content-center align-items-center">
-                    <div class="col-9 pt-2 ps-5 fw-bold text-muted">
-                        Subtotal
+
+            // SUBTOTAL
+            $("#subTotal").text("");
+            $("#subTotal").append(`  
+                <div class="row row-cols-2 text-muted justify-content-center align-items-center">
+                    <!-- Subtotal -->
+                    <div class="col-9">
+                        <div class="fw-bold">
+                            Subtotal
+                        </div>
                     </div>
-                    <div class="col h6 text-muted">
-                        $${parseFloat(subtotal).toFixed(2)}
-                    </div> 
-                </div>
-                <!-- Envios -->
-                <div class="row justify-content-center align-items-center">
-                    <div class="col-9 pt-2 ps-5 fw-bold text-muted">
-                        Envios
+                    <!-- Valor -->
+                    <div class="col-3">
+                        <div class="h6">
+                            $${parseFloat(subtotal).toFixed(2)}
+                        </div>
                     </div>
-                    <div class="col h6 text-muted">
-                        $${parseFloat(envios).toFixed(2)}
-                    </div> 
-                </div>    
-                <!-- Total -->
-                <div class="row justify-content-center align-items-center">
-                    <div class="col-9 pt-2 ps-5 fw-bold text-muted">
-                        Total
+                    <!-- Envios -->
+                    <div class="col-9">
+                        <div class="fw-bold">
+                            Envios
+                        </div>
                     </div>
-                    <div class="col h6 text-muted">
-                        $${parseFloat(total).toFixed(2)}
-                    </div> 
-                </div>             
+                    <!-- Valor -->
+                    <div class="col-3">
+                        <div class="h6">
+                            $${parseFloat(envios).toFixed(2)}
+                        </div>
+                    </div>
+                </div>                
             `);        
+
+            // TOTAL
+            $("#total").text("");
+            $("#total").append(`  
+                <div class="row row-cols-2 text-muted justify-content-center align-items-center">
+                    <!-- Total -->
+                    <div class="col-9">
+                        <div class="fw-bold">
+                            TOTAL
+                        </div>
+                    </div>
+                    <!-- Valor -->
+                    <div class="col-3">
+                        <div class="h6">
+                            $${parseFloat(total).toFixed(2)}
+                        </div>
+                    </div>
+                </div>                
+            `);
 
         } catch (error) {
             console.log(error);
