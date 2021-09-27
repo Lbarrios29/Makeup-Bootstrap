@@ -114,12 +114,12 @@ class mainApp{
     buildProductos(){
 
         //Declaramos la url del archivo JSON local
-        // const URL_JSON = "../data/productos.json",
-        const URL_JSON_GET = "http://localhost:3000/productos",
+        const URL_JSON_LOCAL = "../data/productos.json",
+              URL_JSON_SERVER_GET = "http://localhost:3000/productos",
               dirImagen = "../images/carritoMakeup/"  
 
         // Se obtiene los productos del archivo .json cargado localmente
-        $.get(URL_JSON_GET, function (respuesta, estado) {
+        $.get(URL_JSON_LOCAL, function (respuesta, estado) {
 
             if(estado === "success"){
                 
