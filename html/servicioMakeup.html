@@ -59,7 +59,8 @@
                 Productos Makeup
             </h1>
 
-            <div class="container-sm .container-md .container-lg">
+            <!-- Listado de Productos -->
+            <div class="container-sm container-md container-lg">
                 <div id="mainServicioMakeup" class="row row-cols-2 row-cols-sm-2 row-cols-md-2 
                             row-cols-lg-3 g-2 g-lg-3 g-md-3 g-sm-2 ms-md-5">
 
@@ -68,60 +69,23 @@
         </section>
     </main>
 
-    <!-- Carrito con modelo Bootstrap -->
-    <!-- <div class="container-sm .container-md .container-lg">
-        <div class="row row-cols-2 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 g-2 g-lg-3 g-md-3 g-sm-2 ms-md-5">
-            <div class="col">
-                <div class="card h-100 w-75">
-
-                    <img src="../images/carritoMakeup/Esponja.jpeg" class="card-img-top img-fluid" alt="...">
-
-                    <div class="card-body">
-
-                        <h5 class="card-title pt-3 fw-bold productoMakeup text-center pb-3">Esponja Soft Blender</h5>
-
-                        <div class="h6 text-muted d-lg-flex d-md-flex d-sm-flex justify-content-center">
-                            <label>Precio:</label>
-                            <div class="ms-2">$503.00</div>
-                        </div>
-
-                        <div class="h6 text-muted d-lg-flex d-md-flex d-sm-flex justify-content-center">
-                            <label for="ticketNum" class="">Cantidad:</label>
-                            <input id="ticketNum" type="number" value="1" min="1" class="ms-1 ps-4 w-25 text-muted">
-                        </div>
-
-                        <div class="h6 text-muted d-lg-flex d-md-flex d-sm-flex justify-content-center">
-                            <label>Stock:</label>
-                            <div class="ms-1">100 uds.</div>
-                        </div>
-
-                        <a href="#" class="btn btn-dark w-100 mt-3">
-                            Agregar al carrito
-                            <i class="bi bi-cart3 ps-2"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>    
-        </div>
-    </div> -->
-
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Carrito de Compras</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <!-- Detalle de items en modal carrito -->
-                <div id="detalleCarrito" class="modal-body container-sm .container-md .container-lg">
+                <div id="detalleCarrito" class="modal-body container-sm container-md container-lg">
                 </div>
                 <hr class="separator bg-secondary">
 
-                <div id="subTotal" class="container-sm .container-md .container-lg"></div>
+                <div id="subTotal" class="container-sm container-md container-lg"></div>
                 <hr class="separator bg-secondary">
 
-                <div id="total" class="container-sm .container-md .container-lg">
+                <div id="total" class="container-sm container-md container-lg">
                 </div>
 
                 <div class="modal-footer">
@@ -132,6 +96,7 @@
                         Iniciar Compra
                     </button>
                 </div>
+
             </div>
         </div>
     </div>

@@ -44,31 +44,6 @@
                 <!-- Menu listado de opciones -->
                 <div class="collapse navbar-collapse pe-5" id="navbarNav">
                     <ul id="menuHeader" class="navbar-nav ms-auto">
-                        <!-- <li class="nav-item">
-                            <a class="nav-link  fw-bold text-uppercase menuSecciones" href="../index.html">
-                                Home
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link  fw-bold text-uppercase menuSecciones" href="../html/nosotros.html">
-                                Nosotros
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link  fw-bold text-uppercase menuSecciones" href="../html/servicios.html">
-                                Servicios
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link  fw-bold text-uppercase menuSecciones" href="../html/galeria.html">
-                                Galería
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link  fw-bold text-uppercase menuSecciones" href="../html/contacto.html">
-                                Contacto
-                            </a>
-                        </li> -->
                     </ul>
                 </div>
 
@@ -183,15 +158,22 @@
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Carrito de Compras</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div id="detalleCarrito" class="modal-body">
+                <!-- Detalle de items en modal carrito -->
+                <div id="detalleCarrito" class="modal-body container-sm .container-md .container-lg">
                 </div>
-                <div id="total" class="container"></div>
+                <hr class="separator bg-secondary">
+
+                <div id="subTotal" class="container-sm .container-md .container-lg"></div>
+                <hr class="separator bg-secondary">
+
+                <div id="total" class="container-sm .container-md .container-lg">
+                </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Salir</button>
                     <button id="comprar" type="button" class="btn btn-primary" data-bs-dismiss="modal">Iniciar

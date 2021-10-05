@@ -10,13 +10,14 @@ class mainApp{
     // Actualiza en tiempo real el contador de items del carrito
     counterItemsShoppingCart(){
 
-        // Se obtiene la lista de contactos del storage
+        // Se obtiene el carrito del Local Storage
         let arrayCarrito = JSON.parse(localStorage.getItem('carrito'));
 
         if (!arrayCarrito) {
             arrayCarrito = [];
         }
 
+        // Setea la cantidad al contador    
         $("#count").text(`${arrayCarrito.length}`);
 
     }
@@ -97,7 +98,7 @@ class mainApp{
             clasesMenu = "nav-link fw-bold text-uppercase menuSecciones";
         }               
 
-        // TERCERA FORMA JQUERY
+        // Crea el menu del Sitio
         for (const seccion of secciones) {
 
             $("#menuHeader").append( `<li class="nav-item">
@@ -114,8 +115,8 @@ class mainApp{
     buildProductos(){
 
         //Declaramos la url del archivo JSON local
-        const URL_JSON_LOCAL = "../data/productos.json",
-              URL_JSON_SERVER_GET = "http://localhost:3000/productos",
+        const URL_JSON_LOCAL = "../data/productos.json",               // Archivo .json
+              URL_JSON_SERVER_GET = "http://localhost:3000/productos", // Servidor Local
               dirImagen = "../images/carritoMakeup/"  
 
         // Se obtiene los productos del archivo .json cargado localmente
@@ -131,7 +132,7 @@ class mainApp{
                     $("#mainServicioMakeup").append(`
 
                         <div class="col">
-                            <div class="card h-100 w-75 card-ancho">
+                            <div id = "alert-${producto.id}" class="card h-100 w-75 card-ancho">
                                 
                                 <img src="${dirImagen + producto.imagen}" class="card-img-top img-fluid" loading="lazy" alt="${producto.descripcion}">
                                 
@@ -154,7 +155,7 @@ class mainApp{
                                         <label for="idCant-${producto.id}" class="">
                                             Cantidad:
                                         </label>
-                                        <input id="idCant-${producto.id}" type="number" value="1" min="1" class="ms-1 ps-4 w-25 text-muted border border-secondary">
+                                        <input id="idCant-${producto.id}" type="number" value="1" min="1" max="${producto.stock}" class="ms-1 ps-2 w-25 text-muted border border-secondary">
                                     </div>
 
                                     <div class="h6 text-muted d-flex justify-content-center">
@@ -169,24 +170,47 @@ class mainApp{
                                         <i class="bi bi-cart3 ps-2"></i>
                                     </button>
                                 </div>
+
+                                <div class="container container-md container-sm">
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                                        <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
+                                            <path
+                                                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                                        </symbol>
+                                    </svg>
+
+                                    <div class="alert alert-success fade show align-items-center" role="alert" style="display: none;"
+                                        id="success-addToShoppingCart-alert-${producto.id}">
+                                        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:">
+                                            <use xlink:href="#check-circle-fill" />
+                                        </svg>
+                                        <span>
+                                            Se agregó al carrito.
+                                        </span>
+                                    </div>
+
+                                </div>    
+
                             </div>
                         </div>
             
                     `);        
                     
                     // Suscribe el evento click al presionar boton carrito
-                    $(`#${producto.id}`).click(eventHandlerAddShoppingCart) ;
-                }
+                    $(`#${producto.id}`).click(eventHandlerAddItemToShoppingCart) ;
+
+                } // for (const producto of productos) {
             }
         });
 
     }
 
-    // Suscribe al evento submit del formulario de contacto
+    // Manejador del evento submit del formulario de contacto
     eventHandlerSubmit() {
         
-        // FORMA JQUERY
-        $("#form-contacto").submit(function(event){
+        // Suscribe el evento
+        $("#form-contacto").submit( function(event){
 
             // Se obtiene la lista de contactos del storage
             let contactos = JSON.parse(localStorage.getItem('contactos'));
@@ -208,7 +232,6 @@ class mainApp{
 
             // Verifica si ya existe contacto con ese nombre
             let contacto = crudContacto.read(nombre);
-            let respuesta;
 
             // Si no existe lo crea
             if (!contacto) {
@@ -220,12 +243,18 @@ class mainApp{
                 // Si existe actualiza
                 crudContacto.update(contacto, email, newsletter);
             }  
-            
-            // Mensaje de Exito al enviar formulario
-            $("#mensajeSubmit").show("slow",function(){
-                $("#mensajeSubmit").fadeOut(2000);
+
+            // Mensaje de Exito al enviar formulario Primer disenio
+            // $("#mensajeSubmit").show("slow",function(){
+            //     $("#mensajeSubmit").fadeOut(2000);                
+            // });
+
+            // Mensaje de Exito al enviar formulario Segundo disenio
+            $("#mensajeSubmit").fadeTo(2000, 500).slideUp(500, function() {
+                $("#mensajeSubmit").slideUp(500);
             });
 
+            // Limpia valores del formulario
             $("#form-contacto").trigger("reset");
      
         });
@@ -246,50 +275,68 @@ class mainApp{
 
     // Agrega producto al carrito de compras presionando el icono carrito 
     // y agregando cantidad
-    function eventHandlerAddShoppingCart(event) {
+    function eventHandlerAddItemToShoppingCart(event) {
         
-        let idProducto = parseInt(event.target.id);
-        const dirImagen = "../images/carritoMakeup/";
+        try {         
 
-        let itemCarrito=[];
+            const idProducto = parseInt(event.target.id);
+            const dirImagen = "../images/carritoMakeup/";
 
-        // Se obtiene el carrito del storage
-        let carritoLocalStorage = JSON.parse(localStorage.getItem('carrito'));
+            let itemCarrito=[];
 
-        if(!carritoLocalStorage){
-            carritoLocalStorage = [];
+            // Se obtiene el carrito del storage
+            let carritoLocalStorage = JSON.parse(localStorage.getItem('carrito'));
+
+            if(!carritoLocalStorage){
+                carritoLocalStorage = [];
+            }
+
+            // Instancia la clase carritoService para hacer el crud
+            const crudCarrito = new carritoService(carritoLocalStorage,localStorage);
+
+            // Previene el refresh por default
+            // event.preventDefault()
+
+            const producto = globalProductos.find(producto => producto.id === idProducto);
+
+            // Lee la cantidad ingresada
+            let cant = parseInt($(`#idCant-${idProducto}`).val());
+
+            if (cant > producto.stock) {
+                throw Error("Cantidad ingresada supera al stock");
+            }
+
+            // Si ya existe el producto en el carrito suma la cantidad
+            const itemProducto = carritoLocalStorage.find( item => item.id === idProducto);        
+
+            // Actualiza cantidad
+            if (itemProducto) {
+                itemProducto.cantidad += cant;
+                itemCarrito = new Carrito(producto.id, producto.nombre, itemProducto.cantidad, producto.precio, (dirImagen + producto.imagen));
+                crudCarrito.update(itemCarrito);
+            }
+            // Agrega producto a carrito
+            else{
+                itemCarrito = new Carrito(producto.id, producto.nombre, cant, producto.precio, (dirImagen + producto.imagen));
+                crudCarrito.create(itemCarrito);
+            }
+
+
+            // Actualiza en tiempo real el icono fijo contador del carrito de compras
+            $("#count").text(`${crudCarrito.carrito.length}`);
+
+            // Actualiza la cantidad del carrito de compras clickeado al valor default 1
+            $(`#idCant-${idProducto}`).val("1");
+
+            // Mensaje de Exito al agregar al carrito
+            $(`#success-addToShoppingCart-alert-${idProducto}`).fadeTo(1000, 500).slideUp(500, function() {
+                $(`#success-addToShoppingCart-alert-${idProducto}`).slideUp(500);
+            });
+
+        } catch (error) {
+            console.log(error);
+            alert("La cantidad ingresada supera al stock.");
         }
-
-        // Instancia la clase carritoService para hacer el crud
-        const crudCarrito = new carritoService(carritoLocalStorage,localStorage);
-
-        // Previene el refresh por default
-        // event.preventDefault()
-
-        const producto = globalProductos.find(producto => producto.id === idProducto);
-        let cant = parseInt($(`#idCant-${idProducto}`).val());
-
-        // Si ya existe el producto en el carrito suma la cantidad
-        const itemProducto = carritoLocalStorage.find( item => item.id === idProducto);        
-
-        // Actualiza cantidad
-        if (itemProducto) {
-            itemProducto.cantidad += cant;
-            itemCarrito = new Carrito(producto.id, producto.nombre, itemProducto.cantidad, producto.precio, (dirImagen + producto.imagen));
-            crudCarrito.update(itemCarrito);
-        }
-        // Agrega producto a carrito
-        else{
-            itemCarrito = new Carrito(producto.id, producto.nombre, cant, producto.precio, (dirImagen + producto.imagen));
-            crudCarrito.create(itemCarrito);
-        }
-
-
-        // Actualiza en tiempo real el icono fijo contador del carrito de compras
-        $("#count").text(`${crudCarrito.carrito.length}`);
-
-        // Actualiza la cantidad del carrito de compras clickeado al valor default 1
-        $(`#idCant-${idProducto}`).val("1");
 
     }
 
@@ -326,39 +373,40 @@ class mainApp{
             // Inicializamos el detalle
             $("#detalleCarrito").text("");
 
-            // Agrega los item del carrito al modal
+            // Agrega los items del carrito al modal
             for (const item of carritoLocalStorage) {
 
                 subtotal += (item.precio * item.cantidad);
 
-                // ITEMS - CARRITO
+                const producto = globalProductos.find(producto => producto.id === item.id);    
+
+                // Arma Items - Carrito
                 $("#detalleCarrito").append(`
                 
                     <div class="row row-cols-5 text-muted justify-content-center align-items-center pt-2">
                         <!-- Imagen -->
-                        <div class="col-3">
+                        <div class="col-3 col-lg-3 col-sm-3">
                             <img src="${item.srcImagen}" class="img-fluid">
                         </div>
                         <!-- Producto -->
-                        <div class="col-3">
+                        <div class="col-3 col-lg-3 col-sm-3">
                             <div class="fw-bold pb-2">
                                 ${item.producto} 
                             </div>
                         </div>
                         <!-- Precio -->
-                        <div class="col-2">
+                        <div class="col-2 col-lg-2 col-sm-2">
                             <div class="h6">
                                 $${item.precio}
                             </div>
                         </div>
                         <!-- Cantidad -->
-                        <div class="col-2">
-                            <div class="h6">
-                                ${item.cantidad} Unid.
-                            </div>
+                        <div class="col-2 col-lg-2 col-sm-2">
+                            <input id= "cantModal-${item.id}" type="number" value="${item.cantidad}" min="1" max="${producto.stock}" 
+                                class="h6 ps-2 pt-2 pb-2 text-muted border border-secondary">
                         </div>
                         <!-- Eliminar -->
-                        <div id="delItem-${item.id}" class="col-2">
+                        <div id="delItem-${item.id}" class="col-2 col-lg-2 col-sm-2">
                             <button class="border-1 btn btn-secondary p-1">
                                 X
                             </button>
@@ -366,11 +414,14 @@ class mainApp{
                     </div>                        
                 `);     
 
+                // Suscribe evento eliminar item del carrito    
                 $(`#delItem-${item.id}`).click( function(){
 
+                    // Elimina item del carrito y construye nuevamente el carrito
                     crudCarrito.delete(item.id, carritoLocalStorage);
                     buildItemsInShoppingCart();
 
+                    // Actualiza el contador del carrito
                     let count = 0;
                     let cart = JSON.parse(localStorage.getItem('carrito'));
                     
@@ -381,6 +432,15 @@ class mainApp{
                     $("#count").text(count);  
                 
                 });
+
+                // Suscribe evento change de la cantidad actualizada del item del carrito 
+                $(`#cantModal-${item.id}`).change( function(){
+                    
+                    item.cantidad = parseInt($(`#cantModal-${item.id}`).val());
+                    crudCarrito.update(item);
+                    buildItemsInShoppingCart();
+
+                })
             }
 
             total = subtotal + envios;
@@ -444,18 +504,37 @@ class mainApp{
     // Al presionar Iniciar compra actualiza el localStorage y el contador
     function iniciarCompra(){
 
-        let key; 
-        for (let i = 0; i < localStorage.length; i++) {   
-                
-            key = localStorage.key(i);   
-                
-            if(key == "carrito"){ 
-                localStorage.removeItem(key);
+        try {
+    
+
+            // Se obtiene el carrito del storage
+            let carritoLocalStorage = JSON.parse(localStorage.getItem('carrito'));
+
+            if (!carritoLocalStorage) {
+                throw Error("No hay nada para comprar.");
             }
 
-        }
+            let key; 
+            // ELimina carrito del Local Storage
+            for (let i = 0; i < localStorage.length; i++) {   
+                    
+                key = localStorage.key(i);   
+                    
+                if(key == "carrito"){ 
+                    localStorage.removeItem(key);
+                }
 
-        $("#count").text("0"); 
+            }
+
+            // Inicializa el contador del carrito a 0
+            $("#count").text("0"); 
+
+            alert("Felicidades! Su compra se realizo correctamente");
+
+        } catch (error) {
+            console.log(error);
+            alert("Ingresa a nuestra sección Servicios para comprar");
+        }
 
     }
 

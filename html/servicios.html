@@ -352,15 +352,22 @@
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Carrito de Compras</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div id="detalleCarrito" class="modal-body">
+                <!-- Detalle de items en modal carrito -->
+                <div id="detalleCarrito" class="modal-body container-sm .container-md .container-lg">
                 </div>
-                <div id="total" class="container"></div>
+                <hr class="separator bg-secondary">
+
+                <div id="subTotal" class="container-sm .container-md .container-lg"></div>
+                <hr class="separator bg-secondary">
+
+                <div id="total" class="container-sm .container-md .container-lg">
+                </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Salir</button>
                     <button id="comprar" type="button" class="btn btn-primary" data-bs-dismiss="modal">Iniciar
