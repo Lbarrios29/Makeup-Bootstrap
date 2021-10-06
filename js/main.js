@@ -396,7 +396,7 @@ class mainApp{
                             </div>
                         </div>
                         <!-- Precio -->
-                        <div class="col-2 col-lg-2 col-sm-2">
+                        <div class="col-3 col-lg-2 col-sm-3">
                             <div class="h6">
                                 $${item.precio}
                             </div>
@@ -415,7 +415,7 @@ class mainApp{
                             </div>
                         </div>
                         <!-- Eliminar -->
-                        <div id="delItem-${item.id}" class="col-2 col-lg-2 col-sm-2">
+                        <div id="delItem-${item.id}" class="col-1 col-lg-2 col-sm-1">
                             <button class="border-0 text-muted bg-light fs-5 p-1">
                                 X
                             </button>
