@@ -117,10 +117,11 @@ class mainApp{
         //Declaramos la url del archivo JSON local
         const URL_JSON_LOCAL = "../data/productos.json",               // Archivo .json
               URL_JSON_SERVER_GET = "http://localhost:3000/productos", // Servidor Local
-              dirImagen = "../images/carritoMakeup/"  
+              URL_JSON_SERVER_GITHUB_GET = "https://my-json-server.typicode.com/Lbarrios29/fakeAPI/productos",
+              dirImagen = "../images/carritoMakeup/";  
 
         // Se obtiene los productos del archivo .json cargado localmente
-        $.get(URL_JSON_LOCAL, function (respuesta, estado) {
+        $.get(URL_JSON_SERVER_GITHUB_GET, function (respuesta, estado) {
 
             if(estado === "success"){
                 
@@ -381,12 +382,12 @@ class mainApp{
                 const producto = globalProductos.find(producto => producto.id === item.id);    
 
                 // Arma Items - Carrito
-                $("#detalleCarrito").append(`
+                $("#detalleCarrito").prepend(`
                 
-                    <div class="row row-cols-5 text-muted justify-content-center align-items-center pt-2">
+                    <div class="row row-cols-5 text-muted align-items-center justify-content-around pt-2">
                         <!-- Imagen -->
-                        <div class="col-3 col-lg-3 col-sm-3">
-                            <img src="${item.srcImagen}" class="img-fluid">
+                        <div class="col-2 col-lg-2 col-sm-2">
+                            <img src="${item.srcImagen}" class="img-fluid w-50">
                         </div>
                         <!-- Producto -->
                         <div class="col-3 col-lg-3 col-sm-3">
@@ -401,13 +402,21 @@ class mainApp{
                             </div>
                         </div>
                         <!-- Cantidad -->
-                        <div class="col-2 col-lg-2 col-sm-2">
-                            <input id= "cantModal-${item.id}" type="number" value="${item.cantidad}" min="1" max="${producto.stock}" 
-                                class="h6 ps-2 pt-2 pb-2 text-muted border border-secondary">
+                        <div class="col-3 col-lg-2 col-sm-3">
+                            <div class="qtyBox d-flex align-items-center justify-content-around border">
+                                <div id="qtyMinus-${item.id}" class="btnQty qtyMinus fs-3 ps-2" role='button'>
+                                    -
+                                </div>
+                                <input id="cantModal-${item.id}" type="text" name="quantity" value="${item.cantidad}" min="1" max="${producto.stock}" 
+                                    class="qtyInput border-0 text-center form-control shadow-none">
+                                <div id="qtyPlus-${item.id}" class="btnQty qtyPlus fs-3 pe-2" role='button'>
+                                    +
+                                </div>
+                            </div>
                         </div>
                         <!-- Eliminar -->
                         <div id="delItem-${item.id}" class="col-2 col-lg-2 col-sm-2">
-                            <button class="border-1 btn btn-secondary p-1">
+                            <button class="border-0 text-muted bg-light fs-5 p-1">
                                 X
                             </button>
                         </div>    
@@ -434,14 +443,29 @@ class mainApp{
                 });
 
                 // Suscribe evento change de la cantidad actualizada del item del carrito 
-                $(`#cantModal-${item.id}`).change( function(){
+                $(`#cantModal-${item.id}`).change( function(){      
                     
-                    item.cantidad = parseInt($(`#cantModal-${item.id}`).val());
+                    // qty = ( isNaN( qty ) ) ?1 : qty; 
+                    if (isNaN($(`#cantModal-${item.id}`).val())) {
+                        item.cantidad = 1;    
+                    }
+                    else{
+                        item.cantidad = parseInt($(`#cantModal-${item.id}`).val());        
+                    }
+                    
                     crudCarrito.update(item);
                     buildItemsInShoppingCart();
 
                 })
-            }
+
+            } // for (const item of carritoLocalStorage) {
+
+            $("#detalleCarrito").append(`                
+                <hr class="separator bg-secondary">
+                <div id="subTotal" class="container-sm container-md container-lg"></div>
+                <hr class="separator bg-secondary">
+                <div id="total" class="container-sm container-md container-lg"></div>
+            `);
 
             total = subtotal + envios;
 
@@ -494,6 +518,42 @@ class mainApp{
                     </div>
                 </div>                
             `);
+
+            // Suscribe evento click + / - del item del carrito
+            $('.btnQty').click( function(){
+
+                // Recupera la cantidad ingresada
+                let qty = parseInt($(this).parent('.qtyBox').find('.qtyInput').val());
+
+                // Suma o resta en 1 la cantidad
+                if( $(this).hasClass('qtyPlus') ) {
+                    qty++;
+                }else {
+                    if(qty > 1) {
+                        qty--;
+                    }
+                }
+
+                qty = ( isNaN( qty ) ) ?1 : qty;                
+
+                $(this).parent('.qtyBox').find('.qtyInput').val(qty);
+
+                let idMinusPlus = $(this).attr('id');
+                const id = idMinusPlus.split("-");
+
+                const item = globalProductos.find(producto => producto.id === parseInt(id[1]));     
+
+                // Se obtiene la lista de items en el carrito del storage
+                let carritoLocalStorage = JSON.parse(localStorage.getItem('carrito'));
+
+                // Instancia la clase carritoService para hacer el crud
+                const crudCarrito = new carritoService(carritoLocalStorage,localStorage);    
+
+                item.cantidad = qty;
+                crudCarrito.update(item);
+                buildItemsInShoppingCart();
+                
+            }); 
 
         } catch (error) {
             console.log(error);
