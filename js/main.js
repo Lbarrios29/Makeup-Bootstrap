@@ -384,7 +384,7 @@ class mainApp{
                 // Arma Items - Carrito
                 $("#detalleCarrito").prepend(`
                 
-                    <div class="row row-cols-5 text-muted align-items-center justify-content-around pt-2">
+                    <div class="row row-cols-5 text-muted align-items-center pt-2">
                         <!-- Imagen -->
                         <div class="col-2 col-lg-2 col-sm-2">
                             <img src="${item.srcImagen}" class="img-fluid w-50">
@@ -403,7 +403,7 @@ class mainApp{
                         </div>
                         <!-- Cantidad -->
                         <div class="col-3 col-lg-2 col-sm-3">
-                            <div class="qtyBox d-flex align-items-center justify-content-around border">
+                            <div class="qtyBox d-flex align-items-center justify-content-around border w-100">
                                 <div id="qtyMinus-${item.id}" class="btnQty qtyMinus fs-3 ps-2" role='button'>
                                     -
                                 </div>
@@ -416,7 +416,7 @@ class mainApp{
                         </div>
                         <!-- Eliminar -->
                         <div id="delItem-${item.id}" class="col-1 col-lg-2 col-sm-1">
-                            <button class="border-0 text-muted bg-light fs-5 p-1">
+                            <button class="border-0 text-muted bg-light fs-5 pe-3">
                                 X
                             </button>
                         </div>    
