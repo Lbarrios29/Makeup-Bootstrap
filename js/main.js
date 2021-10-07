@@ -271,19 +271,6 @@ class mainApp{
         try {         
 
             const idProducto = parseInt(event.target.id);
-            const dirImagenSeccion = "../images/carritoMakeup/",
-                  dirImagenIndex = "images/carritoMakeup/" ;
-            let dirImagen;      
-
-            // Obtiene el nombre de la pagina en la que estoy si es el index le paso 
-            // el path de secciones y clases correspondiente                    
-            let path = window.location.pathname;
-            let page = path.split("/").pop();
-            let page2 = page.split(".");
-            let pagina = page2[0].toUpperCase();
-
-            dirImagen = (pagina === 'INDEX' || pagina === "") ?dirImagenIndex :dirImagenSeccion ;
-            
             let itemCarrito=[];
 
             // Se obtiene el carrito del storage
@@ -319,10 +306,9 @@ class mainApp{
             }
             // Agrega producto a carrito
             else{
-                itemCarrito = new Carrito(producto.id, producto.nombre, cant, producto.precio, (dirImagen + producto.imagen));
+                itemCarrito = new Carrito(producto.id, producto.nombre, cant, producto.precio, producto.imagen);
                 crudCarrito.create(itemCarrito);
             }
-
 
             // Actualiza en tiempo real el icono fijo contador del carrito de compras
             $("#count").text(`${crudCarrito.carrito.length}`);
@@ -375,6 +361,19 @@ class mainApp{
             // Inicializamos el detalle
             $("#detalleCarrito").text("");
 
+            const dirImagenSeccion = "../images/carritoMakeup/",
+                  dirImagenIndex = "images/carritoMakeup/" ;
+            let dirImagen;      
+
+            // Obtiene el nombre de la pagina en la que estoy si es el index le paso 
+            // el path de secciones y clases correspondiente                    
+            let path = window.location.pathname;
+            let page = path.split("/").pop();
+            let page2 = page.split(".");
+            let pagina = page2[0].toUpperCase();
+
+            dirImagen = (pagina === 'INDEX' || pagina === "") ?dirImagenIndex :dirImagenSeccion ;
+
             // Agrega los items del carrito al modal
             for (const item of carritoLocalStorage) {
 
@@ -388,7 +387,7 @@ class mainApp{
                     <div class="row row-cols-5 text-muted align-items-center pt-2">
                         <!-- Imagen -->
                         <div class="col-2 col-lg-2 col-sm-2">
-                            <img src="${item.srcImagen}" class="img-fluid w-50">
+                            <img src="${dirImagen + item.srcImagen}" class="img-fluid w-50">
                         </div>
                         <!-- Producto -->
                         <div class="col-3 col-lg-3 col-sm-3">
