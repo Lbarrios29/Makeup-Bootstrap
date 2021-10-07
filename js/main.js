@@ -386,10 +386,10 @@ class mainApp{
                 
                     <div class="row row-cols-2 text-muted align-items-center pb-3">
                         <!-- Imagen -->
-                        <div class="col-3 col-lg-2 col-md-1">
+                        <div class="col-3 col-lg-1 col-md-1">
                             <img src="${dirImagen + item.srcImagen }" class="img-fluid">
                         </div>
-                        <div class="col-9 col-md-1 col-lg-10">
+                        <div class="col-9 col-md-1 col-lg-11">
                             <div class="row text-muted align-items-center">                            
                                 <!-- Producto -->
                                 <div class="col">
