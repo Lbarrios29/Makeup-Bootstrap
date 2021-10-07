@@ -1,7 +1,7 @@
 # Elizabeth Makeup
 
-Sitio: https://lbarrios29.github.io/Proyecto-Final-Coderhouse/ /n
-API Server: https://my-json-server.typicode.com/Lbarrios29/coderhouse-server
+_Sitio: https://lbarrios29.github.io/Proyecto-Final-Coderhouse/_
+_API Server: https://my-json-server.typicode.com/Lbarrios29/coderhouse-server_
 
 _El sitio se basa en todo lo relacionado a la industria del maquillaje agregando diversas secciones(Home,Nosotros,Servicios,Galería,Contacto) para interacción con el usuario._
 
