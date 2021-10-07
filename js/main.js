@@ -301,7 +301,7 @@ class mainApp{
             // Actualiza cantidad
             if (itemProducto) {
                 itemProducto.cantidad += cant;
-                itemCarrito = new Carrito(producto.id, producto.nombre, itemProducto.cantidad, producto.precio, (dirImagen + producto.imagen));
+                itemCarrito = new Carrito(producto.id, producto.nombre, itemProducto.cantidad, producto.precio, producto.imagen);
                 crudCarrito.update(itemCarrito);
             }
             // Agrega producto a carrito
