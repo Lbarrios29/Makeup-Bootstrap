@@ -405,9 +405,9 @@ class mainApp{
                             </div>
                         </div>
                         <!-- Eliminar -->
-                        <div id="delItem-${item.id}" class="col-1 col-lg-2 col-sm-1">
-                            <button class="border-0 text-muted bg-light fs-5 pe-3">
-                                X
+                        <div class="col-1 col-lg-2 col-sm-1">
+                            <button id="delItem-${item.id}" class="btn border-0 text-center fs-5 pe-3">
+                                <i class="bi bi-trash"></i>
                             </button>
                         </div>    
                     </div>                        
