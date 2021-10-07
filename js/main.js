@@ -379,18 +379,17 @@ class mainApp{
 
                 subtotal += (item.precio * item.cantidad);
 
-                const producto = globalProductos.find(producto => producto.id === item.id);  
-                let image = dirImagen.concat(item.srcImagen);  
+                const producto = globalProductos.find(producto => producto.id === item.id);
 
                 // Arma Items - Carrito
                 $("#detalleCarrito").prepend(`
                 
-                    <div class="row row-cols-2 text-muted align-items-center pt-3">
+                    <div class="row row-cols-2 text-muted align-items-center pb-3">
                         <!-- Imagen -->
-                        <div class="col-3 col-lg-1">
+                        <div class="col-3 col-lg-2 col-md-1">
                             <img src="${dirImagen + item.srcImagen }" class="img-fluid">
                         </div>
-                        <div class="col-9 col-lg-11">
+                        <div class="col-9 col-md-1 col-lg-10">
                             <div class="row text-muted align-items-center">                            
                                 <!-- Producto -->
                                 <div class="col">
@@ -401,13 +400,13 @@ class mainApp{
                             </div>    
                             <div class="row row-cols-3 text-muted align-items-center pt-2">    
                                 <!-- Precio -->
-                                <div class="col-4 col-lg-3">
+                                <div class="col-3 col-lg-3">
                                     <div class="h6">
                                         $${item.precio}
                                     </div>
                                 </div>
                                 <!-- Cantidad -->
-                                <div class="col-4 col-lg-3">
+                                <div class="col-5 col-lg-2">
                                     <div class="qtyBox d-flex align-items-center justify-content-around border w-100">
                                         <div id="qtyMinus-${item.id}" class="btnQty qtyMinus fs-3 ps-2" role='button'>
                                             -
