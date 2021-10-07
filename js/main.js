@@ -271,8 +271,19 @@ class mainApp{
         try {         
 
             const idProducto = parseInt(event.target.id);
-            const dirImagen = "../images/carritoMakeup/";
+            const dirImagenSeccion = "../images/carritoMakeup/",
+                  dirImagenIndex = "images/carritoMakeup/" ;
+            let dirImagen;      
 
+            // Obtiene el nombre de la pagina en la que estoy si es el index le paso 
+            // el path de secciones y clases correspondiente                    
+            let path = window.location.pathname;
+            let page = path.split("/").pop();
+            let page2 = page.split(".");
+            let pagina = page2[0].toUpperCase();
+
+            dirImagen = (pagina === 'INDEX' || pagina === "") ?dirImagenIndex :dirImagenSeccion ;
+            
             let itemCarrito=[];
 
             // Se obtiene el carrito del storage
