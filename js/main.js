@@ -117,17 +117,17 @@ class mainApp{
         //Declaramos la url del archivo JSON local
         const URL_JSON_LOCAL = "../data/productos.json",               // Archivo .json
               URL_JSON_SERVER_GET = "http://localhost:3000/productos", // Servidor Local
-              URL_JSON_SERVER_GITHUB_GET = "https://my-json-server.typicode.com/Lbarrios29/fakeAPI/productos",
+              URL_JSON_SERVER_GITHUB_GET = "https://my-json-server.typicode.com/Lbarrios29/coderhouse-server/productos",
               dirImagen = "../images/carritoMakeup/";  
 
         // Se obtiene los productos del archivo .json cargado localmente
-        $.get(URL_JSON_SERVER_GITHUB_GET, function (respuesta, estado) {
+        $.getJSON(URL_JSON_SERVER_GITHUB_GET, function (respuesta, estado) {
 
             if(estado === "success"){
                 
                 const productos = respuesta;
-                globalProductos = respuesta;    
-                
+                globalProductos = respuesta;
+
                 for (const producto of productos) {
 
                     $("#mainServicioMakeup").append(`
@@ -139,31 +139,21 @@ class mainApp{
                                 
                                 <div class="card-body">
                                 
-                                    <div class="card-title pt-3 fw-bold productoMakeup text-center pb-3">
+                                    <div class="card-title pt-3 fw-bold productoMakeup pb-2">
                                         ${producto.nombre}
                                     </div>
                                     
-                                    <div class="h6 text-muted d-flex justify-content-center">
-                                        <div>
-                                            Precio:
-                                        </div>
-                                        <div class="ms-2">
-                                            $${parseFloat(producto.precio).toFixed(2)}
-                                        </div>
+                                    <div class="h6 text-muted">
+                                        $ ${parseFloat(producto.precio).toFixed(2)}
                                     </div>
 
-                                    <div class="h6 text-muted d-flex justify-content-center">
-                                        <label for="idCant-${producto.id}" class="">
-                                            Cantidad:
-                                        </label>
-                                        <input id="idCant-${producto.id}" type="number" value="1" min="1" max="${producto.stock}" class="ms-1 ps-2 w-25 text-muted border border-secondary">
+                                    <div class="h6">
+                                        <input id="idCant-${producto.id}" type="number" value="1" min="1" max="${producto.stock}" 
+                                            class="p-2 w-75 text-muted tex-center border border-secondary">
                                     </div>
 
-                                    <div class="h6 text-muted d-flex justify-content-center">
-                                        <label>
-                                            Stock:
-                                        </label>
-                                        <div class="ms-1">${producto.stock} uds.</div>
+                                    <div class="h6 text-muted">
+                                        ${producto.stock} disponibles
                                     </div>
 
                                     <button id="${producto.id}" type="button" class="btn btn-dark w-100 mt-3">
